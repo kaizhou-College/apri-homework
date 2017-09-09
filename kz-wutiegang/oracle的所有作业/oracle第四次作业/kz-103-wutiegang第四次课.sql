@@ -1,4 +1,8 @@
 
+--1.列出部门30中的雇员
+select * from emp where deptno=30
+--2.列出所有办事员的姓名、编号和部门
+select ename,empno,dname from emp a,dept b where a.deptno=b.deptno
 --3.找出佣金高于薪金的雇员
 select * from emp where comm>sal
 --4.找出佣金高于薪金的20%的雇员
