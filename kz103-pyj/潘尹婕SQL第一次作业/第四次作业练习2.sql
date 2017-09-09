@@ -17,7 +17,8 @@ select distinct deptno from emp
 --显示至少有一个雇员的所有部门。
 select emp.ename,dept.* from emp,dept where emp.deptno=dept.deptno
 --显示部门名称和这些部门的雇员姓名，同时列出那些没有雇员的部门
-select dept.dname,emp.ename from emp,dept where emp.deptno=dept.deptno or(emp.deptno not in (select deptno from dept))
+select a.*,b.* from dept a left join emp b
+on a.deptno=b.deptno
 
 --查询并显示每个部门每个岗位的平均工资和最低工资
 select min(sal),avg(sal) ,deptno ,job from emp group by deptno,job;
