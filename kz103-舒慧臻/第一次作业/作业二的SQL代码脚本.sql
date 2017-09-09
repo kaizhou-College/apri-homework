@@ -38,4 +38,5 @@ insert into studentexam values(seq_studentexam.nextval,'S1_2007070801',(select s
 ----修改
 update studentinfo set sclassid=3
        where stuname in ('火云邪神' , '小李飞车')
- 
+----删除
+delete from  studentexam where estuid = (select stuid from studentinfo where stuname = '东方不败' )
