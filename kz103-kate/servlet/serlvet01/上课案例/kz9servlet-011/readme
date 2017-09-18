@@ -1,0 +1,47 @@
+一，回顾第2阶段的内容
+	tomcat	：  	服务器（提供服务的机器---客户端网络请求）
+	servlet	：	提供服务的对象(服务员)  服务处理和接受数据
+	jsp	        ：	提供服务的对象(服务员)  提供好看页面。
+	三者的关系：
+		Tomcat是服务器，又叫web容器
+		 servlet是就是web容器创建的提供服务器的对象
+		 jsp是程序员创建，通过web容器的编译，进行服务的对象
+		  
+		 jsp就是在html中嵌套java脚本的页面技术(服务端技术)
+		 html js css(前端技术)
+		 
+		 jsp本质就是servlet
+		 jsp运行的原理：
+		 jsp---转译---java类(servlet)--web容器编译--web执行---结果---web容器将结果发给客户端。
+二，	servlet创建的几种方式:
+方式一：实现servlet接口
+	
+	web.xml热部署----修改完了服务就读取了
+
+
+方式二：继承GenericServlet
+
+
+方式三：继承HttpServlet(推荐的方式)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
