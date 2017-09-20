@@ -1,0 +1,6 @@
+今天主要讲：request对象:
+1，第1个map集合：request获取所有的参数
+
+2,第2个map集合：request获取所有的请求头
+
+3,第3个map集合：request获取所有的域数据  key--value
