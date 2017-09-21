@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Wtg2"
+  id="myeclipse.1505911601506"
+  context-root="/Wtg2"
+  j2ee-spec="5.0"
+  archive="Wtg2.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
