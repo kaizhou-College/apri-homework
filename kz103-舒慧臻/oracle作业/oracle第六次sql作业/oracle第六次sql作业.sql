@@ -93,17 +93,29 @@ begin
     dbms_output.put_line('90后占总数和的比'||trunc((num3/total*100),2)||'%');
 end;
    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ----练习五、使用预定义异常
 --针对scott用户的emp表，编写一段PL/SQL代码，
 --根据接收的员工编号查询员工姓名，并将姓名存储在变量empname中。
 --代码中要求将变量声明为varchar2(4)类型，如果ename的值的长度大于变量empname的长度
 --，将引发Value_Error异常，则对异常进行处理，向用户提示信息。
-declare 
-	empname varchar2(4);
-	empno :='&员工编号';
-begin
-	select ename into empname from userinfo wnere empno=empno1 ;
-	exception
-		when Value_Error then
-			dbms_output.put_line('ename的值的长度大于变量empname的长度');
-end;
+
