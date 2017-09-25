@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="filterzy"
+  id="myeclipse.1506080759115"
+  context-root="/filterzy"
+  j2ee-spec="5.0"
+  archive="filterzy.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<filter>
+		<filter-name>filter_01</filter-name>
+		<filter-class>filter.filter_01</filter-class>
+	</filter>
+	<filter>
+		<filter-name>ZY_02</filter-name>
+		<filter-class>filter.ZY_02</filter-class>
+	</filter>
+	<filter>
+		<filter-name>filter_03</filter-name>
+		<filter-class>filter.filter_03</filter-class>
+	</filter>
+		<filter>
+		<filter-name>filter_04</filter-name>
+		<filter-class>filter.filter_04</filter-class>
+	</filter>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>filter.LoginFilter</filter-class>
+	</filter>
+	
+	
+	
+	
+	
+	
+	
+	<filter-mapping>
+		<filter-name>filter_01</filter-name>
+		<url-pattern>/Servlet_01</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ZY_02</filter-name>
+		<url-pattern>/zy_02</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter-mapping>
+		<filter-name>filter_03</filter-name>
+		<url-pattern>/save/login.jsp</url-pattern>
+	</filter-mapping>
+  	<filter-mapping>
+		<filter-name>filter_04</filter-name>
+		<url-pattern>/servlet_04</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</filter-mapping>
+	
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_01</servlet-name>
+    <servlet-class>servlet.Servlet_01</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>zy_02</servlet-name>
+    <servlet-class>servlet.zy_02</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_03</servlet-name>
+    <servlet-class>servlet.servlet_03</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_04</servlet-name>
+    <servlet-class>servlet.servlet_04</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DyncServlet</servlet-name>
+    <servlet-class>servlet.DyncServlet</servlet-class>
+  </servlet>LoginServlet
+<servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+
+
+
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>Servlet_01</servlet-name>
+    <url-pattern>/Servlet_01</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>zy_02</servlet-name>
+    <url-pattern>/zy_02</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_03</servlet-name>
+    <url-pattern>/servlet_03</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_04</servlet-name>
+    <url-pattern>/servlet_04</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DyncServlet</servlet-name>
+    <url-pattern>/DyncServlet</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
