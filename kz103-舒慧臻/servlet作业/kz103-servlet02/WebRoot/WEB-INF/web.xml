@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servletwork01</servlet-name>
+    <servlet-class>work02.Servletwork01</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Servletwork02</servlet-name>
+    <servlet-class>work02.Servletwork02</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Servletwork03</servlet-name>
+    <servlet-class>work02.Servletwork03</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Servletwork04</servlet-name>
+    <servlet-class>work02.Servletwork04</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Servletwork05</servlet-name>
+    <servlet-class>work02.Servletwork05</servlet-class>
+    <init-param>
+    	<param-name>one</param-name>
+    	<param-value>234</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>two</param-name>
+    	<param-value>dstst</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>there</param-name>
+    	<param-value>0453</param-value>
+    </init-param>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Servletwork01</servlet-name>
+    <url-pattern>/Servletwork01</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servletwork02</servlet-name>
+    <url-pattern>/Servletwork02</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servletwork03</servlet-name>
+    <url-pattern>/Servletwork03</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servletwork04</servlet-name>
+    <url-pattern>/Servletwork04</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servletwork05</servlet-name>
+    <url-pattern>/Servletwork05</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+    	<param-name>one</param-name>
+    	<param-value>stst</param-value>
+  </context-param>
+  <context-param>
+    	<param-name>two</param-name>
+    	<param-value>23435</param-value>
+   </context-param>
+   <context-param>
+    	<param-name>there</param-name>
+    	<param-value>gufmd</param-value>
+  </context-param>
+</web-app>
