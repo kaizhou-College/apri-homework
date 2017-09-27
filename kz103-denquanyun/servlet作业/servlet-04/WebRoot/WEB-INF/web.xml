@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<listener>
+		<listener-class>Listener.MyListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>Listener.MyListener02</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>Listener.MyListener03</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>workFour.RequestListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>workFour.SessionListener</listener-class>
+	</listener>
+	<!--  
+	<listener>
+		<listener-class>workFour.ApplicationListener</listener-class>
+	</listener>
+	-->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>workFour.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
