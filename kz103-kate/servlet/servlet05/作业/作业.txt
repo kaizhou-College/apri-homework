@@ -1,0 +1,67 @@
+一，写一个books.xml中写入以下标签
+<books>
+   <book id="1001">
+       <name>java</name>
+   </book>
+   
+   <book id="1002">
+       <name>c#</name>
+   </book>
+</books>
+
+1.使用DOM解析方式，读出xml的元素
+2.构建使用Document对象,构建一个
+
+  <users>
+      <user id="1001" sex="男">
+         <name>tom</name>
+         <birth>2005-01-01</birth>
+      </user>
+
+
+      <user id="1002" sex="女">
+         <name>jerry</name>
+         <birth>2008-03-03</birth>
+      </user>
+  </users>
+  
+二，类似于上面的xml
+ 1.写一个XMLDao对XML增删改查
+
+ 先在硬盘中准备如下的一个XMl文件
+ 
+ <roles>
+    <role id="1001">
+         name="manager"
+    </role>
+
+    <role id="1002">
+         name="admin"
+    </role>
+ </roles>
+
+ 写一个实体类Role.java,设置属性String id,String name.提供get和set方法
+
+ 在XMLDao中添加以下方法
+ public List findAll();
+
+ public void addRole(Role r);
+
+ public void updateRoleById(String id);
+
+ public void deleteRoleById(String id);
+
+ 测试上面的方法
+
+
+2.用SAX解析上面XMl文件
+
+
+
+
+   
+
+
+
+
+   
