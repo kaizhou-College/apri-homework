@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet01</servlet-name>
+    <servlet-class>servlet.Myservlet01</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet02</servlet-name>
+    <servlet-class>servlet.Myservlet02</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet04</servlet-name>
+    <servlet-class>servlet.Myservlet04</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Myservlet01</servlet-name>
+    <url-pattern>/Myservlet01</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet02</servlet-name>
+    <url-pattern>/Myservlet02</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet04</servlet-name>
+    <url-pattern>/Myservlet04</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  		<filter-name>Myfilter01</filter-name>
+  		<filter-class>filter.Myfilter01</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>Myfilter01</filter-name>
+  		<url-pattern>/Myservlet01</url-pattern>
+  </filter-mapping>
+   <filter>
+  		<filter-name>Myfilter02</filter-name>
+  		<filter-class>filter.Myfilter02</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>Myfilter02</filter-name>
+  		<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+  		<filter-name>SaveFilter</filter-name>
+  		<filter-class>filter.SaveFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>SaveFilter</filter-name>
+  		<url-pattern>/save/save.jsp</url-pattern>
+  </filter-mapping>
+  
+   <filter>
+  		<filter-name>Myfilter04</filter-name>
+  		<filter-class>filter.Myfilter04</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>Myfilter04</filter-name>
+  		<!--<url-pattern>/workFour.jsp</url-pattern>
+  		--><servlet-name>Myservlet04</servlet-name>
+  </filter-mapping>
+  
+  <servlet>
+  		<servlet-name>Myservlet05</servlet-name>
+  		<servlet-class>servlet.Myservlet05</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>Myservlet05</servlet-name>
+    <url-pattern>/Myservlet05</url-pattern>
+  </servlet-mapping>
+  
+     <filter>
+  		<filter-name>Myfilter05</filter-name>
+  		<filter-class>filter.Myfilter05</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>Myfilter05</filter-name>
+  		<servlet-name>Myservlet05</servlet-name>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
