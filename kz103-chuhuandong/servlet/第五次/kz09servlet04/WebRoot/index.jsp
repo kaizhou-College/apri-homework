@@ -21,6 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <a href="out.jsp">推出</a>
+    <a href="out.jsp">推出</a><br>
+   	 请求次数：${count}<br>
+   	 在线人数：${online}<br>
+  	访问量：${sum}
   </body>
 </html>
