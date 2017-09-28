@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<context-param>
+    	<param-name>encode</param-name>
+    	<param-value>utf-8</param-value>
+    </context-param>
+     <context-param>
+    	<param-name>encode1</param-name>
+    	<param-value>ww</param-value>
+    </context-param>
+     <context-param>
+    	<param-name>encode2</param-name>
+    	<param-value>qq</param-value>
+    </context-param>
+	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_01</servlet-name>
+    <servlet-class>kz.servlet_zy.Servlet_01</servlet-class>
+  </servlet>
+  <!-- Extend -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletExtends</servlet-name>
+    <servlet-class>kz.servlet_zy.ServletExtends</servlet-class>
+  </servlet>
+ 	<!-- ServletExtends_smzq -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletExtends_smzq</servlet-name>
+    <servlet-class>kz.servlet_zy.ServletExtends_smzq</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_3zy</servlet-name>
+    <servlet-class>kz.servlet_zy.Servlet_3zy</servlet-class>
+  </servlet>
+  
+  
+  
+  	  
+ 
+ 
+ <!--implements-->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletImplements</servlet-name>
+    <servlet-class>kz.servlet_zy.ServletImplements</servlet-class>
+   
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_6zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_6zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_7zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_7zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_8zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_8zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_10zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_10zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_11zys</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_11zys</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_12zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_12zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet_13zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet_13zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_1zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_1zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_2zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_2zy</servlet-class>
+  </servlet>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_3zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_3zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_4zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_4zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_5zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_5zy</servlet-class>
+  	<init-param>
+    	<param-name>encode3</param-name>
+    	<param-value>utf-811</param-value>
+    </init-param>
+     <init-param>
+    	<param-name>encode4</param-name>
+    	<param-value>ww11</param-value>
+    </init-param>
+     <init-param>
+    	<param-name>encode5</param-name>
+    	<param-value>qq11</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_6zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_6zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_7zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_7zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_8zy</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_8zy</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_8zycs</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_8zycs</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>servlet2_9zy_add</servlet-name>
+    <servlet-class>kz.servlet_zy.servlet2_9zy_add</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>show</servlet-name>
+    <servlet-class>kz.servlet_zy.show</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Servlet_01</servlet-name>
+    <url-pattern>/Servlet_01</url-pattern>
+  </servlet-mapping>
+  
+ <!--implements-->
+   <servlet-mapping>
+    <servlet-name>ServletImplements</servlet-name>
+    <url-pattern>/ServletImplements</url-pattern>
+  </servlet-mapping>
+    <!-- Extend -->
+     <servlet-mapping>
+    <servlet-name>ServletExtends</servlet-name>
+    <url-pattern>/ServletExtends</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_6zy</servlet-name>
+    <url-pattern>/servlet_6zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_7zy</servlet-name>
+    <url-pattern>/servlet_7zy</url-pattern>
+  </servlet-mapping>
+  <!-- ServletExtends_smzq -->
+  <servlet-mapping>
+    <servlet-name>ServletExtends_smzq</servlet-name>
+    <url-pattern>/ServletExtends_smzq</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_8zy</servlet-name>
+    <url-pattern>/servlet_8zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_10zy</servlet-name>
+    <url-pattern>/servlet_10zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_11zys</servlet-name>
+    <url-pattern>/servlet_11zys</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_12zy</servlet-name>
+    <url-pattern>/servlet_12zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet_13zy</servlet-name>
+    <url-pattern>/servlet_13zy</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name> Servlet_3zy</servlet-name>
+    <url-pattern>/Servlet_3zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_1zy</servlet-name>
+    <url-pattern>/servlet2_1zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_2zy</servlet-name>
+    <url-pattern>/servlet2_2zy</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>servlet2_3zy</servlet-name>
+    <url-pattern>/servlet2_3zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_4zy</servlet-name>
+    <url-pattern>/servlet2_4zy</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>servlet2_5zy</servlet-name>
+    <url-pattern>/servlet2_5zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_6zy</servlet-name>
+    <url-pattern>/servlet2_6zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_7zy</servlet-name>
+    <url-pattern>/servlet2_7zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_8zy</servlet-name>
+    <url-pattern>/servlet2_8zy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_8zycs</servlet-name>
+    <url-pattern>/servlet2_8zycs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2_9zy_add</servlet-name>
+    <url-pattern>/servlet2_9zy_add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>show</servlet-name>
+    <url-pattern>/show</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
