@@ -1,0 +1,22 @@
+1.使用naming-common.jar,制作一份jndi的目录,然后向这个目录中任意添加,
+  然后测试bind()，list(""),unBind(),lookUp("")
+
+
+2.使用fscontext.jar,providerutil.jar读取当前类的所有目录,再根据一个目录名，得到一个文件的内容
+  然后打印出来
+
+3.仿照教案中的第四个知识点，写自己绑定Javabean的例子
+
+4.使用数据源的连接池来得到Connection对象
+
+5.在tomcat中配置数据源的连接池，在jsp中得到这个数据源连接池，从而得到Connection对象
+  
+6，写一个对图书增删改查的项目,但是必须先登录进入，如果没用用户名必须先注册
+两张表  图书表  用户表
+
+
+用上mvc的框架(mvc中的配置文件使用xml文件)
+servlet ,filter,listener,ajax,数据源连接池拿到Connection对象
+
+
+   
