@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	<servlet>
+				<servlet-name>Myservlet01</servlet-name>
+				<servlet-class>servletwork.Myservlet01</servlet-class>
+	</servlet>
+	<servlet-mapping>
+				<servlet-name>Myservlet01</servlet-name>
+				<url-pattern>/Myservlet01</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+				<servlet-name>Myservlet02</servlet-name>
+				<servlet-class>servletwork.Myservlet02</servlet-class>
+	</servlet>
+	<servlet-mapping>
+				<servlet-name>Myservlet02</servlet-name>
+				<url-pattern>/Myservlet02</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+				<servlet-name>Myservlet03</servlet-name>
+				<servlet-class>servletwork.Myservlet03</servlet-class>
+	</servlet>
+	<servlet-mapping>
+				<servlet-name>Myservlet03</servlet-name>
+				<url-pattern>/Myservlet03</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Myservlet04</servlet-name>
+		<servlet-class>servletwork.Myservlet04</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Myservlet04</servlet-name>
+		<url-pattern>/Myservlet04</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Myservlet05</servlet-name>
+		<servlet-class>servletwork.Myservlet05</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Myservlet05</servlet-name>
+		<url-pattern>/Myservlet05</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Myservlet06</servlet-name>
+		<servlet-class>servletwork.Myservlet06</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Myservlet06</servlet-name>
+		<url-pattern>/Myservlet06</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Myservlet08</servlet-name>
+		<servlet-class>servletwork.Myservlet08</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet10</servlet-name>
+    <servlet-class>servletwork.Myservlet10</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet07</servlet-name>
+    <servlet-class>servletwork.Myservlet07</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet09</servlet-name>
+    <servlet-class>servletwork.Myservlet09</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet11</servlet-name>
+    <servlet-class>servletwork.Myservlet11</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Myservlet12</servlet-name>
+    <servlet-class>servletwork.Myservlet12</servlet-class>
+  </servlet>
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>Myservlet08</servlet-name>
+		<url-pattern>/Myservlet08</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet10</servlet-name>
+    <url-pattern>/Myservlet10</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet07</servlet-name>
+    <url-pattern>/Myservlet07</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet09</servlet-name>
+    <url-pattern>/Myservlet09</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet11</servlet-name>
+    <url-pattern>/Myservlet11</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Myservlet12</servlet-name>
+    <url-pattern>/Myservlet12</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

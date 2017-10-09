@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>Servletwork01</servlet-name>
+    <servlet-class>work01.Servletwork01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servletwork01</servlet-name>
+    <url-pattern>/Servletwork01</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Servletwork02</servlet-name>
+    <servlet-class>work01.Servletwork02</servlet-class>
+    <init-param>
+    		<param-name>hoppy</param-name>
+    		<param-value>play</param-value>
+    </init-param>
+    
+    <init-param>
+    		<param-name>encode</param-name>
+    		<param-value>utf-8</param-value>
+    </init-param>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Servletwork02</servlet-name>
+    <url-pattern>/Servletwork02</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Servletwork03</servlet-name>
+    <servlet-class>work01.Servletwork03</servlet-class>
+    <init-param>
+    		<param-name>encode</param-name>
+    		<param-value>utf-8</param-value>
+    </init-param>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Servletwork03</servlet-name>
+    <url-pattern>/Servletwork03</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Servletwork04</servlet-name>
+    <servlet-class>work01.Servletwork04</servlet-class>
+     <init-param>
+    		<param-name>encode</param-name>
+    		<param-value>utf-8</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servletwork04</servlet-name>
+    <url-pattern>/Servletwork04</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

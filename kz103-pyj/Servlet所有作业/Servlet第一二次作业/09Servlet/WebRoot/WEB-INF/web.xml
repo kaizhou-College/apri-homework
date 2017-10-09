@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 第一课作业 -->
+  <!-- 歌词 -->
+  <servlet>
+  	<servlet-name>GeciServlet</servlet-name>
+  	<servlet-class>Servlet01.GeciServlet</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>GeciServlet</servlet-name>
+<url-pattern>/GeciServlet</url-pattern>
+</servlet-mapping>
+<!-- 实现的生命周期 -->
+  <servlet>
+  	<servlet-name>LifeServlet</servlet-name>
+  	<servlet-class>Servlet01.LifeServlet</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>LifeServlet</servlet-name>
+<url-pattern>/LifeServlet</url-pattern>
+</servlet-mapping>
+<!--servlet被请求了多少次-->
+  <servlet>
+  	<servlet-name>Servlet3</servlet-name>
+  	<servlet-class>Servlet01.Servlet3</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>Servlet3</servlet-name>
+<url-pattern>/Servlet3</url-pattern>
+</servlet-mapping>
+<!--  jsp跳转输出到控制台-->
+  <servlet>
+  	<servlet-name>Tijiao</servlet-name>
+  	<servlet-class>Servlet01.Tijiao</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>Tijiao</servlet-name>
+<url-pattern>/Tijiao</url-pattern>
+</servlet-mapping>
+<!--  jsp跳转输出到控制台并输出到客户端-->
+  <servlet>
+  	<servlet-name>Denglu</servlet-name>
+  	<servlet-class>Servlet01.Denglu</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>Denglu</servlet-name>
+<url-pattern>/Denglu</url-pattern>
+</servlet-mapping>
+<!--运算 -->
+  <servlet>
+  	<servlet-name>Yunsuan</servlet-name>
+  	<servlet-class>Servlet01.Yunsuan</servlet-class>
+  </servlet>
+<servlet-mapping>
+<servlet-name>Yunsuan</servlet-name>
+<url-pattern>/Yunsuan</url-pattern>
+</servlet-mapping>
+<!-- 继承的生命周期 -->
+  <servlet>
+  	<servlet-name>LifeServlet2</servlet-name>
+  	<servlet-class>Servlet01.LifeServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>LifeServlet2</servlet-name>
+<url-pattern>/LifeServlet2</url-pattern>
+</servlet-mapping>
+    <!-- max和min -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work10</servlet-name>
+    <servlet-class>Servlet01.Work10</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Work10</servlet-name>
+    <url-pattern>/Work10</url-pattern>
+  </servlet-mapping>
+  <!-- 第九题 -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work9</servlet-name>
+    <servlet-class>Servlet01.Work9</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Work9</servlet-name>
+    <url-pattern>/Work9</url-pattern>
+  </servlet-mapping>
+  <!-- 根据编号删除 -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work11</servlet-name>
+    <servlet-class>Servlet01.Work11</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Work11</servlet-name>
+    <url-pattern>/Work11</url-pattern>
+  </servlet-mapping>
+  <!-- 第二课作业1 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work1</servlet-name>
+    <servlet-class>Servlet02.Work1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Work1</servlet-name>
+    <url-pattern>/Work1</url-pattern>
+  </servlet-mapping>
+<!-- 作业2 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work2</servlet-name>
+    <servlet-class>Servlet02.Work2</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Work2</servlet-name>
+    <url-pattern>/Work2</url-pattern>
+  </servlet-mapping>
+  <!-- 作业3 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work3</servlet-name>
+    <servlet-class>Servlet02.Work3</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Work3</servlet-name>
+    <url-pattern>/Work3</url-pattern>
+  </servlet-mapping>
+  <!-- 作业4 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work4</servlet-name>
+    <servlet-class>Servlet02.Work4</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Work4</servlet-name>
+    <url-pattern>/Work4</url-pattern>
+  </servlet-mapping>
+  <!-- 作业5 -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work5</servlet-name>
+    <servlet-class>Servlet02.Work5</servlet-class>
+     	<init-param>
+ 		<param-name>in-encode</param-name>
+ 		<param-value>utf-8</param-value>
+ 		</init-param>
+ 		
+ 		<init-param>
+ 		<param-name>in-age</param-name>
+ 		<param-value>19</param-value>
+ 		</init-param>
+ 		
+ 		 <init-param>
+ 		<param-name>in-sex</param-name>
+ 		<param-value>女</param-value>
+ 		</init-param>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>Work5</servlet-name>
+    <url-pattern>/Work5</url-pattern>
+  </servlet-mapping>
+  <!-- 作业6 -->
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work6</servlet-name>
+    <servlet-class>Servlet02.Work6</servlet-class>
+  </servlet>
+      <servlet-mapping>
+    <servlet-name>Work6</servlet-name>
+    <url-pattern>/Work6</url-pattern>
+  </servlet-mapping>
+  <!-- 作业8 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Work8</servlet-name>
+    <servlet-class>Servlet02.Work8</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Work8</servlet-name>
+    <url-pattern>/Work8</url-pattern>
+  </servlet-mapping>
+  <context-param>
+  		<param-name>out-eid</param-name>
+ 		<param-value>2</param-value>
+  </context-param>
+  
+  <context-param>
+  		<param-name>out-ename</param-name>
+ 		<param-value>pyj</param-value>
+  </context-param>
+  
+    <context-param>
+  		<param-name>out-esex</param-name>
+ 		<param-value>男</param-value>
+  </context-param>
+</web-app>

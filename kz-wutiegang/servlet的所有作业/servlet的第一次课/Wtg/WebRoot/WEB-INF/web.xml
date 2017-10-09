@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+
+ 
+  <servlet>
+  		<servlet-name>DiYi</servlet-name>
+  		<servlet-class>com.wtg.DiYi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>DiYi</servlet-name>
+  		<url-pattern>/DiYi</url-pattern>
+  
+  </servlet-mapping>
+  <servlet>
+  		<servlet-name>DiEr</servlet-name>
+  		<servlet-class>com.wtg.DiEr</servlet-class>
+  		<init-param>
+  			<param-name>age</param-name>
+  			<param-value>20</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>encode</param-name>
+  			<param-value>utf-8</param-value>
+  		</init-param>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>DiEr</servlet-name>
+  		<url-pattern>/DiEr</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DiSan</servlet-name>
+  	<servlet-class>com.wtg.DiSan</servlet-class>
+  	<init-param>
+  		<param-name>age</param-name>
+  		<param-value>20</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>encode</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DiSan</servlet-name>
+  	<url-pattern>/DiSan</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  		<servlet-name>DiSi</servlet-name>
+  		<servlet-class>com.wtg.DiSi</servlet-class>
+  		<init-param>
+  			<param-name>encode</param-name>
+  			<param-value>utf-8</param-value>
+  		</init-param>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>DiSi</servlet-name>
+  		<url-pattern>/DiSi</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+  		<servlet-name>DiLiu</servlet-name>
+  		<servlet-class>com.wtg.DiLiu</servlet-class>
+  		<init-param>
+  			<param-name>encode</param-name>
+  			<param-value>utf-8</param-value>
+  		</init-param>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>DiLiu</servlet-name>
+  		<url-pattern>/DiLiu</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>DiBa</servlet-name>
+  	<servlet-class>com.wtg.DiBa</servlet-class>
+  	<init-param>
+  		<param-name>age</param-name>
+  		<param-value>30</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>encode</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DiBa</servlet-name>
+  	<url-pattern>/DiBa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>DiJiu</servlet-name>
+  	<servlet-class>com.wtg.DiJiu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DiJiu</servlet-name>
+  	<url-pattern>/DiJiu</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+  	<servlet-name>DiShi</servlet-name>
+  	<servlet-class>com.wtg.DiShi</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DiSE</servlet-name>
+    <servlet-class>com.wtg.DiSE</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>DiShi</servlet-name>
+  	<url-pattern>/DiShi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DiSE</servlet-name>
+    <url-pattern>/DiSE</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  		<servlet-name>DiSY</servlet-name>
+  		<servlet-class>com.wtg.DiSY</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>DiSY</servlet-name>
+  		<url-pattern>/DiSY</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
