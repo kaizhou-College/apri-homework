@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<books>
+		<book id="1001">
+			<name>java</name>
+		</book>
+		
+		<book id="1002">
+			<name>c#</name>
+		</book>
+	</books>
