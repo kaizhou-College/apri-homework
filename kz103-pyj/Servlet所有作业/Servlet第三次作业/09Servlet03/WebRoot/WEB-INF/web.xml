@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+		<!-- 作业1 -->
+		<!--<filter>
+			<filter-name>Work1</filter-name>
+			<filter-class>Servlet03.Work1</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>Work1</filter-name>
+			<servlet-name>Work1_1</servlet-name>
+		</filter-mapping>
+		<filter>
+			<filter-name>Work1_1</filter-name>
+			<filter-class>Servlet03.Work1_1</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>Work1_1</filter-name>
+			<servlet-name>Work1</servlet-name>
+		</filter-mapping>-->
+		
+		
+		<!-- 作业2 -->
+		<filter>
+			<filter-name>Encodefilter</filter-name>
+			<filter-class>Servlet03.Encodefilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>Encodefilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+	    <servlet>
+	    <description>This is the description of my J2EE component</description>
+	    <display-name>This is the display name of my J2EE component</display-name>
+	    <servlet-name>Encodeservlet</servlet-name>
+	    <servlet-class>Servlet03.Encodeservlet</servlet-class>
+	  </servlet>
+	    <servlet-mapping>
+	    <servlet-name>Encodeservlet</servlet-name>
+	    <url-pattern>/Encodeservlet</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	   <!--  作业3 -->
+	  <!-- servlet配置 -->
+	  <servlet>
+	    <description>This is the description of my J2EE component</description>
+	    <display-name>This is the display name of my J2EE component</display-name>
+	    <servlet-name>LoginServlet</servlet-name>
+	    <servlet-class>Servlet03.LoginServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>LoginServlet</servlet-name>
+	    <url-pattern>/LoginServlet</url-pattern>
+	  </servlet-mapping>
+	
+	  <!-- filter的权限过滤 -->
+		<filter>
+			<filter-name>SaveFilter</filter-name>
+			<filter-class>Servlet03.SaveFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>SaveFilter</filter-name>
+			<url-pattern>/save/save.jsp</url-pattern>
+		</filter-mapping>
+	 <!-- 作业4 -->
+	   <!-- servlet配置 -->
+	   <servlet>
+	    <description>This is the description of my J2EE component</description>
+	    <display-name>This is the display name of my J2EE component</display-name>
+	    <servlet-name>Work4Servlet</servlet-name>
+	    <servlet-class>Servlet03.Work4Servlet</servlet-class>
+	  </servlet>
+	    <servlet-mapping>
+	    <servlet-name>Work4Servlet</servlet-name>
+	    <url-pattern>/Work4Servlet</url-pattern>
+	  </servlet-mapping>
+	  <!--  filter过滤 -->
+	  <filter>
+	  		<filter-name>Work4Filter</filter-name>
+	  		<filter-class>Servlet03.Work4Filter</filter-class>
+	  </filter>
+	  	<filter-mapping>
+			<filter-name>Work4Filter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		<!-- 作业5 -->
+		<filter>
+			<filter-name>Work5Filter</filter-name>
+			<filter-class>Servlet03.Work5Filter</filter-class>
+		</filter>
+			  	<filter-mapping>
+			<filter-name>Work5Filter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		
+		<servlet>
+			<servlet-name>StrServlet</servlet-name>
+			<servlet-class>Servlet03.StrServlet</servlet-class>
+		</servlet>
+		  <servlet-mapping>
+	    <servlet-name>StrServlet</servlet-name>
+	    <url-pattern>/StrServlet</url-pattern>
+	  </servlet-mapping>
+	  
+	    <welcome-file-list>
+	    <welcome-file>index.jsp</welcome-file>
+	  </welcome-file-list>
+	</web-app>

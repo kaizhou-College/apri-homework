@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"> 
+ <servlet>
+  <servlet-name>Servlet01</servlet-name>
+  <servlet-class>servlet.servlet01</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>Encodeservlet</servlet-name>
+  <servlet-class>servlet.Encodeservlet</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>servlet.LoginServlet</servlet-class>
+ </servlet>
+ 
+ <filter>
+  <filter-name>filter01</filter-name>
+  <filter-class>filter.filter01</filter-class>
+ </filter>
+ <filter>
+  <filter-name>Encodefilter</filter-name>
+  <filter-class>filter.Encodefilter</filter-class>
+ </filter>
+ <filter>
+  <filter-name>doFilter</filter-name>
+  <filter-class>filter.doFilter</filter-class>
+ </filter>
+ 
+ 
+ <servlet-mapping>
+  <servlet-name>Servlet01</servlet-name>
+  <url-pattern>/Servlet01</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>Encodeservlet</servlet-name>
+  <url-pattern>/Encodeservlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/LoginServlet</url-pattern>
+ </servlet-mapping>
+ 
+ <filter-mapping>
+ <filter-name>filter01</filter-name>
+ <servlet-name>Servlet01</servlet-name>
+  <url-pattern>/Servlet01</url-pattern>
+ </filter-mapping>
+ 
+ <filter-mapping>
+ <filter-name>Encodefilter</filter-name>
+ <servlet-name>Encodeservlet</servlet-name>
+  <url-pattern>/Encodeservlet</url-pattern>
+ </filter-mapping>
+ 
+ <filter-mapping>
+ <filter-name>doFilter</filter-name>
+ <servlet-name>LoginServlet</servlet-name>
+  <url-pattern>/LoginServlet</url-pattern>
+ </filter-mapping>
+ 
+ 
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
