@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+ 
+	<!--Servlet的WEB-XML配置-->
+ 	 
+  	<servlet>
+  	<servlet-name>Test</servlet-name>
+  	<servlet-class>com.kqw.Test</servlet-class>
+  	</servlet>
+ 
+ 	<servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+ 	
+ 	
+ 
+	
+	<servlet>
+  	<servlet-name>Test8</servlet-name>
+  	<servlet-class>com.kqw.Test8</servlet-class>
+  	</servlet>
+ 
+ 	<servlet-mapping>
+    <servlet-name>Test8</servlet-name>
+    <url-pattern>/Test8</url-pattern>
+    </servlet-mapping>
+
+ 
+    <servlet>
+  	<servlet-name>Test2</servlet-name>
+  	<servlet-class>com.kqw.Test2</servlet-class>
+  	<init-param>
+	<param-name>age</param-name>
+	<param-value>18</param-value>
+  	</init-param>
+  	
+  	<init-param>
+	<param-name>encode</param-name>
+	<param-value>utf-8</param-value>
+  	</init-param>
+    </servlet>
+    
+    <servlet-mapping>
+    <servlet-name>Test2</servlet-name>
+    <url-pattern>/Test2</url-pattern>
+    </servlet-mapping>
+ 
+
+    <servlet>
+  	<servlet-name>Test3</servlet-name>
+  	<servlet-class>com.kqw.Test3</servlet-class>
+    <init-param>
+	<param-name>encode</param-name>
+	<param-value>utf-8</param-value>
+  	</init-param>
+    </servlet>
+    
+    <servlet-mapping>
+    <servlet-name>Test3</servlet-name>
+    <url-pattern>/Test3</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet>
+  	<servlet-name>Test4</servlet-name>
+  	<servlet-class>com.kqw.Test4</servlet-class>
+  	<init-param>
+  	<param-name>hobby</param-name><!-- key -->
+  	<param-value>basketball</param-value><!-- value -->
+  	</init-param>
+  	
+  	<init-param>
+  	<param-name>hobbyy</param-name><!-- key -->
+  	<param-value>football</param-value><!-- value -->
+  	</init-param>
+  	
+  	<init-param>
+  	<param-name>encode</param-name><!-- key -->
+  	<param-value>utf-8</param-value><!-- value -->
+  	</init-param>
+    </servlet>
+  
+
+
+    
+    <servlet-mapping>
+    <servlet-name>Test4</servlet-name>
+    <url-pattern>/Test4</url-pattern>
+    </servlet-mapping>
+  
+ 	
+ 	<servlet>
+  	<servlet-name>Test5</servlet-name>
+  	<servlet-class>com.kqw.Test5</servlet-class>
+    <init-param>
+	<param-name>encode</param-name>
+	<param-value>utf-8</param-value>
+  	</init-param>
+    </servlet>
+    <servlet>
+    <servlet-name>Test6</servlet-name>
+    <servlet-class>com.kqw.Test6</servlet-class>
+    </servlet>
+
+
+
+    
+    <servlet-mapping>
+    <servlet-name>Test5</servlet-name>
+    <url-pattern>/Test5</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>Test6</servlet-name>
+    <url-pattern>/Test6</url-pattern>
+    </servlet-mapping>
+ 
+ 	
+ 	<servlet>
+  	<servlet-name>Test7</servlet-name>
+  	<servlet-class>com.kqw.Test7</servlet-class>
+  	<init-param>
+	<param-name>age</param-name>
+	<param-value>18</param-value>
+  	</init-param>
+  	
+  	<init-param>
+	<param-name>encode</param-name>
+	<param-value>utf-8</param-value>
+  	</init-param>
+    </servlet>
+ 
+ 	    
+    <servlet-mapping>
+    <servlet-name>Test7</servlet-name>
+    <url-pattern>/Test7</url-pattern>
+    </servlet-mapping>
+   
+ 	
+    
+    
+    <servlet>
+    <servlet-name>Test9</servlet-name>
+    <servlet-class>com.kqw.Test9</servlet-class>
+    </servlet>
+	<servlet-mapping>
+    <servlet-name>Test9</servlet-name>
+    <url-pattern>/Test9</url-pattern>
+    </servlet-mapping>
+ 
+    
+    <servlet>
+    <servlet-name>Test10</servlet-name>
+    <servlet-class>com.kqw.Test10</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>Test10</servlet-name>
+    <url-pattern>/Test10</url-pattern>
+    </servlet-mapping>
+   
+   	<servlet>
+    <servlet-name>Test11</servlet-name>
+    <servlet-class>com.kqw.Test11</servlet-class>
+    <init-param>
+	<param-name>encode</param-name>
+	<param-value>utf-8</param-value>
+  	</init-param>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>Test11</servlet-name>
+    <url-pattern>/Test11</url-pattern>
+    </servlet-mapping>
+   
+  
+
+
+<welcome-file-list>
+<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+</web-app>
