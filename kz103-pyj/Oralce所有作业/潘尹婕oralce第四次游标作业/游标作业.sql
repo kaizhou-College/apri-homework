@@ -50,7 +50,7 @@ end;
 --重新生成所有用户的密码，要求密码必须为6位数。
 declare
 	cursor pass is  select * from userinfo for update of password;
-  num number:=round(dbms_random.value(100000,795620));
+  num number:=round(dbms_random.value(100000,999999));
 begin
    for user in pass
    loop
