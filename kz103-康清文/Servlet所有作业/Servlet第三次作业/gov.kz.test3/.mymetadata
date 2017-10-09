@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="gov.kz.test3"
+  id="myeclipse.1506132161406"
+  context-root="/gov.kz.test3"
+  j2ee-spec="5.0"
+  archive="gov.kz.test3.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
