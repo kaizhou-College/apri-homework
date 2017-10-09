@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+ 
+ <servlet>	
+ 	<servlet-name>MyServlet01</servlet-name>
+ 	<servlet-class>com.kz.L1.MyServlet01</servlet-class>
+ 	<init-param>
+ 		<param-name>encode</param-name>
+ 		<param-value>utf-8</param-value>
+ 	</init-param>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>MyServlet01</servlet-name>
+ 	<!-- 必须以/开始 -->
+ 	<url-pattern>/MyServlet01</url-pattern>
+ </servlet-mapping>
+ 
+ <filter>
+ 	<filter-name>MyFilter</filter-name>
+ 	<filter-class>com.kz.L3.MyFilter</filter-class>
+ </filter>
+ <filter-mapping>
+ 	
+	<filter-name>MyFilter</filter-name>
+	<!-- 拦截当个servlet：必须是在web.xml能找的到了 -->
+	<servlet-name>MyServlet01</servlet-name>
+	<!-- 拦截多个请求 -->
+	<url-pattern>/admin/*</url-pattern>
+ 	
+ </filter-mapping>
+ <listener>
+ 	<listener-class>com.kz.L4.MyListener</listener-class>
+ </listener>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
