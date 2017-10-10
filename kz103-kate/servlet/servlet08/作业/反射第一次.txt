@@ -1,0 +1,25 @@
+1.通过4种方式得到HashMap的Class对象
+
+2.写一个A类，在类中写好一个静态块，验证延时加载和及时加载
+
+3.得到HashTable的所有父类
+
+
+
+4.在d: 写一个Test1类，在main方法中调用在e盘的Test2类的一个方法，
+然后在各java程序所在的盘符下编译完成以后，
+在c盘使用java 命令运行:java Test.java
+前提在环境变量中设置  classpath=".;d:\;e:\"
+
+5.写一个Test类放在E盘,在main方法中打印"Test1".然后将Test类打包,放到jdk的安装目录下面jdk1.5.0_05\jre\lib\ext的文件夹下,
+  然后改写Test.java,在main方法中打印"Test2".重新编译,打印结果
+  说明原因
+
+E:\> jar -cfv test.jar Test2.class   //生成jar包
+
+
+
+6.写一个Dog类，编译打包(test.jar),丢到tomcat的webapps下面的test(自己创建)的下面，通过网络加载,得到Dog类的一个对象
+
+网络加载地址为:http://localhost:127.0.0.1:8080/test/test.jar
+  
