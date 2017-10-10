@@ -1,4 +1,4 @@
-package dao;
+package com.wtg.Dao;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +19,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import entity.Role;
-
+import com.wtg.entity.Role;
 
 public class xmlDao {
 	//查询所有
@@ -41,7 +40,14 @@ public class xmlDao {
 				role.setName(content);
 				roles.add(role);
 			}
-		} catch (Exception e) {
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return roles;
@@ -55,26 +61,38 @@ public class xmlDao {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			//先解析根元素
 			Document doc = db.parse(new File("roles.xml"));
+			//Document doc = db.newDocument();
+			
+			//Element rootNode = doc.createElement("roles");
+			//doc.appendChild(rootNode);
 			//再读到根元素
 			Element rootNode = (Element) doc.getElementsByTagName("roles").item(0);
 			//再将需要创建的元素体创建好
 			Element idNode = doc.createElement("role");
 			//设置属性
 			idNode.setAttribute("id", r.getId());
+			
 			Element nameNode = doc.createElement("name");
 			nameNode.setTextContent(r.getName());
 			//将元素追加子元素上
 			idNode.appendChild(nameNode);
 			//将子元素追加到根元素上
 			rootNode.appendChild(idNode);
+			
 			TransformerFactory tf=TransformerFactory.newInstance();
 			Transformer t = tf.newTransformer();
-			
 			
 			DOMSource ds=new DOMSource(doc);
 			StreamResult sr=new StreamResult("roles.xml");
 			t.transform(ds, sr);
-		} catch (Exception e) {
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -101,7 +119,20 @@ public class xmlDao {
 
 			}
 			
-		} catch (Exception e) {
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -129,7 +160,20 @@ public class xmlDao {
 					t.transform(ds, sr);
 				}
 			}
-		} catch (Exception e) {
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -140,9 +184,9 @@ public class xmlDao {
 //		}
 		xmlDao xml=new xmlDao();
 //	
-//		Role r=new Role("1003", "火烈鸟");
+//		Role r=new Role("1003", "潘狗子");
 //		xml.addRole(r);
-//		Role r=new Role("1001", "manager");
+//		Role r=new Role("1001", "小二狗");
 //		xml.updateRoleById(r);
 		xml.deleteRoleById("1001");
 	}
