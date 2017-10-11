@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="kz9servlet08-net"
+  id="myeclipse.1507605328971"
+  context-root="/kz9servlet08-net"
+  j2ee-spec="5.0"
+  archive="kz9servlet08-net.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

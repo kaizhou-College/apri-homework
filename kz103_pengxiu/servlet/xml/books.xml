@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<books>
+	<book id="1001">
+		<name>Java</name>
+	</book>
+	<book id="1002">
+		<name>#C</name>
+	</book>
+</books>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><roles>
+	
+	<role id="1002">
+		<name>夏季</name>
+
+	</role>
+
+	<role id="1003">
+		<name>小小花</name>
+	</role>
+</roles>

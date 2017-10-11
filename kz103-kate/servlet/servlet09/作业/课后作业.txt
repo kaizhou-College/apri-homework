@@ -1,0 +1,74 @@
+1、写一个A类，类如下：
+public class A{
+	public int a;
+	private int b;
+
+	public void showA(){
+		System.out.println(a);
+	}
+
+	private void showB(){
+		System.out.println(b);
+	}
+}
+再写一个测试类，要求在此类的main方法中输出A类中的所有属性（包括修饰符及类型），及方法（包括修饰符及返回类型和参数列表）。
+2、再写一个测试类，要求在此类的main方法中生成一个A类的对象，使用反射技术将此对象中的a=6；b=10;再使用反射技术调用showA及showB方法。
+3、写一个B类，类如下：
+public class B{
+	public B(){
+		System.out.println("调用默认构造方法");
+	}
+
+	public B(int a){
+		System.out.println("调用B(int a)构造方法");
+	}
+
+	public B(Integer a){
+		System.out.println("调用B(Integer a)构造方法");
+	}
+}
+再写一个测试类，使用反射技术分别调用B类的三个构造方法来造成B类的三个对象。
+
+课后作业(思考)：
+1.自己写一个ReflectionUtils(反射工具)类,在这个类中封装如下几个方法
+a.根据传入Class类型、属性名称获取属性值的方法
+b.根据传入Class类型、方法名称、参数列表(Class类型的数组) 调用方法的方法
+
+
+
+2.试着自己写一个BaseDao，在这其中写一个getConnection()方法，将driver,url,uname
+password 等数据连接字符串放到与BaseDao同包的config.properties中，实现读取其中的配
+置的driver,url,uname,password的属性对应的值
+config.properties中的配置如下:
+#mysql
+driver = com.mysql.jdbc.Driver
+url = jdbc:mysql://localhost:3306/servlet
+uname = root
+upwd = 123
+
+#sqlserver
+#driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
+#url = jdbc:sqlserver://localhost:1423;DatabaseName=servlet
+#uname = sa
+#upwd = 123
+
+
+#oracle
+#driver = oracle.jdbc.driver.OracleDriver
+#url = jdbc:oracle:thin:@127.0.0.1:1521:orcl
+#uname = scott
+#upwd = tiger
+
+提示:BaseDao中读到config.properties 方式为:
+InputStream is = BaseDao.class.getResourceAsStream("config.properties");
+
+
+
+3.试着自己写一个通用的BaseDao(利用反射写出通用的增、删、改、查的方法)
+
+
+
+
+
+
+
