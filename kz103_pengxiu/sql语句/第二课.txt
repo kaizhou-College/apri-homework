@@ -1,0 +1,54 @@
+
+--StudentInfo 的约束
+
+alter table StudentInfo add constraint pk2_StudentInfo
+primary key (StuID)
+
+alter table StudentInfo 
+add constraint ck_StudentInfo check(Stuage >16 and Stuage<35)
+select * from StudentInfo
+alter table StudentInfo
+add constraint ck_Studentinfo check(StuSex =('男' || '女'))
+
+--ClassInfo
+alter table ClassInfo add constraint pk2_ClassInfo
+primary key (ClassId)
+
+
+--TeacherInfo
+alter table TeacherInfo add constraint pk2_TeacherInfo
+primary key (TeacherID)
+
+
+--StudentExam
+alter  table  StudentExam add constraint  pk2_StudentExam
+primary key (ExamID)
+
+alter table StudentExam 
+add constraint ck_StudentExam check(EStuID >0 and EStuID<100)
+--所有的主外键
+alter table Studentinfo add constraint fk_studentinfo 
+foreign key(SclassID) references ClassInfo(ClassId)
+
+alter table ClassINfo add constraint fk_classInfo
+foreign key (ClassId) references  Teacherinfo(TeacherID)
+
+alter table StudentExam add constraint fk_StudentExam
+foreign key(EStuID) references Studentinfo (StuID)
+
+--Studentinfo 的添加语句
+insert into Studentinfo(Stunumber,StuName,Stuage,Stusex,StuCard,StuJoinTime,Stuaddress) values(001,'火云邪神',18,'男','430105198905022032','2017-3-1','长沙市开福区')
+insert into Studentinfo(Stunumber,StuName,Stuage,Stusex,StuCard,StuJoinTime,Stuaddress) values(002,'东方不败',28,'男','430105198905022032','2017-3-1','长沙市开福区')
+insert into Studentinfo(Stunumber,StuName,Stuage,Stusex,StuCard,StuJoinTime,Stuaddress) values(003,'小李飞车',18,'男','430105198905022032','2017-3-1','长沙市开福区')
+insert into Studentinfo(Stunumber,StuName,Stuage,Stusex,StuCard,StuJoinTime,Stuaddress) values(004,'樱桃肉丸子',18,'男','430105198905022032','2017-3-1','长沙市开福区')
+insert into TeacherInfo values(1,'唐三藏','18074540017','2830882828@qq.com')
+insert into TeacherInfo values(2,'擎天柱','18074540017','2830882828@qq.com')
+--ClassInfo 添加语句
+insert into classinfo values(1,07034,11,'s1')
+
+select Classid,classNumber,CteacherID,classGrade from ClassINfo as a
+update ClassInfo set ClassNumber=7034
+where   '火云邪神' in (select StuName from Studentinfo)
+and ClassNumber in(select SclassId from Studentinfo)
+
+
