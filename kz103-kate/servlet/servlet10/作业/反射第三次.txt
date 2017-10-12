@@ -1,0 +1,22 @@
+1.写一个通用的insert语句的方法public int save(Object o)
+
+2.写一个通用的查询所有数据的方法  public List find(Class c)
+  
+
+3.写一个通用的查询某个类的单个数据的方法  public Object load(Class c,int id)
+
+4.写一个简单的例子，实现浅度克隆和深度克隆的例子
+
+5.写一个简单的实体类，实现序列化的读与写
+
+
+6,写一个通用的修改的方法 和删除的方法
+
+public int update(Object o)
+public int delete(Class c,int id)
+
+7.回家思考，怎样完成自己的简单的hibernate
+(上面的方法已经足够，要解决的问题就是，
+要能够在不同的数据库之间切换)xml配置
+
+

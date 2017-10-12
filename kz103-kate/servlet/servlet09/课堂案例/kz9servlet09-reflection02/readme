@@ -1,0 +1,13 @@
+一，反射：动态编译 （按需加载class到内存）
+	Class.forName("com.kz.entity.Student");
+	
+	Class类：表示.class文件
+		所有java程序都是要通过.java编译成计算机可以识别的.class的字节码文件
+		.class文件中包含了类的属性，方法，构造方法
+	Class类是类的类。
+	得到Class类的对象的四种方式：
+二，通过Class类对象获取类中的属性，方法，构造方法
+	补充：可变参数
+	public void add(int... args){
+	
+	}

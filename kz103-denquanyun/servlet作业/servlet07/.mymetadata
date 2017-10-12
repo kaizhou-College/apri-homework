@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Wtg7"
+  id="myeclipse.1506594572098"
+  context-root="/Wtg7"
+  j2ee-spec="5.0"
+  archive="Wtg7.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

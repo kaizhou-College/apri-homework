@@ -1,0 +1,188 @@
+--练习一、
+--用Scott用户的emp表为数据源，编写一个过程根据员工编号
+--输出员工姓名和薪水。（要求将员工姓名和薪水作为输出参数）
+select * from emp
+
+create or replace procedure EmpSelect(qempno number)
+is
+
+cursor qemp is select * from emp where empno = qempno;
+emprow emp%rowtype;
+begin
+       for  emprow in qemp
+       loop
+       dbms_output.put_line(emprow.ename||'----'||emprow.sal);
+       end loop;
+end;
+
+begin
+       empselect('&请输入您要查询的员工编号');
+end;
+--练习二、
+--用Scott用户的emp表为数据源，编写一个函数根据员工编号返回员工的入职时间。
+create or replace function empTime(e  number) return varchar2
+is
+
+cursor qemp is select * from emp where empno=e;
+emprow  emp%rowtype;
+
+begin
+     for emprow in qemp
+         loop
+            return emprow.hiredate;   
+                
+         end loop;
+end;
+
+declare
+     time varchar2(20);
+begin 
+
+         time:=empTime('&请您输入要查询的员工编号');
+         dbms_output.put_line(time);`
+end;
+
+--练习三、
+--创建程序包，在程序包中定义一个过程用作添加员工，再定义一个函数用作根据
+--员工编号判断员工是否存在。（要求：在用户执行添加操作之前，先调用函数判断
+--该员工是否存在，如果不存在，则插入并提交数据；否则提示该员工已存在）
+
+
+
+
+-----------------------待完善--------------------------------
+create or replace package empinsert
+is 
+     procedure pempinsert(eno number);  
+end;
+
+create or replace package body empinsert
+is
+   procedure pempinsert(eno number)
+       is
+       id1 number:=eno;
+             begin
+             
+                  if sql%rowcount>0 then  
+                       dbms_output.put_line('该员工已存在');   
+                   else 
+                      insert into emp(empno) values(eno);
+                  end if;        
+             end;
+end;
+begin
+       
+       empinsert.pempinsert('&亲输入要添加的员工编号');
+       
+end;
+
+select * from emp 
+
+-----------------------待完善--------------------------------
+
+--练习四 参照上课代码完成：
+--用Scott用户的emp表为数据源，编写分页的存储过程，要求传入开始和结束的行处
+--显示数量，输出游标。（提示：可在程序包中定义游标类型，再声明游标变量作为
+--输出参数)
+select * from (select rownum rn ,emp.* from emp where rownum<=1*5)
+where rn >((1-1)*5)
+
+create or replace procedure  fy(pageSize number,pageIndex number)
+is
+emprow emp%rowtype;
+cursor qemp is select * from(select rownum rn ,emp.* from emp where rownum<=pageIndex*pageSize)
+where rn >((pageIndex-1)*pageSize);
+begin
+       for emprow in qemp
+           loop
+                  dbms_output.put_line(emprow.ename);
+                  
+           end loop;
+end;
+
+begin 
+           fy('&请输入每页显示多少行','&请输入第几页');
+
+
+
+end;
+
+
+--练习五、
+--现有账单表如下：
+--Create table billInfo
+--(  
+  --billID varchar2(14),  --账单编号，格式为‘ZD201005290001’
+ -- billDate date      --开单时间
+--);
+--求编写过程实现开单功能，即生成账编号并插入记录。
+
+--数据库-》表空间-》段（表）-》表分区-》块
+
+--课后使用“oracle 表分区”查询百度
+--表分区是一种将表内的数据，分成各个不同的区域管理的技术，
+--主要能提高表查询的速度
+
+---Select * from 表名(分区1)
+
+--Good luck
+
+Create table billInfo
+(  
+  billID varchar2(14),  --账单编号，格式为‘ZD201005290001’
+  billDate date      --开单时间
+)
+
+select * from billInfo
+
+create or replace procedure bill(billIds varchar2)
+as
+
+begin
+    insert  into billInfo values(billIDs,sysdate());  
+       if sql%rowcount >0 then
+          dbms_output.put_line('添加成功！');
+          commit;
+       else
+          dbms_output.put_line('添加失败！');
+       end if;
+
+end;
+
+begin
+
+       bill('&请输入要添加的员工号');
+ 
+end;
+
+
+
+--练习六、编写通用版的分页存储过程，然后编写java程序调用
+
+create or replace package fy103
+is 
+       procedure fy1(pageindex number,pagesize number);
+end;       
+
+create or replace package body  fy103
+as
+       procedure fy1(pageindex number,pagesize number)
+       as
+       
+       begin
+       
+       
+       end;
+
+
+end;
+
+
+
+
+
+
+
+
+
+

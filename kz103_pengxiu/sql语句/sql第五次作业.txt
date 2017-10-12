@@ -1,0 +1,169 @@
+
+--练习一、使用条件结构
+--问题描述：公司决定向职员（emp表）发放奖金，发放原则根据职员所在部门编号（deptno）来计算。
+--如果部门编号为“10”，奖金为2000元；部门编号为“20”，奖金为1700元；部门编号为“30”，奖金为1500元，
+--请用条件结构解决该问题。
+--提示：首先根据用户输入的员工编号（empno）获得其对应的部门编号（deptno）
+--，然后根据部门编号（deptno）判断，更新薪水sal。
+---------------------------
+
+select * from emp
+declare 
+       no number :='&请输入员工号'
+       UPsal number:='&请输入部门号';
+begin 
+       select deptno into UPsal from emp where empno =no ;
+       if 10 = UPsal then
+             update emp set sal =sal + 2000 where deptno=10;
+       SELIF UPsal =20 then
+             update emp set sal =sal +1700 where deptno=20;
+       SELIF UPsal =30 then
+             update emp set sal =sal + 1000 where deptno=30;      
+       end if; 
+       commit;
+end; 
+
+--练习二、使用循环结构
+--问题描述：请编写一个程序，通过循环向course_details表中插入10条件记录，要求学生编号每次累加1，课程由用户输入。
+
+--表结构：
+--create table course_details
+--(
+--  stuid number,--学员编号
+--  course varchar2(20)—课程
+--);
+--------------------------------------
+--例如接收的课程为oralce
+--效果如下：
+ -- stuid        course
+--1oracle
+--2oracle
+--3oracle
+--4oracle
+--5oracle
+--Begin
+--For  i in  1..5
+--Loop
+  -- C :='&c';
+ --  Inesert ..............
+--End loop;
+--End;
+----------------
+
+
+create table course_details
+(
+  stuid number,
+  course varchar2(20)
+);
+
+declare
+         Stuobject varchar2(10) :='&请输入课程';
+begin
+         for i in 1.. 10
+        
+         loop
+            
+             insert into Course_details values(i,Stuobject);
+         end loop;
+         commit;
+end;
+
+select * from course_details
+delete  course_details
+
+
+
+
+
+
+
+
+--练习三、编写一个程序，显示1至100之间的素数（质数）。
+--提示：
+--1、素数（质数）：只能被1和本身整除的数。
+--2、使用for循环
+
+
+declare
+    i number(4);--存储1-100中所有的数（用作被除数）
+    j number(4) := 1;--存储除数
+    z number(4) := 0;--存储被整除的次数;
+begin
+    for i in 1..100 loop
+        while j <= i loop
+            if mod(i,j) = 0 then 
+                z := z + 1;
+            end if;
+            j := j + 1;
+        end loop; 
+        j := 0;
+        if z = 2 then 
+            dbms_output.put_line(i);         
+        end if;  
+        z := 0; 
+    end loop;
+end;
+
+
+--练习四、将userInfo.dmp文件中的数据导入Scott用户下，该文件中包含UserInfo用户信息表，结构如下：
+-- imp  scott/tiger@orcl  file=e:\userInfo.dmp  full=y
+--列名  注释
+--CUSTOMERID  客户编号
+--CREATETIME  客户创建时间
+--EMAIL  客户email
+--LANGUAGE  客户语言
+--USERNAME  客户帐户
+--SCREENNAME  呢称
+--PASSWORD  密码
+--ISMALE  是否通过邮箱认证
+--BIRTHDAY  生日
+--POSTALCODE  邮政编码
+--FIRSTNAME  第一名称
+--LASTNAME  第二名称
+--ADDRESS  地址
+--请编写PL/SQL块，统计70后，80后，90后用户的人数和占三者人数和的比例。效果如下：
+---------------------
+
+select * from emp
+declare 
+       a70 number;
+       a80 number;
+       a90 number;
+       a number ;
+begin
+       select count(*) into a from emp ;
+       select count(*) into a90 from emp where Extract(year from HiredAte )>= 1990;
+        select count(*) into a80 from emp where Extract(year from HiredAte )>= 1980 and Extract(year from HiredAte )<1990;
+         select count(*) into a70 from emp where Extract(year from HiredAte )>= 1970 and Extract(year from HiredAte )<1980;
+       dbms_output.put_line('70后共'||a70||'人;'||'80后共'||a80||'人;'||'90后共'||a90||'人;');
+      dbms_output.put_line('70后共占'||round(a70/a*100,2));
+      dbms_output.put_line('80后共占'||round(a80/a*100,2));
+      dbms_output.put_line('90后共占'||round(a90/a*100,2));
+end;
+--练习五、使用预定义异常
+--针对scott用户的emp表，编写一段PL/SQL代码，根据接收的员工编号查询员工姓名，
+--并将姓名存储在变量empname中。代码中要求将变量声明为varchar2(4)类型，
+--如果ename的值的长度大于变量empname的长度，将引发Value_Error异常，则对
+--异常进行处理，向用户提示信息。
+------------------------------
+select * from emp 
+declare
+       empname varchar2(4) ;
+begin
+       select ename into empname from emp where ename='SMITH';
+       dbms_output.put_line(empname);
+       exception
+          when Value_Error    then
+          dbms_output.put_line('大兄弟...长度超出范围啦');
+end;
+
+
+--练习六、动态SQL
+--编写一段PL/SQL代码，接收用户输入的部门编号、部门名称和部门地址，将其插入到scott用户的dept表中。要求使用动态SQL实现。
+--execute immediate 'sql语句'
+--using 参数列表 --使用参数填补占位符（:name）
+select * from dept
+
+
+
