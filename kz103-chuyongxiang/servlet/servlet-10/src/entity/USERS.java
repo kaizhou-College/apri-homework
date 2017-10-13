@@ -1,9 +1,12 @@
 package entity;
 
-public class USERS {
+import java.io.Serializable;
+
+public class USERS implements Cloneable,Serializable{
 	private int id;
 	private String name;
 	private String pwd;
+//	private JOB zhiwei;
 	public USERS(int id, String name, String pwd) {
 		super();
 		this.id = id;
@@ -36,5 +39,21 @@ public class USERS {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+//	public JOB getZhiwei() {
+//		return zhiwei;
+//	}
+//	public void setZhiwei(JOB zhiwei) {
+//		this.zhiwei = zhiwei;
+//	}
+//	
+//	
+//	public Object clone() throws CloneNotSupportedException{
+//		USERS u=(USERS)super.clone();
+//		JOB job2=(JOB) this.zhiwei.clone();
+//		u.setZhiwei(job2);
+//		return u;
+//		
+//	}
 	
 }
