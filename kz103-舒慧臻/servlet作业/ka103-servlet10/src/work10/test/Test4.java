@@ -11,7 +11,7 @@ import work10.entity.UserInfo;
 public class Test4 {
 	public static void main(String[] args) throws CloneNotSupportedException {
 		//淺度克隆
-		UserInfo u1 = new UserInfo();
+/*		UserInfo u1 = new UserInfo();
 		u1.setFirstname("大");
 		Dept d1 = new Dept();
 		d1.setDname("ASD");
@@ -22,7 +22,7 @@ public class Test4 {
 		u2.setFirstname("小");
 		u2.getDp().setDname("FGH");
 		System.out.println(u1.getDp().getDname());
-		System.out.println(u2.getDp().getDname());
+		System.out.println(u2.getDp().getDname());*/
 	}
 
 }

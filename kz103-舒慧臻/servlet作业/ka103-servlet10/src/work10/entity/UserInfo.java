@@ -14,7 +14,7 @@ public class UserInfo extends Object implements Cloneable {
 	private String firstname;             
 	private String lastname;             
 	private String address;
-	private Dept dp;
+	//private Dept dp;
 	
 	public int getCustomerid() {
 		return customerid;
@@ -28,12 +28,12 @@ public class UserInfo extends Object implements Cloneable {
 	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
-	public Dept getDp() {
-		return dp;
-	}
-	public void setDp(Dept dp) {
-		this.dp = dp;
-	}
+//	public Dept getDp() {
+//		return dp;
+//	}
+//	public void setDp(Dept dp) {
+//		this.dp = dp;
+//	}
 	public String getEmail() {
 		return email;
 	}
@@ -110,14 +110,14 @@ public class UserInfo extends Object implements Cloneable {
 				+ ", screenname=" + screenname + ", username=" + username + "]";
 	}
 	
-	public Object clone() throws CloneNotSupportedException{
+/*	public Object clone() throws CloneNotSupportedException{
 			UserInfo u = (UserInfo) super.clone();
 			Dept d = (Dept) this.dp.clone();
 			//將克隆Dept的對象複製給克隆的UserInfo
 			u.setDp(d);
 			return u;
 		
-	}
+	}*/
 	
 	
 
