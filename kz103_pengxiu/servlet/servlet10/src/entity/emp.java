@@ -1,14 +1,14 @@
 package entity;
 
 public class emp {
-	public int EMPNO;
+	public Integer EMPNO;
 	public String ENAME;
 	public String JOB;
-	public int MGR;
+	public Integer MGR;
 	public String HIREDATE;
-	public int SAL;
-	public int COMM;
-	public int DEPTNO;
+	public Integer SAL;
+	public Integer COMM;
+	public Integer DEPTNO;
 	
 	public emp() {
 		super();
