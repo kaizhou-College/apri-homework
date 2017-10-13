@@ -1,29 +1,20 @@
 package entity;
 
-public class JOB {
-	private String name;
+public class JOB implements Cloneable{
+	public String zhiwei;
 
-	public JOB(String name) {
-		super();
-		this.name = name;
+
+	public String getZhiwei() {
+		return zhiwei;
 	}
 
-	@Override
-	public String toString() {
-		return "JOB [name=" + name + "]";
+	public void setZhiwei(String zhiwei) {
+		this.zhiwei = zhiwei;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public JOB() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+		
 	}
 	
 }
