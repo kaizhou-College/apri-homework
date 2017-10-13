@@ -10,7 +10,7 @@ public class StudentInfo implements Cloneable{
 	private String stujointime;                               
 	private String stuaddress;                       
 	private int sclassid;
-	private Look lk;
+	//private Look lk;//深度克隆
 	public StudentInfo() {
 		super();
 	}
@@ -82,12 +82,13 @@ public class StudentInfo implements Cloneable{
 	public void setSclassid(int sclassid) {
 		this.sclassid = sclassid;
 	}
-	public Look getLk() {
+	//深度克隆
+/*	public Look getLk() {
 		return lk;
 	}
 	public void setLk(Look lk) {
 		this.lk = lk;
-	}
+	}*/
 	public String toString() {
 		return "StudentInfo [sclassid=" + sclassid + ", stuaddress="
 				+ stuaddress + ", stuage=" + stuage + ", stucard=" + stucard
@@ -95,10 +96,11 @@ public class StudentInfo implements Cloneable{
 				+ ", stuname=" + stuname + ", stunumber=" + stunumber
 				+ ", stusex=" + stusex + "]";
 	}  
-	public Object clone() throws CloneNotSupportedException {
+	//深度克隆
+/*	public Object clone() throws CloneNotSupportedException {
 		StudentInfo stu=(StudentInfo)super.clone();
 		Look lk1=(Look) this.lk.clone();
 		stu.setLk(lk1);
 		return stu;
-	}
+	}*/
 }
