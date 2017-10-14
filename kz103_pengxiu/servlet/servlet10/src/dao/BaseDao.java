@@ -139,21 +139,57 @@ public class BaseDao {
 		
 	}
 	//3.写一个通用的查询某个类的单个数据的方法  public Object load(Class c,int id)
-	 public Object load(Class c,int id){
+	 public static Object load(Class c,int id) throws InstantiationException, IllegalAccessException{
 		List list=new ArrayList();
+		Field[] fields = c.getDeclaredFields();
 		StringBuffer buff=new StringBuffer("select ");
+		for (int i = 0; i < fields.length; i++) {
+			buff.append(fields[i].getName());
+			if(i!=fields.length-1){
+				buff.append(",");
+			}
+			
+		}
+		buff.append(" from "+c.getSimpleName() +" where " + fields[0].getName()+"="+id);
 		
-		  
+		Connection conn = getConn();
+		PreparedStatement statement = null;
+		ResultSet rs =null;
+		try {
+			statement = conn.prepareStatement(buff.toString());
+			rs = statement.executeQuery();
+			while(rs.next()){
+				System.out.println("dsvsd12");
+				Object object = c.newInstance();
+				for(Field f:fields){
+					Object value = rs.getObject(f.getName());
+					if(value instanceof BigDecimal){
+						value=((BigDecimal)value).intValue();
+					}
+					if(value instanceof Timestamp){
+						value=((Timestamp)value).toString();
+					}
+					
+					f.set(object, value);
+				}
+				list.add(object);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		
-		
-		
-		 
+		System.out.println(buff);
 		return list;
 		 
 		 
 	 }
-	 
+	 public static void main(String[] args) throws Exception {
+		Class name = Class.forName("entity.emp");
+		System.out.println(load(name,7369));
+		
+		
+	}
 	 
 
 //	 6,写一个通用的修改的方法 和删除的方法
@@ -162,16 +198,18 @@ public class BaseDao {
 //	 public int delete(Class c,int id)
 	public static int update(Object o) throws Exception{
 		int num=0; 
-		Class o1=(Class)o;
-		StringBuffer buff=new StringBuffer(" update "+o1.getSimpleName()+" set  ");
+		Class o1 = o.getClass();
 		Field[] fields = o1.getDeclaredFields();
 		Field.setAccessible(fields,true);
+		StringBuffer buff=new StringBuffer("update "+o1.getSimpleName()+" set  ");
 		for (int i = 1; i < fields.length; i++) {
+			if(fields[i].get(o)!=null){
 			buff.append(fields[i].getName()+"=?");
-			if(i!=fields.length-1){
-				buff.append(",");
+			
 			}
 		}
+		buff.toString().substring(1,buff.length()-1);
+		System.out.println(buff);
 		buff.append(" where "+fields[0].getName()+"=?");
 		System.out.println(buff);
 		Connection conn = getConn();
@@ -180,12 +218,14 @@ public class BaseDao {
 		try {
 			statement = conn.prepareStatement(buff.toString());
 			for (int i = 1; i < fields.length; i++) {
+				if(fields[i].get(o)!=null){
 				statement.setObject(index,fields[i].get(o));
 				index++;
-				if(index==fields.length){
+				System.out.println(fields.length);
 					statement.setObject(index,fields[0].get(o));
 				}
 			}
+			num = statement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -198,16 +238,18 @@ public class BaseDao {
 		
 		return num;
 	 }
-	public static void main(String[] args) throws Exception {
-//		Class cls = Class.forName("entity.A");
-//		System.out.println(frind(cls));
-//		System.out.println(delete(A.class,1));
-		Class forName = Class.forName("entity.A");
-		A a=new A();
-		a.setAid(1);
-		a.setName("fdbgh");
-		System.out.println(update(forName));
-	}
+//	public static void main(String[] args) throws Exception {
+////		Class cls = Class.forName("entity.A");
+////		System.out.println(frind(cls));
+////		System.out.println(delete(A.class,1));
+////		emp a=new emp();
+////		a.setCOMM(78978);
+////		a.setEMPNO(7369);
+//		A a=new A();
+//		a.setAid(1);
+//		a.setName("fdbgh");
+//		System.out.println(update(a));
+//	}
 	public static int delete(Class c,int id){
 	int num=0; 
 	StringBuffer buff=new StringBuffer("Delete  ");

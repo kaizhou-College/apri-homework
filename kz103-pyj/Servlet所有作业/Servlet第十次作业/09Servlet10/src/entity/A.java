@@ -1,5 +1,5 @@
 package entity;
-
+/*写一个简单的实体类，实现序列化的读与写*/
 import java.io.Serializable;
 
 public class A implements Serializable{

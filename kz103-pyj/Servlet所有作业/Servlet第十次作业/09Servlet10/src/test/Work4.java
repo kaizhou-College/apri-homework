@@ -1,10 +1,10 @@
 package test;
-
+/*写一个简单的例子，实现浅度克隆和深度克隆的例子*/
 import entity.Look;
 import entity.StudentInfo;
 
 public class Work4 {
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		StudentInfo stu=new StudentInfo();
 		stu.setStuname("黑子");
 		Look lk=new Look();
@@ -19,5 +19,5 @@ public class Work4 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 }

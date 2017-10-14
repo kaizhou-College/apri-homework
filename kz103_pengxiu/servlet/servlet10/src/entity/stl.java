@@ -1,8 +1,11 @@
 package entity;
 
-public class stl {
+import java.io.Serializable;
+
+public class stl extends Object implements Cloneable,Serializable {
 	public String name;
 	public String Sec;
+	public GirlFriend gf;
 	public stl() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -23,6 +26,21 @@ public class stl {
 	}
 	public void setSec(String sec) {
 		Sec = sec;
+	}
+	public GirlFriend getGf() {
+		return gf;
+	}
+	public void setGf(GirlFriend gf) {
+		this.gf = gf;
+	}
+	public Object clone() throws CloneNotSupportedException {
+		//return super.clone();
+		
+		stl u = (stl) super.clone();
+		GirlFriend gf2 = (GirlFriend) this.gf.clone();
+		//将克隆的女朋友复制给克隆的User
+		u.setGf(gf2);
+		return u;
 	}
 	@Override
 	public String toString() {

@@ -116,7 +116,7 @@ public class BaseDao {
 				for (Field field : fields) {
 					Object value = rs.getObject(field.getName());
 					if(value instanceof BigDecimal){
-						value = ((BigDecimal)value).toString();
+						value = ((BigDecimal)value).intValue();
 					}
 					if(value instanceof Timestamp){
 						value = ((Timestamp)value).toString();
@@ -137,8 +137,7 @@ public class BaseDao {
 		return list;
 	}
 	//3.写一个通用的查询某个类的单个数据的方法  public Object load(Class c,int id)  待修改
-	public static List load(Class clazz,int id){
-		List list =null;
+	public static Object load(Class clazz,int id){
 		StringBuffer sql = new StringBuffer();
 		//sql语句：select 字段名(属性) from 表明(类名);
 		sql.append("select ");
@@ -152,15 +151,16 @@ public class BaseDao {
 		}
 		sql.append(" from "+clazz.getSimpleName()+" where "+fields[0].getName()+"="+id);
 		//得到链接
+		System.out.println(sql.toString());
 		Connection conn = BaseDao.getConn();
 		PreparedStatement st =null; 
 		ResultSet rs = null;
+		Object obj = null;
 		try {
 			st = conn.prepareStatement(sql.toString());
 			rs = st.executeQuery();
-			list = new ArrayList();
-			while(rs.next()){
-				Object obj = clazz.newInstance();
+			obj = clazz.newInstance();
+			rs.next();
 				for (Field f : fields) {
 					Object value = rs.getObject(f.getName());
 					if(value instanceof BigDecimal){
@@ -174,8 +174,6 @@ public class BaseDao {
 					}
 					f.set(obj, value);
 				}
-				list.add(obj);
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -188,10 +186,10 @@ public class BaseDao {
 		}finally{
 			BaseDao.closeConn(rs, st, conn);
 		}
-		return list;
+		return obj;
 	}
 	
-	//修改
+	//修改硬
 	public static int update(Object obj){
 		StringBuffer sf = new StringBuffer();
 		sf.append("update ");
@@ -240,6 +238,56 @@ public class BaseDao {
 		return num;
 	}
 	
+	
+	//软修改
+	public static int update1(Object obj,int id) throws IllegalArgumentException, IllegalAccessException{
+		//先写SQL语句
+		int num = -1;
+		StringBuffer sql = new StringBuffer();
+		sql.append("update ");
+		Class class1 = obj.getClass();
+		//想得到属性（字段名）就得暴力破解封装
+		Field[] fields = class1.getDeclaredFields();
+		Field.setAccessible(fields, true);
+		sql.append(class1.getSimpleName()+" set ");
+		for (int i = 1;i<fields.length;i++) {
+			if(fields[i].get(obj) != null&&!fields[i].get(obj).equals(new Integer(0))&&!fields[i].get(obj).equals(new Double(0.0))){
+				sql.append(fields[i].getName()+"=?");
+				if(i!=fields.length-1){
+					sql.append(",");
+				}
+			}
+		}
+		sql.append(" where "+fields[0].getName()+"="+id);
+		System.out.println(sql.toString());
+		Connection conn = null;
+		PreparedStatement st = null;
+		try {
+			conn = BaseDao.getConn();
+			st = conn.prepareStatement(sql.toString());
+			//给占位符赋值
+			//index记录占位符的个数
+			int index = 1;
+			for (int i = 1; i < fields.length; i++) {
+				if(fields[i].get(obj)!=null&&!fields[i].get(obj).equals(new Integer(0))&&!fields[i].get(obj).equals(new Double(0.0))){
+					Object value = fields[i].get(obj);
+					st.setObject(index, value);
+					index++;
+				}
+			}
+			//执行修改
+			num = st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			BaseDao.closeConn(null, st, conn);
+		}
+		return num;
+		
+		
+		
+		
+	}
 	//删除
 	public static int del(Class clazz,int id){
 		StringBuffer sql = new StringBuffer();

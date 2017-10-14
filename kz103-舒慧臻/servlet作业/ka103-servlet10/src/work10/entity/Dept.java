@@ -24,14 +24,20 @@ public class Dept implements Cloneable,Serializable{
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-	public Object clone(){
+	@Override
+	public String toString() {
+		return "Dept [deptno=" + deptno + ", dname=" + dname + ", loc=" + loc
+				+ "]";
+	}
+	
+/*	public Object clone(){
 		try {
 			return super.clone();
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 	 
 
 }
