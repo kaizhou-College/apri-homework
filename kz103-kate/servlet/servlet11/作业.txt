@@ -1,0 +1,59 @@
+一，jsp标签库的功能库中所有的 el函数编写测试类
+
+
+二，使用自定义函数技术实现：
+1，获取集合和数组的长度  给一个集合返回集合的长度
+	${kz:size(lists)}  参数是集合
+2，格式化日期-string   给一个字符串日期返回指定格式的字符串日期
+	${kz:dateFormat("2015-10-12",'yyyy年MM月dd日')}
+	
+	结果为：2015年10月12日
+3，格式化日期-date  给date类型日期 返回指定格式的字符串日期	
+	${kz:formateDate("2015-10-12",'yyyy年MM月dd日')}
+	
+	
+	结果为：2015年10月12日
+4，indexOf查找  给一个字符串，查找指定字符串的下标
+	${kz:indexOf("1#22#22#33",'2')}
+	
+	结果为：2
+三，使用自定义标签技术：
+	0，定义一个日期的标签
+		<kztag:kzDate value="" pattern=""></kztag:kzDate>
+	1，自定义分页标签
+	
+	2，自定义一个表格标签：
+		效果图
+		——————————————————————————————————
+		|UserName:|	二狗子				  |
+		——————————————————————————————————
+		|age:     |	22      			  |
+		——————————————————————————————————
+		|email:   |	test@test.com		  |
+		——————————————————————————————————
+		
+		测试：在index.jsp测试
+		 <%
+
+			UserInfo user = new UserInfo();
+
+			user.setUserName("Xuwei");
+
+			user.setAge(33);
+
+			user.setEmail("test@test.test");
+
+			pageContext.setAttribute("userinfo", user);  
+
+		%>
+
+ 
+
+		<!-- 给标签设置user属性绑定要展现的UserInfo对象  -->
+
+		<kz:showUserInfo user="${pageScope.userinfo }" />
+		
+		
+	
+	
+	

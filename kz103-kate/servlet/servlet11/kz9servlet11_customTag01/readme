@@ -1,0 +1,34 @@
+【1，el函数库：fn.tld】针对字符串的一些操作
+	http://www.cnblogs.com/zhangliang0115/archive/2012/07/18/2597276.html
+【2，自定义el函数库】
+1)定义一个函数库的类，在类中定义【静态】的方法
+2)在web-inf中定义一个tld文件
+	function>
+ 	<description>判断字符串非空</description>
+ 	<!-- 函数名 -->
+ 	<name>strIsNotNull</name>
+ 	<!-- 函数所在的java类 -->
+ 	<function-class>com.kz.utils.functions.KzStringUtil</function-class>
+ 	<!-- 定义函数的签名 -->
+ 	<function-signature>boolean strIsNotNull(java.lang.String)</function-signature>
+ 	<!-- 写一个例子 -->
+  	<example>
+      &lt;c:if test="${kzfn:strIsNotNull(name)}">
+    </example>
+ </function>
+3)在jsp中导入 库
+	<%@taglib uri="http://www.kaizhouedu.com/kz/el/functions" prefix="kzfn" %>
+4）在jsp中使用
+	 ${kzfn:strIsNotNull("abc")}
+
+【3，jstl标签库：c标签库和fmt标签库】
+
+
+【4，自定义jstl标签】
+【4.1简单自定义标签】
+1)定义一个的类实现SimpleTag接口，实现接口方法
+2)在web-inf中定义一个tld文件
+
+
+
+

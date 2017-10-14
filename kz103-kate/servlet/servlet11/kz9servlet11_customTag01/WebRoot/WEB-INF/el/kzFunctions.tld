@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>kzFunctions</short-name>
+ <uri>http://www.kaizhouedu.com/kz/el/functions</uri>
+ <!-- 定义el函数 -->
+ <function>
+ 	<description>判断字符串非空</description>
+ 	<!-- 函数名 -->
+ 	<name>strIsNotNull</name>
+ 	<!-- 函数所在的java类 -->
+ 	<function-class>com.kz.utils.functions.KzStringUtil</function-class>
+ 	<!-- 定义函数的签名 -->
+ 	<function-signature>boolean strIsNotNull(java.lang.String)</function-signature>
+ 	<!-- 写一个例子 -->
+  	<example>
+      &lt;c:if test="${kzfn:strIsNotNull(name)}">
+    </example>
+ </function>
+ <function>
+ 	<description>日期转字符串</description>
+ 	<!-- 函数名 -->
+ 	<name>dateToString</name>
+ 	<!-- 函数所在的java类 -->
+ 	<function-class>com.kz.utils.functions.TmDateUtil</function-class>
+ 	<!-- 定义函数的签名 -->
+ 	<function-signature>Date dateToString(java.lang.String)</function-signature>
+ 	<!-- 写一个例子 -->
+  	<example>
+      ${kzfn:dateToString("2017-1-1 12:12:12")}
+    </example>
+ 	
+ </function>
+</taglib>
