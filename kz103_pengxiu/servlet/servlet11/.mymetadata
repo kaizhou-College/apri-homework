@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="servlet11"
+  id="myeclipse.1508063928697"
+  context-root="/servlet11"
+  j2ee-spec="5.0"
+  archive="servlet11.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
