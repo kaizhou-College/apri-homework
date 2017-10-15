@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>work01</short-name>
+ <uri>http://java.wangdapao.com/jsp/work</uri>
+ <function>
+ 	<!-- 描述 -->
+ 	<description>獲取集合長度</description>
+ 	<!-- 函數名 -->
+ 	<name>getSize</name>
+ 	<!-- 函數所在的java類 -->
+ 	<function-class>com.kz.Utils.Function.work01</function-class>
+ 	<!-- 定義函數的簽名 -->
+ 	<function-signature>int getSize(java.util.List)</function-signature>
+ </function>
+ <function>
+ 	<description>獲取字符長度</description>
+ 	<name>getStringSize</name>
+ 	<function-class>com.kz.Utils.Function.work01</function-class>
+ 	<function-signature>int getStringSize(java.lang.String)</function-signature>
+ </function>
+ <function>
+ 	<description>日期樣式轉換</description>
+ 	<name>dateToString</name>
+ 	<function-class>com.kz.Utils.Function.work01</function-class>
+ 	<function-signature>String dateToString(java.lang.String,java.lang.String)</function-signature>
+ </function>
+ <function>
+ 	<description>找下標</description>
+ 	<name>indexof</name>
+ 	<function-class>com.kz.Utils.Function.work01</function-class>
+ 	<function-signature>int indexof(java.lang.String,java.lang.String)</function-signature>
+ </function>
+</taglib>
