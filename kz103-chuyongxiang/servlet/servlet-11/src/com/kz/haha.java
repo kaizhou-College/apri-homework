@@ -22,6 +22,4 @@ public class haha extends HttpServlet {
 		request.setAttribute("list",list);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-
-
 }
