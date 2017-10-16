@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>kztag</short-name>
+ <uri>http://www.kaizhouedu.com/kz/kztag</uri>
+ <tag>
+ 	<name>loop</name>
+ 	<tag-class>com.kz.el.KzLoopTag</tag-class>
+ 	<!-- 无标题前体：empty 有表前提一定要用jsp -->
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>count</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>int</type>
+ 	</attribute>
+ </tag>
+ <tag>
+ 	<name>kzif</name>
+ 	<tag-class>com.kz.tag.KzIfTag</tag-class>
+ 	<!-- 无标题前体：empty 有表前提一定要用jsp -->
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>boolean</type>
+ 	</attribute>
+ 
+ </tag>
+ <tag>
+ 	<name>kzelseif</name>
+ 	<tag-class>com.kz.tag.KzElseIfTag</tag-class>
+ 	<!-- 无标题前体：empty 有表前提一定要用jsp -->
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>boolean</type>
+ 	</attribute>
+ </tag>
+ <tag>
+ 	<name>kzelse</name>
+ 	<tag-class>com.kz.tag.KzElseTag</tag-class>
+ 	<!-- 无标题前体：empty 有表前提一定要用jsp -->
+ 	<body-content>empty</body-content>
+ </tag>
+ 
+</taglib>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>work1</short-name>
+ <uri>http://servlet-11/WebRoot/WEB-INF/tag/work1</uri>
+
+
+ <function>
+ 	<description>取集合和数组的长度 </description>
+ 	<name>size</name>
+ 	<function-class>el.Size</function-class>
+ 	<function-signature>int size(java.util.List)</function-signature>
+ 	<example>
+ 	${kz:size(list)}
+ 	</example>
+ </function>
+ 
+ 
+ 
+<function>
+ 	<description>格式化日期 </description>
+ 	<name>dateFormat</name>
+ 	<function-class>el.dateFormat</function-class>
+ 	<function-signature>String dateFormat(java.lang.String,java.lang.String)</function-signature>
+ 	<example>
+ 	 ${kz:dateFormat("2015-10-12",'yyyy年MM月dd日')}
+ 	</example>
+ </function>
+ 
+ 
+ <function>
+ 	<description>indexOf查找 </description>
+ 	<name>indexOf</name>
+ 	<function-class>el.indexOf</function-class>
+ 	<function-signature>String indexOf(java.lang.String,java.lang.String) </function-signature>
+ 	<example>
+ 	${kz:indexOf("abc","b")}
+ 	</example>
+ </function>
+ 
+
+
+</taglib>

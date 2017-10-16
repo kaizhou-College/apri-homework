@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>kzFunctions</short-name>
+ <uri>http://www.yunyunsFuction.com/el/functions</uri>
+ 
+ 
+ <function>
+ 		<!-- 描述 -->
+ 		<description>返回数组长度</description>
+ 		<!-- 函数名字 -->
+ 		<name>getListLength</name>
+ 		<!-- 函数所在的类 -->
+ 		<function-class>util.MyFunction</function-class>
+ 		<!-- 函数的签名	 -->
+ 		<function-signature>Integer getListLength(java.util.List)</function-signature>
+ </function>
+ <function>
+ 	<description>找寻制定的字符串下标下表</description>
+ 	<name>indexOf</name>
+ 	<function-class>util.MyFunction</function-class>
+ 	<function-signature>Integer indexOf(java.lang.String,java.lang.String)</function-signature>
+ </function>
+ 
+ <function>
+ 		<!-- 描述 -->
+ 		<description>转型</description>
+ 		<!-- 函数名字 -->
+ 		<name>dateToString</name>
+ 		<!-- 函数所在的类 -->
+ 		<function-class>util.MyFunction</function-class>
+ 		<!-- 函数的签名	 -->
+ 		<function-signature>Date dateToString(java.lang.String,java.lang.String)</function-signature>
+ </function>
+</taglib>
