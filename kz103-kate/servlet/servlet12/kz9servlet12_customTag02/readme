@@ -1,0 +1,42 @@
+一，为什么复杂自定义标签
+	简单自定义标签：doTag()控制标签体的输出
+	需要在自定义标签中嵌套自定义标签，控制标签的的输出，
+	(标签体循环出，标签体按条件输出)
+	
+
+
+<kz:loop count="5">
+	<%=new Date()%>
+</kz:loop>
+	
+	
+<kz:if test="1==1">
+	 我是if条件成立时改执行的代码
+<kz:elseif test="1==2"/>
+	我是else  if条件成立时改执行的代码
+<kz:else/>
+	我是else条件成立时改执行的代码
+</kz:if>
+
+
+二，怎么样使用复杂自定义标签
+1，继承BodyTagSupport类
+
+
+两个重要的点：
+1,）自定义标签的生命周期
+	setPageContext();
+ 	setParent();
+ 	setAttribute();------处理属性值---setCount()
+ 	<kztag:loop count="5">  doStartTag()
+		<%=new Date()%>    setBodyContent-->doInitBody-->doAfterBody
+	</kztag:loop>		   doEndTag()
+	release() ----释放资源
+2,) doStartTag()		
+	doAfterBody()
+	doEndTag()   -----一般进行缓存中内容是否是否的操作
+	返回值的作用
+	
+
+	
+	

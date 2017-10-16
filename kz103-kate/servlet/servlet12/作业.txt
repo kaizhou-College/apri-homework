@@ -1,0 +1,12 @@
+自定义一个：
+	<kz:switch test="${value}">
+		<kz:case1 value="v1"/>
+			我是case1输出的内容
+		<kz:case2 value="v1"/>
+			我是case2输出的内容
+		<kz:case3 value="v1"/>
+			我是case3输出的内容
+	</kz:switch>
+		
+	
+
