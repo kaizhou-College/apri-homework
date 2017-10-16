@@ -9,7 +9,7 @@
 	
 	结果为：2015年10月12日
 3，格式化日期-date  给date类型日期 返回指定格式的字符串日期	
-	${kz:formateDate("2015-10-12",'yyyy年MM月dd日')}
+	${kz:formateDate(new Date() ,'yyyy年MM月dd日')}
 	
 	
 	结果为：2015年10月12日
