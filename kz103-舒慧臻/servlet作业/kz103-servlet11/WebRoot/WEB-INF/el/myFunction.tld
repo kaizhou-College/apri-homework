@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>kzFunctions</short-name>
+ <uri>http://www.shushushu.com/el/functions</uri>
+ 
+ 
+ <function>
+ 	<description>得到list长度</description>
+ 	<!-- 函数名 -->
+ 	<name>size</name>
+ 	<!-- 函数所在的java类 -->
+ 	<function-class>work11.Tag.Tag201</function-class>
+ 	<!-- 定义函数的签名 -->
+ 	<function-signature>Integer size(java.util.List)</function-signature>  	
+ </function>
+</taglib>
