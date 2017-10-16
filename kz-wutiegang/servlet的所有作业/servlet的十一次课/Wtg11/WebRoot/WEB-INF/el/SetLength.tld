@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>SetLength</short-name>
+ <uri>http://www.Wtg.com/com/wtg/Util/Length</uri>
+ <function>
+ 	<description>求集合或数组的长度</description>
+ 	<name>size</name>
+ 	<function-class>com.wtg.Util.Length</function-class>
+ 	<function-signature>int size(java.util.ArrayList)</function-signature>
+ 	<example>
+ 		${ln:size(list)}
+ 	</example>
+ </function>
+</taglib>

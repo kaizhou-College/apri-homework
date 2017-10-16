@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>FontIndex</short-name>
+ <uri>http://www.Wtg.com/indexOf</uri>
+ <function>
+ 	<description>找字符串的下标</description>
+ 	<name>indexOf</name>
+ 	<function-class>com.wtg.Util.FontIndex</function-class>
+ 	<function-signature>int intdexOf(java.lang.String,java.lang.String)</function-signature>
+ 	<example>
+ 		${io:indexOf("abcdef","c")}
+ 	</example>
+ </function>
+</taglib>

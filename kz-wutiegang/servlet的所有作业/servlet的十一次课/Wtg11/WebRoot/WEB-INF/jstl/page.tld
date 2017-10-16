@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>page</short-name>
+ <uri>http://www.Wtg.com/Page</uri>
+ <tag>
+		<description>分页标签</description>
+		<name>Page</name>
+	 	<tag-class>com.wtg.Util.Page</tag-class>
+	 	<!-- 改标签没有标签体就写empty -->
+	 	<body-content>scriptless</body-content>
+	 	<attribute>
+	 		<description>当前页数</description>
+	 		<name>currentPage</name>
+	 		<!-- 是否必须写改属性 -->
+	 		<required>true</required>
+	 		<!-- 是否支持el 表单式 -->
+	 		<rtexprvalue>true</rtexprvalue>
+	 		<!-- 属性的类型 可以不写 -->
+	 	</attribute>
+	 	
+	 	<attribute>
+	 		<description>最大页数</description>
+	 		<name>maxPage</name>
+	 		<!-- 是否必须写改属性 -->
+	 		<required>true</required>
+	 		<!-- 是否支持el 表单式 -->
+	 		<rtexprvalue>true</rtexprvalue>
+	 		<!-- 属性的类型 可以不写 -->
+	 		<type>int</type>
+	 	</attribute>
+	
+	</tag>
+</taglib>
