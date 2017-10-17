@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class Switch extends BodyTagSupport{
 	//用来存变量的值
@@ -22,7 +23,17 @@ public class Switch extends BodyTagSupport{
 	}
 	@Override
 	public int doEndTag() throws JspException {
+
+		if(isTagsuccessed()==false){
+			try {
+				getBodyContent().getEnclosingWriter().write("不匹配=======");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		if(body==null){
+
 			setBody();
 		}
 		if (body!=null) {
@@ -48,6 +59,7 @@ public class Switch extends BodyTagSupport{
 	}
 	public void setTagsuccessed(boolean tagsuccessed) {
 		this.tagsuccessed = tagsuccessed;
+		
 	}
 	public String getBody() {
 		return body;

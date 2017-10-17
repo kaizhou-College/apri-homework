@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <%--  <t:loop count="5">
     	<%=new Date() %><br/>
     </t:loop>--%>
-    <kz:Switch test="${'v3'}">
+    <kz:Switch test="${'v4'}">
 		<kz:Case1 value="v1"/>
 			我是case1输出的内容
 		<kz:Case2 value="v2"/>
