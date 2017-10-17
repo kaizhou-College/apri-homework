@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>myifs</short-name>
+ <uri>http://www.pyj.jsp/jstl/yin</uri>
+ 
+ <tag>
+ 	<name>myif</name>
+	 	<tag-class>Test.Myif</tag-class>
+	 	<body-content>JSP</body-content>
+	 	<attribute>
+	 		<name>test</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+ </tag>
+ 
+ <tag>
+ 	<name>myelseif</name>
+	 	<tag-class>Test.Myelseif</tag-class>
+	 	<body-content>empty</body-content>
+	 	<attribute>
+	 		<name>test</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+ </tag>
+ 
+  <tag>
+ 	<name>myelse</name>
+	 	<tag-class>Test.Myelse</tag-class>
+	 	<body-content>empty</body-content>
+ </tag>
+ 
+</taglib>

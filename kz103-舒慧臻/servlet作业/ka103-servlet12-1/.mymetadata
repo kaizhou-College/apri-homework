@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ka103-servlet12-1"
+  id="myeclipse.1508158340007"
+  context-root="/ka103-servlet12-1"
+  j2ee-spec="5.0"
+  archive="ka103-servlet12-1.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
