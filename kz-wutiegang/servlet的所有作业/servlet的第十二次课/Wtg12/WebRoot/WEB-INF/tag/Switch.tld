@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>Switch</short-name>
+ <uri>http://www.Wtg.com/Switch</uri>
+ <tag>
+ <description>switch标签</description>
+ 	<name>Switch</name>
+ 	<tag-class>com.wtg.Switch.Switch</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+  <tag>
+   <description>case1标签</description>
+ 	<name>Case1</name>
+ 	<tag-class>com.wtg.Switch.Case1</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+  <tag>
+   <description>case2标签</description>
+ 	<name>Case2</name>
+ 	<tag-class>com.wtg.Switch.Case2</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+  <tag>
+   <description>case3标签</description>
+ 	<name>Case3</name>
+ 	<tag-class>com.wtg.Switch.Case3</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+</taglib>
