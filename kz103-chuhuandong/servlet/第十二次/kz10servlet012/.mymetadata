@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="kz10servlet012"
+  id="myeclipse.1508123522227"
+  context-root="/kz10servlet012"
+  j2ee-spec="5.0"
+  archive="kz10servlet012.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
