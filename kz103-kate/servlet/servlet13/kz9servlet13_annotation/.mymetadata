@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="kz9servlet13_annotation"
+  id="myeclipse.1508290068879"
+  context-root="/kz9servlet13_annotation"
+  j2ee-spec="5.0"
+  archive="kz9servlet13_annotation.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
