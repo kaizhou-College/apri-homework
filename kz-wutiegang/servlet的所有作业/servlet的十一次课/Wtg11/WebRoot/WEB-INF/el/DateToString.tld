@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>DateToString</short-name>
+ <uri>http://www.Wtg.com/wtg/Util/Function</uri>
+ <!-- 定义el函数 -->
+ <function>
+ 	<!--描述  -->
+ 	<description>字符串转日期</description>
+ 	<!-- 函数名 -->
+ 	<name>dateToString</name>
+ 	<!-- 函数所在的java类 -->
+ 	<function-class>com.wtg.Util.TmDateUtil</function-class>
+ 	<!-- 定义函数的签名 -->
+ 	<function-signature>Date dateToString(java.lang.String)</function-signature>
+ 	<!-- 例子 -->
+ 	<example>
+ 		${fn:dateToString("2017-10-15 12:12:12")}
+ 	</example>
+ </function>
+
+</taglib>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>top</short-name>
+ <uri>http://IFtop</uri>
+ <tag>
+ 	<name>if</name>
+ 	<tag-class>tag.TagIf</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>boolean</type>
+ 	</attribute>
+ </tag>
+ <tag>
+ 	<name>elseIf</name>
+ 	<tag-class>tag.TagElseIf</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>boolean</type>
+ 	</attribute>
+ </tag>
+ <tag>
+ 	<name>else</name>
+ 	<tag-class>tag.TagElse</tag-class>
+ 	<body-content>empty</body-content>
+ </tag>
+ <tag>
+ 	<name>switch</name>
+ 	<tag-class>tag.TagSwitch</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>test</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>String</type>
+ 	</attribute>
+ </tag>
+ <tag>
+ 	<name>case</name>
+ 	<tag-class>tag.TagCase</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>String</type>
+ 	</attribute>
+ </tag>
+  <tag>
+ 	<name>case1</name>
+ 	<tag-class>tag.TagCase1</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>String</type>
+ 	</attribute>
+ </tag>
+   <tag>
+ 	<name>case2</name>
+ 	<tag-class>tag.TagCase2</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>value</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 		<type>String</type>
+ 	</attribute>
+ </tag>
+ 
+ 
+ 
+ 
+ 
+ 
+</taglib>
