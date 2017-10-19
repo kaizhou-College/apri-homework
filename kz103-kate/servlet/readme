@@ -1,42 +1,139 @@
-一，为什么复杂自定义标签
-	简单自定义标签：doTag()控制标签体的输出
-	需要在自定义标签中嵌套自定义标签，控制标签的的输出，
-	(标签体循环出，标签体按条件输出)
+一，分组：班长 ，学习委员（潘尹婕），纪律委员
+======================================================
+一，servlet的三种创建方式（重点）
+	1，实现接口：Servlet接口
+		生命周期:
+			当客户第1次请求该servlet的时候就创建并初始化
+			当客户请求一次就调用一次服务的方法
+			
+			当服务器关闭，项目重新部署，删除项目servlet销毁
+			
+		在servlet的配置中配置参数：ServletConfig来接受
+	2，继承GenericServlet
+	3, 继承HttpServlet(推荐)
+	4，自定义
+	
+====================================================
+二，三个枚举
+	1，获取参数的枚举			getParamaterNames();
+		编码
+	2，获取header请求头		getHeaderNames();
+	3，获取域中的参数 		getAttributeNames();
+	
+	4,获取
+		uri   :相对路径
+		url   ：绝对路径		 getRequestURL();
+		资源     ：servlet的名字  getServletPath();
+		项目名 :项目名		 getContextPath();
+	
+====================================================
+三，过滤器：门卫（重点）
+
+	生命周期：
+		是在web容器启动就创建并初始化了(servlet没有初始化)
+		
+		在符合web.xml中的配置的拦截规则就开始拦截doFilter
+		
+		在服务器关闭，项目重新部署，删除销毁
+	应用：
+		1，解决编码
+		2，权限问题(登录(讲用户名保存到session))
+		3，过滤非法字符
+====================================================
+四，监听器：秘书（重点）
+	1，request监听器
+	2，session监听器
+	3，application监听器(ServletContext----context -----上下文)
+	4，session域绑定监听器（值的添加和移除）(不需要在web.xml中配置)
+
+
+	总结：
+		在web容器启动的时候创建，比过滤器先创建
+			监听域对象创建和销毁
+		在服务器关闭，项目重新部署，删除销毁
+	应用：在线人数 ----- 访问量 -----请求量
+==========================================================
+五，xml解析
+	1，dom解析 
+		缺点：加载整个文档到内存----构成文档树-----很耗内存
+	2，sax解析  基于节点事件
+		不需要加载这个文档到内存，从上往下读取web文档，产生一系列事件
+		文档开始事件
+			元素开始事件<name>
+					元素体的事件:内容
+			元素结束事件</name>
+		文档结束事件	
+========================================================
+六，Ajax  异步请求   局部刷新(重点)
+	1,获取Ajax对象(获取手机)
+	2,设置请求方式，url 等参数(拨和打电话)
+	3,设置回调函数(监听电话)
+	4,定义回调函数(通话)
+====================================================
+七，jndi :java命名与目录接口(重点)
+	java name and document interface
+	
+	(jdni相当于做一个菜单 ：根据菜名来点菜)
+	做菜单的方式：
+	1，自己做：			根据context.xml的名字来获取值
+	2，web容器帮我们做：   根据context.xml的名字前面加java:comp/env获取值(对象  当个数据)
+		连接池：connection Pool 装链接
+======================================================
+八，反射基础
+	1，反射的概念
+	2，获取Class类对象的四种方式
+		1)Class.forName();
+		2)类名.class;
+		3)对象.getClass();
+		4)类加载器
+			ClassLoader.getSystemClassLoader();
+	3，3种类加载器
+		系统类加载器					当前工程的classes路径下或者环境变量的classpath下
+		扩展类加载器					jdk/jre/lib/ext
+		根加载器  (null----C/C++写)  jdk/lib
+		(网络加载器)
+		类加载器的原则：
+			A:委托原则
+			B:透明原则
+			C:一致性原则
+==================================================
+九，反射  Class类 就是类的类(.java-----.class)
+	1，通过Class类对象获取类属性(类型，访问修饰符,属性名)
+	2，通过Class类对象获取类方法(返回值类型，访问修饰符,属性名)
+	3，通过Class类对象获取类构造方法
+十，反射的应用：写通用的curd(重点)
+
+	软更新：可以更新部分字段(多)
+	硬更新：一定要更新所有字段
+	
+	crm框架：hibernate  mybatis(ssh  ssm)
+十一:简单定义标签(重点)
+	继承SimpleTagSupport
+		doTag(){
+			处理标签属性，标签体
+		}
+	分页的自定标签
+		<kz:page page="1" pageSize="5" max="6"/>
+十二：复杂自定义标签
+	继承：BodyTagSupport类
+		setJspContext();
+		setParent();
+		setAttribute();
+		doStartTag();
+			EVAL_BODY_INCLUDE		标签体直接输出
+			EVAL_BODY_BUFFERED		保存到缓存中
+		setBodyContent()
+			----->initalBody()
+			--->doAfterBody();
+				EVAL_BODY_AGEIN		重新执行标签体
+				SKIP_BODY			执行到doEndTag()
+		doEndTag()
+				SKIP_BODY;//继续执行jsp页面后面的内容
+				SKIP_PAGE;//忽略jsp页面后面的内容
+
+	应用：1）if-elseif-else标签
+		 2）循环标签
+	
+	
 	
 
-
-<kz:loop count="5">
-	<%=new Date()%>
-</kz:loop>
-	
-	
-<kz:if test="1==1">
-	 我是if条件成立时改执行的代码
-<kz:elseif test="1==2"/>
-	我是else  if条件成立时改执行的代码
-<kz:else/>
-	我是else条件成立时改执行的代码
-</kz:if>
-
-
-二，怎么样使用复杂自定义标签
-1，继承BodyTagSupport类
-
-
-两个重要的点：
-1,）自定义标签的生命周期
-	setPageContext();
- 	setParent();
- 	setAttribute();------处理属性值---setCount()
- 	<kztag:loop count="5">  doStartTag()
-		<%=new Date()%>    setBodyContent-->doInitBody-->doAfterBody
-	</kztag:loop>		   doEndTag()
-	release() ----释放资源
-2,) doStartTag()		
-	doAfterBody()
-	doEndTag()   -----一般进行缓存中内容是否是否的操作
-	返回值的作用
-	
-
-	
-	
