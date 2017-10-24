@@ -1,0 +1,51 @@
+开发一个简单的MVC框架，开发步骤：
+
+(1)开发一个ActionServlet（公司），要求能够接收所有的.action请求。（即配置web.xml文件达到要求）
+(2)开发一个业务员的接口Action接口，要求定义一个行为，即execute方法，传入请求与响应对象，
+   返回一个结果页面的ActionForward对像。
+(3)准备一个ActionForward的对象来封装结果页面的字符串，和是否是转发还是重定向的boolean类型的标志，
+   如果是false，表示的转发，否则是重定向,提供get和set方法，有参的构造方法（给属性设值）
+(4)在WEB-INF目录上加一个属性文件，文件名：actionConfig.properties，此文件是一个注册了请求的URI与业务员类的对应关系。
+(5)在ActionServlet类的init方法中将属性文件actionConfig.properties文件内容加载到一个属性对象中。
+(6)在ActionServlet的服务方法首先对所有的请求参数进行编码。
+(7)在ActionServlet的服务方法中根据请求的URI得到对应的业务员对象。
+(8)在ActionServlet的服务方法中得到业务员对象后，调用业务员的execute方法，开始工作，并接收业务员返回的结果页面的对象ActionForward
+在ActionServlet的服务方法中接收到业务员返回的结果页面后，将根据ActionForward的boolean类型属性，将页面转发或者是重定向到结果页面去。
+
+到此框架基本完成，进行测试一：
+写一个用户登录的jsp，提交到login.action中，准备一个LoginAction实现Action接口，实现execute(),拿到用户名和密码，
+当用户名和密码都是admin，那么就封装ActionForward（success.jsp,false）,否则就封装ActionForward（error.jsp,false）
+在actionConfig.properties配置好uri(login)和LoginAction关系
+
+
+
+测试二：写一个jsp,一个姓名的文本框，一个籍贯的下拉列表，两个单选框（性别）,提交到info.action中，准备一个InfoAction实现Action接口，
+实现execute(),拿到姓名和籍贯和性别，如果性别是男的，就封装ActionForward(man.jsp,false),否则ActionForward(woman.jsp,false),在
+在结果页面显示出表单的值,在actionConfig.properties配置好uri(info)和LoginAction关系
+
+三，进行测试：
+（1）写一个主页面index.jsp，有两个超链接 （<a href="addUser.jsp">添加用户</a>,<a href="showUser.action">显示用户</a>）
+
+（2）点击“添加用户”,跳到addUser.jsp，其中有一个表单，能够填入姓名，密码，和出生日期，提交到addUser.action中
+
+（3）准备一个AddUserAction实现Action接口，实现execute(),拿到用户名和密码和出生日期，调用UserDao中的addUser(User u),
+     添加数据.如果添加成功就封装ActionForward（success.jsp,true），如果失败ActionForward（error.jsp,true),
+     在actionConfig.properties配置好uri(addUser)和AddUserAction关系
+
+（4）编写UserDao中addUser(User u)
+     success.jsp（有个返回的超链接，返回index.jsp）
+     error.jsp（有个返回的超链接，返回index.jsp）
+
+（5）点击“显示用户”,超连接到showUser.action,准备一个ShowUserAction实现Action接口，实现execute(),
+     调用UserDao中的showUser(),得到一个List集合，设置到request中,封装ActionForward（showUser.jsp,false），
+     在actionConfig.properties配置好uri(showUser)和ShowUserAction关系
+ 
+ (6)写出show.jsp，在show.jsp中用表格的形式列出数据，在每一行的后面添加一个删除的超链接
+    (<a href="delUser.action?id=<%= u.getId() %>"),带上参数，超链接到delUser.action
+    准备DelUserAction,实现Action接口，实现execute(),调用UserDao中的delUser(int id),删除数据
+    如果删除成功就封装ActionForward（"showUser.action",true），如果失败ActionForward（error.jsp,true),
+    在actionConfig.properties配置好uri(delUser)和DelUserAction关系
+
+  挑战：
+  如果有时间，在删除的后面加一个操作 ，修改的超链接，仿照的上面的完成。
+
