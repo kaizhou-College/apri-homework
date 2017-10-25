@@ -1,0 +1,46 @@
+一，mvc的步骤
+【0,编写jsp发起请求】
+1，要有控制器Filter(配置web.xml)
+2，配置文件(menu.properties   )
+3, Action接口
+4，Action类
+5，编写显示结果的jsp
+
+二，struts2就是一个实现了mvc模式的框架
+自己mvc: 给你一张白纸写简历
+框架mvc：网上下一个模板(框架)，你根据你的信息填写
+三，使用strust2的步骤
+1，到apache的官网下载struts2的jar包
+	struts-2.3.15.1-all\struts-2.3.15.1\apps\struts2-blank\WEB-INF\lib
+	13个jar包
+2, 配置控制器(struts2已经写好了)
+	【2.1编写核心控制器】
+
+3,  配置文件(struts.xml) 放到src下面  
+	同时要添加dtd约束
+	
+【4，编写action接口 （struts2写好了）】
+
+5，Action类（实现action接口，重写execute()方法）
+
+6, jsp页面
+
+
+三，struts.xml继承struts-default 这个父包(struts写好)
+
+
+四，指定action的方法
+	1）在struts.xml配置method="方法名"
+	2）请求的url中TestAction1!方法名.action
+	
+五,通配符的使用
+	
+
+
+六，result的配置
+	【dispactcher :】action转发到jsp
+	【redirect :】action重定向到jsp
+	【chian:】action转发到action
+	【redirectAction:】action重定向到action
+
+

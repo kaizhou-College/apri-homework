@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- package:包 	分包管理action
+		    name:包名
+		 	namespace:访问action的url的前缀：/；  /abc ； /abc/def
+		 	extends:继承 struts2的默认的包：使用struts2的功能(编码，取值，国际化，验证，文件上传下载......)
+	-->
+	<package name="default" namespace="/abc/def" extends="struts-default">
+		<!-- 配置action
+			name:客户要访问action的url路径
+				(man.action=com.kz.action.ManAction)
+		 -->
+		<action name="TestAction1" class="com.kz.action.TestAction1">
+			<!-- 开始/代表的是web工程的根目录 加到 /abc/def-->
+			<result name="success">/aa/a.jsp</result>
+			<result name="cg">/aa/a.jsp</result>
+		</action>
+		<action name="TestAction2" class="com.kz.action.TestAction2">
+			<!-- result的name属性默认值为"success" -->
+			<result>/aa/a.jsp</result>
+		</action>
+		<action name="TestAction3" class="com.kz.action.TestAction3">
+			<!-- result的name属性默认值为"success" -->
+			<result>/aa/a.jsp</result>
+		</action>
+		<!-- method:执行调用action类的哪个方法 -->
+		<action name="TestAction33" class="com.kz.action.TestAction3" method="test3">
+			<!-- result的name属性默认值为"success" -->
+			<result name="cg" >/aa/a.jsp</result>
+		</action>
+		
+		<!-- 动态url -->
+		<action name="DynamicAction" class="com.kz.action.DynamicAction" method="test4">
+			<!-- type跳转的方式,默认是type="dispatcher"  转发
+				 type="redirect" 重定向
+			-->
+			<result type="redirect">
+				<!-- reg1.jsp?name="二狗子"&age=12 -->
+				 <param name="location">/${url}</param>
+				 <param name="name">${name}</param>
+				 <param name="age">12</param>
+			</result>
+		</action>
+		
+		<!-- 转发重定向 -->
+		<action name="LoginAction" class="com.kz.action.LoginAction" method="tz">
+			<!-- action跳到另外一个action:转发 -->
+			<!--<result type="chain">TestAction1</result>-->
+			<!-- action跳到另外一个action:重定向 -->
+			<!--<result type="redirectAction">TestAction1</result>
+		--></action>
+		<!-- http://localhost:8080/kz9struts2-02/login_login_aa 
+			*:任意字符
+			第1个*：模块
+			第2个*：方法
+		-->
+		
+		<action name="login_*_*" class="com.kz.action.TestAction1" method="{1}">
+			<result >/{1}/{2}/a.jsp</result>
+		</action>
+	</package>
+	
+
+	
+	
+	
+</struts>
+
