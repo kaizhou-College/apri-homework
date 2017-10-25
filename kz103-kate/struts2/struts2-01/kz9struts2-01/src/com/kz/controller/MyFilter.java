@@ -45,8 +45,8 @@ public class MyFilter implements Filter {
 		String actionName = ps.getProperty(bing);
 		System.out.println("action="+actionName);
 		try {
-			Class actionClazz = Class.forName(actionName);
-			Action action = (Action) actionClazz.newInstance();
+			Class actionClazz = Class.forName(actionName);//Class.forname(".Test")
+			Action action = (Action) actionClazz.newInstance();//Test t = new Test();
 			//3.2调用医生看病
 			//String re = action.excute();
 			ActionForward af = action.excute(req,resp);

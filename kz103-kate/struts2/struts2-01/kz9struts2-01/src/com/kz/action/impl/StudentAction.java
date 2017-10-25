@@ -13,7 +13,6 @@ public class StudentAction implements Action {
 	private BaseDao db;
 	private List<Student> dataList;
 	//查询所有学生，跳到show.jsp进行显示
-	
 	public ActionForward excute(HttpServletRequest req, HttpServletResponse resp) {
 		System.out.println("查询学生");
 		//调用dao方法
