@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+		<package name="defult" namespace="/" extends="struts-default">
+			<action name="test1" class="struts2Test3.ActionOne">
+				<result>index.jsp</result>
+			</action>
+			<action name="test2" class="struts2Test3.ActionTwo">
+				<result>index.jsp</result>
+			</action>
+			<action name="test3" class="struts2Test3.ActionThree">
+				<result>index.jsp</result>
+			</action>
+			<action name="login" class="impl.LoginAction">
+				<result name="success">index.jsp</result>
+				<result name="error">error.jsp</result>
+			</action>
+		</package>
+</struts>
