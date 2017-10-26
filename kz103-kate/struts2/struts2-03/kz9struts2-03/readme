@@ -1,0 +1,88 @@
+回顾：
+一，struts2他是一个实现了mvc模式的框架。
+	1，核心的过滤器
+	2，指定Action接口,扩展了一个ActionSupport类
+	3，struts2的配置文件名必须为:struts.xml
+二，struts2的执行流程
+
+三，struts.xml种的配置解释
+	1,Pageckate 属性：
+		name		:包名
+		namespace	:命名空空间(访问action的前缀，默认为"")
+		extends:	:继承struts2写好的包：struts-default
+	2,action的属性
+		name:	访问action的url
+		class:	访问的action对应的类
+		method:	方法的action对应类的对应方法
+	3，result属性
+		name		:结果名字 默认值："success"
+		type		：执行跳转的方式
+			dispatcher 		action--->jsp :转发
+			redirect		action--->jsp :重定向
+			chain			action--->action :转发
+			redirectAction  action--->action :重定向
+	4,通配符：* 
+		简化action的配置
+=========================================================
+一，struts常量的配置
+	方式一：配置在struts.xml中
+	方式二：配置到struts.properties(default.properties)
+二，action中怎么样获取Servlet api
+	在action中怎么样获取request session application
+	解耦方式(推荐)
+	耦合方式
+
+三，参数传递
+	(表单)jsp-----参数------>action：
+		以前：request.getParameter("");
+		
+		通过：struts2的拦截器(在struts-default这个包的default-stack中18个拦截器)
+		拦截器：当我们要访问action的方法之前，先必须通过默认的18拦截器，才能进入action的方法
+		参数的绑定是通过其中一个拦截器实现的？
+	属性驱动
+		<interceptor-ref name="params">
+            <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+        </interceptor-ref>
+         模型驱动
+         <interceptor-ref name="modelDriven"/>
+        
+ 四，action数据的回显：
+ 	action----------数据----------jsp  
+
+	1）回显数据的第1种方式：el表达式
+		在struts2中el表达式先去4大域中取，没有就会去struts2的
+		值栈的根部来获取。
+		
+		值栈：struts2中用来装数据的一个容器。
+		值栈的结构：root和非root组成
+		root中装什么？
+			action对象
+			getModel放回的对象
+			（struts2默认放入的）
+		非根部中装什么？
+			web对象的数据
+			reqeust
+			response
+			session
+			application
+			parameters
+			attr
+			这些web对象struts2在servlet的web对象上改造过来的web对象。
+			比如：struts2中的request对象在在servlet的request
+			对象的基础上进行的封装。
+	2）OGNL表达式来获取值栈内容(配合struts2的标签)
+	OGNL----Object-Graph Navigation Language对象导航语言
+	使用ognl显示值栈的根部的数据：直接写属性名<br/>
+  		<s:property value="uname"/><br/>
+	使用ognl显示值栈的非根部的数据：必须在属性前加：#<br/>
+  		下面等价于：request.getParameter("uname");
+   		<s:property value="#request.uname"/><br/>
+	strurs2的循环标签
+		<s:iterator value="" var="">
+		相当于jstl标签<c:forEach item="" var="">
+	strurs2的条件标签
+		<s:if test="#user.pwd>124">
+  			<s:property value="#user.uname"/>密码大于124-----<s:property value="#user.pwd"/>
+  		</s:if><br/>
+
+	

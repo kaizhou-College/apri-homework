@@ -1,0 +1,32 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- struts常量配置 
+	<constant name="struts.action.extension" value="action,php,,"></constant>
+	-->
+	<!--  struts-default：有拦截器 （绑定参数拦截器，国际化拦截器，文件上传下载拦截器，校验拦截器.....）-->
+	<package name="sdjdefault" namespace="/" extends="struts-default">
+		<action name="testAtcion1_*" class="com.kz.action.TestAction1" method="{1}">
+			<result name="abc">/abc/suc1.jsp</result>
+			<result name="test_sucsess">/suc2.jsp</result>
+			<result>success.jsp</result>
+		</action>
+		
+		<action name="testAtcion2_*" class="com.kz.action.TestAction2" method="{1}">
+			<result>success.jsp</result>
+		</action>
+		
+		<action name="testAtcion3_*" class="com.kz.action.TestAction3" method="{1}">
+			<result>success.jsp</result>
+		</action>
+		
+		<action name="testAtcion4_*" class="com.kz.action.TestAction4" method="{1}">
+			<result>success.jsp</result>
+		</action>
+		<action name="loginAction_*" class="com.kz.action.LoginAction" method="{1}">
+			<result name="login_success" >success.jsp</result>
+		</action>
+		
+	</package>
+</struts>

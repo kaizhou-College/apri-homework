@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- struts常量配置 
+	<constant name="struts.action.extension" value="action,php,,"></constant>
+	-->
+	<!--  struts-default：有拦截器 （绑定参数拦截器，国际化拦截器，文件上传下载拦截器，校验拦截器.....）-->
+	<package name="pdjdefault" namespace="/" extends="struts-default">
+		<action name="listAction" class="com.kz.action.ListAction">
+			<result >success.jsp</result>
+		</action>
+	</package>
+</struts>
