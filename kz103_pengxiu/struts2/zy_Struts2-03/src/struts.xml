@@ -1,0 +1,25 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="" extends="struts-default" >
+		<action name="login_*" class="com.kz.px.action.imp.LoginAction" method="{1}">
+			<result name="success" type="chain">OrdersSelectAction_execute</result>
+			<result name="error">Usres.jsp</result>
+		</action>
+		<action name="OrdersSelectAction_*" class="com.kz.px.action.imp.OrdersSelectAction" method="{1}">
+			<result name="success">OrdersSelect.jsp</result>		
+		</action>
+		<action name="OrdersDeleteAction_*" class="com.kz.px.action.imp.OrdersDeleteAction" method="{1}">
+			<result name="success">
+				success.jsp
+			</result>
+			<result name="error">
+				error.jsp
+			</result>
+		</action>
+		<action name="OrdersUpdateAction_*" class="com.kz.px.action.imp.OrdersUpdateAction" method="{1}">
+			<result name="success" type="chain">OrdersSelectAction_execute</result>
+		</action>
+	</package>
+</struts>
