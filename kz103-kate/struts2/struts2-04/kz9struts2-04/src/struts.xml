@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="testAction1" class="com.kz.action.TestAction1">
+			<result>tag1.jsp</result>
+		</action>
+		
+		<action name="testAction2_*" class="com.kz.action.TestAction2" method="{1}">
+			<result>tag2.jsp</result>
+		</action>
+		
+		<action name="listAction" class="com.kz.action.ListAction" >
+			<result>list.jsp</result>
+		</action>
+		
+	</package>
+</struts>

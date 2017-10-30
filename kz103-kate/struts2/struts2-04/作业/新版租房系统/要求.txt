@@ -1,0 +1,10 @@
+基本要求需要用struts2.3完成租房系统的功能
+
+上机作业：
+1.完成list.htm的功能;
+2.完成regs.htm的功能;
+要求使用struts2的标签功能完成;
+list.htm页面要求高级搜索数据能够进行回显。
+
+
+课后作业：完成login.htm  guanli.htm   fabu.htm    details.htm

@@ -1,0 +1,55 @@
+回顾
+1，action中获取servlet api
+	request
+	response
+	session
+	application
+	1)耦合
+	2)解耦（推荐）
+2，jsp(表单)------>action
+	1）属性驱动
+		属性可以是非自定义类型
+			private String name;
+		也可以是自定类型
+			private Users user ;
+		NOTE:一定要提供属性的get/set方法
+	2）模型驱动	
+		1)action实现ModelDriver接口，实现接口中的方法
+		2)定义引用属性必须初始化
+			private Users user = new Users();
+3,action---------->jsp进行显示
+	1>>El表达式(是从域中取数据)
+		strus2先从域中取数据，如果没有就从值栈中取数据
+		1.1>>什么是值栈？
+			值栈就是一个保存数据的容器。值栈分为两部分
+			一部分：root
+				root中装action对象
+				root中装getModel的返回值
+			一部分：非root
+				struts2中web对象
+				request
+				session
+				application
+				response
+				parameters
+				attr
+	2>>通过struts2标签+OGNL表达式
+		root部分数据不要加#,非root部分数据要加#
+		
+	3>>怎么样查看值栈数据？
+		<s:debug></s:debug>
+=================struts2标签=========================================		
+1,数据标签  properties set bean 
+2,控制标签   iterator  if 
+3,表单标签  checkboxList radio  select
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
