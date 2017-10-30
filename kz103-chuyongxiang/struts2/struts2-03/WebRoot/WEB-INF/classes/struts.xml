@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="OrderAction_*" class="action.OrderAction" method="{1}">
+		<result name="SUCCESS" type="chain">ListAction</result>
+		<result name="NO">/login.jsp</result>
+		</action>
+		<action name="ListAction" class="action.ListAction">
+		<result name="OK">/Order_list.jsp</result>
+		<result name="NO">/login.jsp</result>
+		</action>
+		<action name="AddAction" class="action.AddAction"> 
+		<result name="OK" type="chain">ListAction</result>
+		</action>
+		<action name="DeleteAction" class="action.DeleteAction"> 
+		<result name="OK" type="chain">ListAction</result>
+		<result name="NO" type="chain">ListAction</result>
+		</action>
+		<action name="updateAction" class="action.updateAction"> 
+		<result name="success" type="chain">ListAction</result>
+		<result name="error" type="chain">ListAction</result>
+		</action>
+		
+	
+	</package>
+
+</struts>

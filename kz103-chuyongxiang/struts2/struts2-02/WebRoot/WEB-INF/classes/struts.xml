@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+
+<package name="default" namespace="/" extends="struts-default">
+
+	<action name="workAction1" class="action.workAction1">
+		<result name="success">/ok.jsp</result>
+	</action>
+	<action name="workAction2" class="action.workAction2">
+		<result name="success">/ok.jsp</result>
+	</action>
+	<action name="workAction3" class="action.workAction3">
+		<result name="success">/ok.jsp</result>
+	</action>
+	
+	
+	<action name="LoginAction" class="action.LoginAction">
+		<result name="success" >/success.jsp</result>
+		<result name="error">/login.jsp</result>
+	</action>
+</package>
+</struts>
