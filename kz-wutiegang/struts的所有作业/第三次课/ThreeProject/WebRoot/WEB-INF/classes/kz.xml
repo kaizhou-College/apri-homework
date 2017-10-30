@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    <struts>
+    	<package name="kzlogin" extends="struts-default">
+    		<action name="MyUsersAction_*" class="www.wtg.Action.MyUsersAction" method="{1}">
+    			<result type="chain">OrderAction</result>
+    			<result name="loser">loser.jsp</result>
+    		</action>
+    		<action name="OrderAction" class="www.wtg.Action.OrderAction">
+    			<result>/order/Order_list.jsp</result>
+    		</action>
+    		<action name="deleteAction" class="www.wtg.Action.deleteAction">
+    			<result type="chain">OrderAction</result>
+    		</action>
+    		<action name="updateAction" class="www.wtg.Action.updateAction">
+    			<result>/order/Order_update.jsp</result>
+    		</action>
+    		<action name="updateAction1" class="www.wtg.Action.updateAction1">
+    			<result type="chain">OrderAction</result>
+    		</action>
+    		<action name="addAction" class="www.wtg.Action.addAction">
+    			<result type="chain">OrderAction</result>
+    		</action>
+    	</package>
+    
+    
+    
+    </struts>
