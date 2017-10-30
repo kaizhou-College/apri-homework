@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<!-- package:包 	分包管理action
+			name:包名
+			namespace:访问action的url的前缀：/；  /abc ； /abc/def
+			extends:继承 struts2的默认的包：使用struts2的功能(编码，取值，国际化，验证，文件上传下载......)
+		-->
+		<package name="default" namespace="/" extends="struts-default">
+				<action name="TestAction" class="com.kz.action.TestAction">
+					<result name="CC">a.jsp</result>
+				</action>
+				<action name="LoginAction" class="com.kz.action.LoginAction">
+					<result>index.jsp</result>
+				</action>
+		</package>
+	</struts>
+
