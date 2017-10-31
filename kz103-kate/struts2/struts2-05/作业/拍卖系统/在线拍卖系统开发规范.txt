@@ -1,0 +1,34 @@
+﻿在线拍卖系统
+
+工程名：auction
+应用名：auction
+JAVAEE版本：Java EE 5.0
+JDK版本：1.6
+字符集：UTF-8
+Hibernate版本：3.1
+Struts版本:2.1
+测试工具：junit4
+
+
+主键生成器：increment
+jar包地址：auction/lib目录
+静态页面地址：auction/page目录
+测试类地址：test源代码目录
+测试类所在包：com.kz.auction.test
+异常处理：DAO和BIZ均不处理异常，抛至Action，Action捕获到异常后跳转到统一的错误信息页面，页面显示错误信息。
+
+相关类说明：
+  1. com.kz.auction.web.EncodingServlet类用于处理字符集问题，注意：各个Servlet继承该类。
+  2. com.kz.auction.util.Tool类中提供了以下静态方法：
+     1). 把日期字符串转为java.util.Date类型： java.util.Date strToDate(String dateStr,String parttern)
+     2). 获取近若干个月的日期：java.util.Date getDate(int num)
+  3. com.kz.auction.util.entity.PageInfo类用来封装分页信息
+
+命名规范：
+JSP:
+	发布拍卖品页：addAuction.jsp
+Action：
+	发布拍卖品：name：AddAuctionAction；url-parttern：addAuctionAction
+
+技术实现要求：
+	1. 通过通用dao和非通用dao来实现crud

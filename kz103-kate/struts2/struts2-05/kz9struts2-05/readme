@@ -1,0 +1,22 @@
+回顾：
+	struts2标签
+====================================================
+一，类型转换器
+	com.kz.dao------持久层 （数据库的crud）
+	com.kz.web------web层（处理请求）
+
+自己写了类型转换器后出现的2个问题？
+ 问题1：日期类型格式错误不再往 input指定的页面跳转？
+ 答：在类型转换器中，catch中将e.printStackTrace();
+ 	改为：throw new RuntimeException();
+ 问题2：怎么样把格式不对的数据错误的信息带到注册页面？
+答：1，编写action类类名.properties文件，在文件中写上错误提示信息
+		invalid.fieldvalue.属性名= 错误信息 
+	2，在jsp中通过<s:field>获取错误信息
+ 
+ 问题3：是struts中的谁导致格式不正确就会往input页面跳转？
+ 	18个默认拦截器：
+ 	<interceptor-ref name="conversionError"/>
+ 二，校验器：
+ 	步骤参看 博客http://blog.csdn.net/womeia331416/article/details/78341269
+ 

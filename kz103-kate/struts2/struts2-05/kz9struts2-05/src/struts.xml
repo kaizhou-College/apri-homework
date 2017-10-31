@@ -1,0 +1,13 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 使struts2表单的时候，采用主题：simple -->
+	
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="users_*" class="com.kz.web.action.UsersAction" method="{1}">
+			<result name="regist_success">success.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+	</package>
+</struts>
