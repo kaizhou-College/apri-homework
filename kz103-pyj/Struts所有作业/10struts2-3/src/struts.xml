@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="pan" namespace="/" extends="struts-default">
+		<action name="loginAction_*" class="action.LoginAction" method="{1}">
+			<result name="error">login.jsp</result><!-- 如果是假的跳回登陆页面 -->
+			<result name="success" type="chain">OrderAction</result><!-- 如果是真的跳别的页面 -->
+		</action>
+		
+		<action name="OrderAction_*" class="action.OrderAction">
+			<result name="no">login.jsp</result><!-- 如果是假的跳回登陆页面 -->
+			<result name="yes">/order/Order_list.jsp</result><!-- 如果是真的跳别的页面 -->
+		</action>
+		
+		<action name="DelAction_*" class="action.DelAction">
+			<result name="no" type="chain">OrderAction</result><!-- 如果是假的跳回显示页面 -->
+			<result name="yes" type="chain">/order/Order_list.jsp</result><!-- 如果是真的跳别的页面 -->
+		</action>
+		
+		<action name="AddAction_*" class="action.AddAction"> 
+			<result name="yes" type="chain">OrderAction</result><!-- 添加成功就跳回显示页面 -->
+		</action>
+		
+		<action name="UpdateAction_*" class="action.UpdateAction"> 
+			<result name="yes" type="chain">OrderAction</result><!-- 修改成功就跳回显示页面 -->
+			<result name="no" type="chain">/order/Order_update.jsp</result><!-- 失败就还是修改页面 -->
+		</action>
+	</package>
+</struts>

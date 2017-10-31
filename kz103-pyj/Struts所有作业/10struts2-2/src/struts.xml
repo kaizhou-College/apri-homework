@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="pyj" namespace="/" extends="struts-default">
+		<action name="Work1_1" class="action.Work1_1">
+			<result>work1.jsp</result>
+		</action>
+		
+		<action name="Work1_2" class="action.Work1_2">
+			<result>work1.jsp</result>
+		</action>
+		
+		<action name="Work1_3" class="action.Work1_3">
+			<result>work1.jsp</result>
+		</action>
+		
+		<action name="login_*" class="action.LoginAction">
+			<result name="error">login.jsp</result>
+			<result>success.jsp</result>
+		</action>
+	</package>
+</struts>
