@@ -1,0 +1,15 @@
+  <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="yy" namespace="/" extends="struts-default">
+		<action name="login" class="action.LoginAction">
+			<result>show.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		<action name="order_*" class="action.OrderAction" method="{1}">
+			<result>show.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+	</package>
+</struts>
