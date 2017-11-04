@@ -1,0 +1,20 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 使struts2表单的时候，采用主题：simple -->
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="users_*" class="com.kz.web.action.UsersAction" method="{1}">
+			<result name="{1}_success" type="redirectAction" >houser_list</result>
+			<result name="{1}">/WEB-INF/page/login.jsp</result>
+		</action>
+		<action name="houser_*" class="com.kz.web.action.HouseAction" method="{1}">
+			<result name="list_success">/WEB-INF/page/guanli.jsp</result>
+			<result name="edit_success">/WEB-INF/page/edit.jsp</result>
+			<result name="update_success" type="redirectAction">houser_list</result>
+		</action>
+		<action name="street_*" class="com.kz.web.action.StreetAction" method="{1}">
+		</action>
+		
+	</package>
+</struts>

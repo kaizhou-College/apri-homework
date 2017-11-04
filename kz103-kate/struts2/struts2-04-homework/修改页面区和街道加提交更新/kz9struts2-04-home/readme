@@ -1,0 +1,60 @@
+登录成功后往guanli.jsp跳转
+1，测试能够从登录成功跳过去 不带任何数据
+//1, 调用dao分页查询第1页房屋信息
+		houses = db.selByPage(House.class, page, DEFAULT_HOUSE_PAGE_SIZE);
+		return "list_success";
+2, 将gunali.jsp的样式调整正确
+
+3，带第1页房屋的信息过去 
+4, 解决显示哪个区的哪个街道
+
+5,分页查询
+	1）导入kzpage.jar
+	2) guanli.jsp中加入
+		<kz:kzPage max="${max}" url="houser_list" page="${page}"></kz:kzPage>
+	3）在HouseAction中：
+		private int page;
+		private int max;
+		
+		//0,修改页数
+		if(page==0){
+			page=1;
+		}
+		
+		//1, 调用dao分页查询第1页房屋信息
+		List<House>houses = db.selByPage(House.class, 默认第1页, DEFAULT_HOUSE_PAGE_SIZE);
+		将默认第1页改为 page
+		//3，查询最大页
+		max = db.getMaxPage(House.class, DEFAULT_HOUSE_PAGE_SIZE);
+========================修改==========================================
+1，编写js方法
+	function update(hid){
+		//alert(1);
+		//根据id查询当前的房屋信息
+		location.href="houser_edit?house.id="+hid;
+	}
+2，在HouseAction的edit中根据id查询房屋信息
+		//1,根据id查询房屋信息
+		house = hd.findById(house.getId());
+		//2,将信息传递到edit.jsp显示---属性驱动
+3，测试能否跳到edit.jsp,修改其样式
+	<%@include file="comm.jsp" %>
+	
+	<LINK rel=stylesheet type=text/css href="${basePath}/css/style.css">
+	
+	<IMG src="${basePath}/images/logo.gif">
+4，将数据显示到edit.jsp  struts2标签
+	//1,根据id查询房屋信息
+	house = hd.findById(house.getId());
+	//3,将信息传递到edit.jsp显示---属性驱动
+	return "edit_success";
+5,显示房屋的类型 
+	//2,查询所有的房屋类型
+	BaseDao<Types> baseDao = new BaseDao<Types>();
+	types = baseDao.find(Types.class);
+
+		
+	
+
+
+
