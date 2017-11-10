@@ -1,0 +1,18 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 使struts2表单的时候，采用主题：simple -->
+	
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="user_*" class="com.kz.action.UserAction" method="{1}">
+			<result name="success">login.jsp</result>
+		</action>	
+		<action name="i18n" class="com.kz.action.I18NAction">
+		</action>
+		<action name="uploadAction" class="com.kz.action.UploadAction" method="upload">
+		
+			<result name="input">/input.jsp</result>
+		</action>
+	</package>
+</struts>
