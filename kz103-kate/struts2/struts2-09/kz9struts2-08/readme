@@ -1,0 +1,43 @@
+1，防表单重复提交
+
+2，自定义拦截器
+	struts2默认会使用18个拦截器
+		  <interceptor-ref name="exception"/>
+            <interceptor-ref name="alias"/>
+            <interceptor-ref name="servletConfig"/>
+         	   	国际化
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="prepare"/>
+            <interceptor-ref name="chain"/>
+            <interceptor-ref name="scopedModelDriven"/>
+           		模型驱动
+            <interceptor-ref name="modelDriven"/>
+            	文件上传
+            <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="checkbox"/>
+            <interceptor-ref name="multiselect"/>
+            <interceptor-ref name="staticParams"/>
+            <interceptor-ref name="actionMappingParams"/>
+            	属性驱动
+            <interceptor-ref name="params">
+                <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+            </interceptor-ref>
+            	类型转换错误
+            <interceptor-ref name="conversionError"/>
+            	校验拦截器
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            	出错的时候跳转到result的name为input的页面
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="debugging"/>
+	struts2拦截器中使用了一种设计模式：责任链模式？？？？
+二，怎么样自己定义拦截器？
+	方式一：实现一个接口Interceptor接口
+
+	
+
+	
+		
