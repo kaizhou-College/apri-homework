@@ -1,0 +1,64 @@
+﻿----------------------------------------------------------------------------------------------------------------------
+#用户表
+CREATE TABLE S_User(
+	userID INT  primary key, --主键ID
+	userName VARCHAR(50)   NULL, --用户姓名
+	logonName VARCHAR(50)   NULL, --登录名
+	logonPwd VARCHAR(50)  NULL,   --密码#
+	sex VARCHAR(10)  NULL,        --性别（例如：男，女）
+	birthday VARCHAR(50) NULL,    --出生日期
+	education VARCHAR(20)  NULL,  --学历（例如：研究生、本科、专科、高中）
+	telephone VARCHAR(50)  NULL,  --电话 
+	interest VARCHAR(20)  NULL,   --兴趣爱好（例如：体育、旅游、逛街）
+	path VARCHAR(500)  NULL,      --上传路径（path路径）
+	filename VARCHAR(100)  NULL,  --上传文件名称（文件名）
+	remark VARCHAR(500)  NULL   --备注
+	
+) 
+
+#初始化数据：默认用户名和密码是admin
+INSERT INTO s_user (userName,logonName,logonPwd) VALUES ('超级管理员','admin','admin')
+
+-----------------------------------------------------------------------------------------------------------------------
+* 要完成的功能:
+  * 讲课过程中领着学生把普通的html标签替换为struts2标签
+  * 登录
+       * 用户名和密码用struts2验证框架进行验证
+       
+  * 首页完善
+       * 显示当前的用户名
+        
+  * 用户的添加
+        包含文件上传,配置参数(临时路径  总开关  3三个配置  struts2验证框架 表单重复提交)  
+  
+  * 用户的条件查询   
+
+  * 用户的编辑(文件上传)  
+
+  * 用户的修改   
+        包含文件上传,表单重复提交  
+      
+  * 用户的删除
+  
+  * 查看
+        包含文件下载)
+  
+  * 自定义拦截器(验证用户登录)
+  
+  
+  
+  update s_user set userName= ?,1
+  logonName=?, admin
+  logonPwd =?,admin
+  sex=?,女
+  birthday=?, 1900-1-1
+  education=? , 博士
+  telephone=?, 1111
+  interest='abc', 
+  path=? ,d:\upload\7ade5911-714e-43be-bf05-8f2505545619.jpg
+  filename=?, download.jpg
+  remark=? 1
+  where userID = ? Parameters: [, , , , ,, , , , 爱的法师打发, ]
+  
+  
+
