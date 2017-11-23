@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="user_*" class="com.kz.web.action.UserAction" method="{1}">
+			<result name="toLogin">/login/login.jsp</result>
+			<result name="login_success">/login/home.jsp</result>
+			<result name="list_success">/user/list.jsp</result>
+			<result name="edit_success">/user/edit.jsp</result>
+			<result name="editSubmit_success" type="redirectAction">user_list</result>
+		</action>
+	</package>
+</struts>
