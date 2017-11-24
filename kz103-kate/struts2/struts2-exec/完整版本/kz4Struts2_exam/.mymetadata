@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="kz4Struts2_exam"
+  id="myeclipse.1495503139791"
+  context-root="/kz4Struts2_exam"
+  j2ee-spec="5.0"
+  archive="kz4Struts2_exam.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
