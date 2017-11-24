@@ -1,0 +1,55 @@
+一，国际化的全局配置：
+	1，需要配置常量
+		struts.custom.i18n.resources=mssage
+	2，编写国际化资源文件
+		mssage_en_US.properties
+			uname=用户名
+			.....
+		mssage_zh_CN.properties
+			uname=userName
+			.....
+	3,在jsp中获取国际化的资源
+		<s:text name="国际化资源文件的key"/>
+	4,切换语言需要发送一个参数名：
+		?request_locale=en_US
+二，在action中获取国际化资源？
+	1，通过下面的方式获取资源
+		getText("key");
+	
+		getText("key",字符串数组)；//动态参数
+	2，动态参数
+		mssage_en_US.properties
+			uname=用户名{0}  //字符串数组下标为0的字符串
+			.....
+		mssage_zh_CN.properties
+			uname=userName{0}
+			.....
+
+三,局部国际化
+	1，针对某个action有效：
+		action类名.properties
+		action类名_en_US.properties
+		action类名_zh_CN.properties
+		
+	2，针对某个包有效
+		package.properties
+		package_en_US.properties
+		package_zh_CN.properties
+		
+========================================================
+二，文件上传
+1，jsp需要将表单添加一个：
+	enctype="multipart/form-data">
+2,action中
+	/*上传的文件对象: 名字必须和文件域的name值相同*/
+	private File upload;
+	/*上传的文件类型*/
+    private String uploadContentType;
+    /*上传的文件命名*/	
+    private String uploadFileName;
+3，默认上传文件大小为 ：2m  超过就跳转到resule的name的input指定的页面
+	在页面中通过<s:actionerror/>显示错误信息。
+	
+	
+	
+	
