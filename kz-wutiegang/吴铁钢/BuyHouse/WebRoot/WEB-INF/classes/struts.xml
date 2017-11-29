@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    <struts>
+    	<package name="default" namespace="/" extends="struts-default">
+    		<interceptors>
+    			<interceptor name="UserInterceper" class="com.kz.web.interceper.UserInterceper"></interceptor>
+    			
+    			<interceptor-stack name="kzStack">
+    				<interceptor-ref name="UserInterceper">
+    					<param name="includeMethods">post,delete,updateById,my</param>
+    				</interceptor-ref>
+    				<interceptor-ref name="defaultStack"></interceptor-ref>
+    			
+    			</interceptor-stack>
+    		</interceptors>
+    		
+    			
+    		
+    	
+    	
+    		<action name="user_*" class="com.kz.web.action.UserAction" method="{1}">
+    			<result name="login_success" type="chain">fwxx_query</result>
+    			<result name="login_file">/</result>
+    			<result name="input">/WEB-INF/pages/login_form.jsp</result>
+    			<result name="reg_success">/WEB-INF/pages/reg.jsp</result>
+    			<result name="register_success">/WEB-INF/pages/login_form.jsp</result>
+    			<result name="loginout_success">/WEB-INF/pages/login_form.jsp</result>
+    			<result name="userlogin_success">/WEB-INF/pages/login_form.jsp</result>
+    		</action>
+    		<action name="fwxx_*" class="com.kz.web.action.FwxxAction" method="{1}">
+    			<result name="query_success">/WEB-INF/pages/login.jsp</result>
+    			<result name="my_success">/WEB-INF/pages/my.jsp</result>
+    			<result name="mypage_success">/WEB-INF/pages/my.jsp</result>
+    			<result name="my_file">/WEB-INF/pages/login_form.jsp</result>
+    			<result name="post_file">/WEB-INF/pages/login_form.jsp</result>
+    			<result name="post_success">/WEB-INF/pages/post.jsp</result>
+    			<result name="index_success">/WEB-INF/pages/index.jsp</result>
+    			<result name="delete_success" type="chain">fwxx_mypage</result>
+    			<result name="confirm_success">/WEB-INF/pages/post_confirm.jsp</result>
+    			<result name="add_success" type="redirectAction">fwxx_query</result>
+    			<result name="updateById_success">/WEB-INF/pages/update.jsp</result>
+    			<result name="look_success">/WEB-INF/pages/detail.jsp</result>
+    			<result name="update_success" type="redirectAction">fwxx_query</result>
+    			<result name="input">/WEB-INF/pages/login_form.jsp</result>
+    			<interceptor-ref name="kzStack"></interceptor-ref>
+    		</action>
+    	</package>
+    
+    
+    
+    </struts>
