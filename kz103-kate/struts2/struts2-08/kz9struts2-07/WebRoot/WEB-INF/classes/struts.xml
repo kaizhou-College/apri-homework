@@ -1,0 +1,34 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 使struts2表单的时候，采用主题：simple -->
+	
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="user_*" class="com.kz.action.UserAction" method="{1}">
+			<result name="success">login.jsp</result>
+		</action>	
+		<action name="i18n" class="com.kz.action.I18NAction">
+		</action>
+		<action name="uploadAction" class="com.kz.action.UploadAction" method="upload">
+			<result name="input">/input.jsp</result>
+			<result name="upload_success">upload_success.jsp</result>
+			<!--maximumSize~~每一个上传文件大小
+			allowedTypes~~允许上传文件的 mimeType 类型.
+			allowedExtensions~~允许上传文件的后缀名.-->
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">2097152</param>
+				<param name="fileUpload.allowedExtensions">jpg</param>
+			</interceptor-ref>
+		</action>
+		<action name="downloadAction" class="com.kz.action.DownloadAction" method="download">
+			<!-- 完成文件的下载 -->
+			<result name="success" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="inputStream">${inputStream}</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+			</result>
+		
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,49 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 配置拦截器 -->
+		<interceptors>
+			<interceptor name="myException" class="com.kz.web.interceptor.MyExceptionInterceptor"></interceptor>
+			<interceptor-stack name="sysStack">
+				<interceptor-ref name="myException"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 修改默认的拦截器栈 -->
+		<default-interceptor-ref name="sysStack"/>
+		<!-- 全局的result -->
+		<global-results>
+			<result name="login">/login/login.jsp</result>
+			<result name="error">error.jsp</result>
+		</global-results>
+		
+		<!-- 通用的错误页面 -->
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.NullPointerException"></exception-mapping>
+		</global-exception-mappings>
+		<!-- 配置action -->
+		<action name="user_*" class="com.kz.web.action.UserAction" method="{1}">
+			<!-- 登录 -->
+			<result name="login_success">/login/home.jsp</result>
+			<!-- 查询全部 -->
+			<result name="list_success">/user/list.jsp</result>
+			<!-- 查看单个 -->
+			<result name="view_success">/user/view.jsp</result>
+			<!-- 编辑 -->
+			<result name="edit_success">/user/edit.jsp</result>
+			<!-- 下载简历 -->
+			<result name="download_success" type="stream">
+			   <param name="contentType">${contentType}</param>
+			   <param name="inputStream">${inputStream}</param>
+			   <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			</result>
+			<result name="save_success" type="redirectAction">user_list</result>
+			<result name="save_input" >/user/add.jsp</result>
+			<result name="login_input">/login/login.jsp</result>
+			<!--<interceptor-ref name="sysStack"></interceptor-ref>-->
+		</action>
+		
+	</package>
+</struts>

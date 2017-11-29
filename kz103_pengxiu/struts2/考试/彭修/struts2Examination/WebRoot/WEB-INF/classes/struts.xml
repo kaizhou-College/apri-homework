@@ -1,0 +1,85 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    	<!-- action跳到另外一个action:转发 -->
+			<!--<result type="chain">TestAction1</result>-->
+			<!-- action跳到另外一个action:重定向 -->
+			<!--<result type="redirectAction">TestAction1</result>-->
+			
+			<!-- type跳转的方式,默认是type="dispatcher"  转发
+				 type="redirect" 重定向
+			-->
+<struts>
+	
+	<package name="kzDefault" extends="struts-default" >
+		<interceptors>
+		<interceptor name="login" class="com.kz.examination.wed.filter.LoginInpterceptor"></interceptor>
+		<interceptor-stack name="kzpx">
+			<interceptor-ref name="login">
+				<param name="includeMethods">postJD,delteFwxx,updateList</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+			
+		</interceptors>
+		
+		<global-results>
+			<result name="error">
+				error.jsp
+			</result>
+			<result name="addUser">
+				index.jsp
+			</result>
+		</global-results>
+		<action name="user_*" class="com.kz.examination.wed.action.TblUserAction" method="{1}" >
+			<result name="loginUser" type="chain"  >
+				fwxx_pageList
+			</result>
+			<result name="goIndex">
+				index.jsp
+			</result>
+			<result name="input">
+				index.jsp
+			</result>
+		</action>
+		<action name="fwxx_*" class="com.kz.examination.wed.action.Tbl_fwxxAction" method="{1}">
+			<result name="input">
+				index.jsp
+			</result>
+			<result name="pageList">
+				login.jsp
+			</result>
+			<result name="listDetail" >
+				detail.jsp
+			</result>
+			<result name="updateList">
+				updateList.jsp
+			</result>
+			<result name="list">
+				my.jsp
+			</result>
+			<result name="updateListTBL">
+				post_confirm.jsp
+			</result>
+			<result name="updateTBL" type="chain" >
+				fwxx_list
+			</result>
+			<result name="delteFwxx" type="chain">
+				fwxx_list
+			</result>
+			<result name="postJD" >
+				post.jsp
+			</result>
+			<result name="addListTbl" >
+				post_confirmAdd.jsp
+			</result>
+			<result name="addTbl" type="chain">
+				fwxx_pageList
+			</result>
+			<interceptor-ref name="kzpx"></interceptor-ref>
+		</action>
+		<action name="jd_*" class="com.kz.examination.wed.action.TBL_JDAction" method="{1}" >
+		
+		</action>
+	</package>
+</struts>

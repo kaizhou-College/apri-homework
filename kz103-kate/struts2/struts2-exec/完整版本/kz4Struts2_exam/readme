@@ -1,0 +1,149 @@
+一，搭建struts框架
+1， 导入jar
+2, 配置struts核心过滤器
+3, 配置struts核心配置文件
+4, 创建model和view
+
+二， 搭建项目框架
+	按功能划分项目的框架
+	util			工具层
+	dao				持久层
+	entity			实体层
+	biz 			业务层(service)
+	web				web层
+		action
+		interceptor
+		filter
+		.....
+三， 导入项目的资源文件
+	image
+	css
+	js
+	juery
+	login
+	user
+四，做项目的思路
+	先做功能，最后校验，异常.........
+五，struts2的标签开发项目
+
+
+html
+<form id="loginAction_home" name="form1" action="${pageContext.request.contextPath}/login/home.jsp" target="_parent" method="post">
+struts2
+<s:form id="loginAction_home" name="form1" action="user_login" namespace="/" target="_parent" method="post">
+	
+html
+<a href="${basePath}/user/view.jsp?userID=15">
+	<img src="${basePath}/images/button_view.gif" border="0" style="CURSOR: hand">
+</a>
+struts2
+<s:a action="user_view" namespace="/">
+	<s:param name="userID" value="#user.userID"></s:param>
+	<img src="${basePath}/images/button_view.gif" border="0" style="CURSOR: hand">
+</s:a>	
+
+
+html
+<input type="text" name="logonName" value="caocao" id="userAction_save_do_logonName" class="bg"/>
+struts2
+<s:textfield type="text" name="logonName" value="caocao" id="userAction_save_do_logonName" cssClass="bg"/>
+
+html
+<input type="radio" name="sex" id="sex男" value="男"/><label for="sex男">男</label>
+<input type="radio" name="sex" id="sex女" checked="checked" value="女"/><label for="sex女">女</label>
+struts
+<s:radio list="{'男','女'}" name="sex" id="sex" value="%{model.sex}"></s:radio>
+
+html
+<select name="education" id="education">
+    <option value=""
+    >--选择学历--</option>
+    <option value="博士">博士</option>
+    <option value="硕士">硕士</option>
+    <option value="研究生" selected="selected">研究生</option>
+    <option value="本科">本科</option>
+    <option value="专科">专科</option>
+    <option value="高中">高中</option>
+</select>
+struts
+<s:select list="{'博士','硕士','研究生','本科','专科','高中'}" value="%{model.education}" headerKey="" headerValue="--选择学历--"></s:select>
+
+
+html
+ <input type="checkbox" name="interest" value="看电影" id="interest-1" checked="checked"/>
+<label for="interest-1" class="checkboxLabel">看电影</label>
+<input type="checkbox" name="interest" value="旅游" id="interest-2" checked="checked"/>
+<label for="interest-2" class="checkboxLabel">旅游</label>
+<input type="checkbox" name="interest" value="健身" id="interest-3"/>
+<label for="interest-3" class="checkboxLabel">健身</label>
+<input type="checkbox" name="interest" value="购物" id="interest-4"/>
+<label for="interest-4" class="checkboxLabel">购物</label>
+<input type="checkbox" name="interest" value="睡觉" id="interest-5"/>
+<label for="interest-5" class="checkboxLabel">睡觉</label>
+<input type="hidden" id="__multiselect_userAction_save_do_interest" name="__multiselect_interest" value="" /> 
+struts
+<s:checkboxlist list="{'看电影','旅游','健身','购物','睡觉'}" id="interest" name="interest" value="%{model.interest}"></s:checkboxlist>
+
+
+
+html
+<textarea name="remark" cols="30" rows="3" id="userAction_save_do_remark" style="WIDTH: 96%">&#30340;</textarea>
+
+
+补充：统一异常处理
+1，定义一个异常类：继承 RuntimeException类
+
+2，需要统一异常处理的地方加上：
+	throw new 自定义异常类("错误信息");
+3,定义一个异常拦截器：专门用来拦截我们的统一异常
+	try {
+		//放行
+		return arg0.invoke();
+	} catch (MyException e) {
+			//统一处理系统的异常
+			//1,发送短信 2， 发邮件  3，记录日志文件
+			System.out.println("这个异常被我拦截了3333..."+e.getMessage());
+			return "error";
+	}
+第4步：struts.xml文件中定义一个全局的错误页面的result
+	<global-results>
+			<result name="login">/login/login.jsp</result>
+			<result name="error">error.jsp</result>
+	</global-results>
+	自定义的异常不能处理系统所有的异常，其他不是自定义的异常怎么样处理？
+	在struts.xml配置全局的异常处理
+	<global-exception-mappings>
+		<exception-mapping result="error" exception="java.lang.NullPointerException"></exception-mapping>
+	</global-exception-mappings>
+	
+
+
+补充：登陆校验拦截器 
+1、 自定义拦截器
+	获取Action对象添加错误信息
+	ActionSupport action = (ActionSupport) actionInvocation.getAction();
+	action.addActionError(action.getText("nologin"));
+2、 配置拦截器	
+		<interceptors>
+			<!-- 注册 -->
+			<interceptor name="login" class="cn.itcast.user.web.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="login"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 设置默认拦截器栈 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		
+		<!-- 如果未登陆 定义全局结果集 -->
+		<global-results>
+			<result  name="login">/login/login.jsp</result>
+		</global-results>
+***** 元素有顺序的！！！！！！！！
+
+问题：永远无法登陆！！！！！
+**** 通过拦截器参数设置，控制哪些方法 不被拦截  ---- 对user_login 不进行拦截
+
+
+

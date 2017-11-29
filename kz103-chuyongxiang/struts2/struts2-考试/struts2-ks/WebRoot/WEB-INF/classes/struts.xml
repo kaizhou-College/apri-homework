@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	
+		<action name="user_*" class="web.action.UserAction" method="{1}">
+			<result name="login_ok" type="redirectAction">fwxx_selectpage</result>
+			<result name="login_no">/login_form.jsp</result>
+			<result name="login2_ok" type="redirectAction">fwxx_selectpage3</result>
+			<result name="login2_no" type="redirectAction">fwxx_selectpage2</result>
+			<result name="zhuce_ok" type="redirectAction">fwxx_selectpage2</result>
+			<result name="out" >/login_form.jsp</result>
+			<result name="input">/reg.jsp</result>
+			
+		</action>
+		<action name="fwxx_*" class="web.action.FwxxAction" method="{1}">
+		<result name="selectpage_ok">/list.jsp</result>
+		<result name="selectpage2_ok">/index.jsp</result>
+		<result name="selectpage3_ok">/login.jsp</result>
+		<result name="selectpage4_ok">/my.jsp</result>
+		<result name="toview">/detail.jsp</result>
+		<result name="Delect_OK" type="redirectAction">fwxx_selectpage4</result>
+		<result name="update_ok">/update.jsp</result>
+		<result name="toupdateview">/post_confirm.jsp</result>
+		<result name="updateok_ok" type="redirectAction">fwxx_selectpage4</result>
+		<result name="toadd_ok" >/add_confirm.jsp</result>
+		<result name="add_ok" type="redirectAction">fwxx_selectpage4</result>
+		<result name="superselect_ok" type="chain">fwxx_superselectpage</result>
+		<result name="superselectpage_ok">/login.jsp</result>
+		</action>
+			
+	</package>
+</struts>

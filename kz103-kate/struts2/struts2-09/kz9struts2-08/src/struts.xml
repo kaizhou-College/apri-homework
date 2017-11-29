@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<!-- 注册拦截器 -->
+		<interceptors>
+		<!--拦截action的所有方法-->
+			<interceptor name="myIntercepotr2" class="com.kz.web.inpterceptor.MyInterceptor2"></interceptor>
+				<!-- 拦截器值拦截指定的方法(绝大数都是这种情况) -->
+			<interceptor name="myInterceptor3" class="com.kz.web.inpterceptor.MyInterceptor3"></interceptor>
+			<interceptor name="bookInpterceptor" class="com.kz.web.inpterceptor.BookInpterceptor"></interceptor>
+			<!-- 拦截器栈 1-->
+			<interceptor-stack name="kzStack">
+				<interceptor-ref name="myInterceptor3">
+					<param name="includeMethods">logon</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			<!-- 拦截器栈 2-->
+			<interceptor-stack name="kzStack2">
+				<interceptor-ref name="myIntercepotr2"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			
+			<!-- 拦截器栈 3-->
+			<interceptor-stack name="kzStack3">
+				<interceptor-ref name="token"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			<!-- 拦截器栈 4-->
+			<interceptor-stack name="kzStack4">
+				<interceptor-ref name="bookInpterceptor">
+					<param name="excludeMethods">listBook</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			
+		</interceptors>
+		<action name="user_*" class="com.kz.web.action.UsersAction" method="{1}">
+			<result name="invalid.token">/login.jsp</result>
+			<!-- 如果在action中配置了拦截器，那么默认的18个拦截器就失效 -->
+			<!--<interceptor-ref name="token"></interceptor-ref>
+			-->
+			<result name="login">/login.jsp</result>
+			<result name="logon_success">/index.jsp</result>
+			<interceptor-ref name="kzStack"></interceptor-ref>	
+		</action>
+		<action name="book_*" class="com.kz.web.action.BookAction" method="{1}">
+			<result name="login">/login.jsp</result>
+			<interceptor-ref name="kzStack4"></interceptor-ref>
+		</action>
+		
+		
+		
+	</package>	
+</struts>
