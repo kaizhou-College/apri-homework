@@ -1,0 +1,39 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<package name="pan" namespace="/" extends="struts-default">
+		   <interceptors>
+    			<interceptor name="LoginInpterceptor" class="pan.web.inpterceptor.LoginInpterceptor"></interceptor>
+    			<interceptor-stack name="panStack">
+    				<interceptor-ref name="LoginInpterceptor">
+    					<param name="includeMethods">add,del,queryById</param>
+    				</interceptor-ref>
+    				<interceptor-ref name="defaultStack"></interceptor-ref>
+    			</interceptor-stack>
+    		</interceptors>
+	
+	
+		<action name="user_*" class="pan.web.action.UserAction" method="{1}">
+			<result name="login_error">/pages/login_from.jsp</result> <!-- 如果登陆失败就还是在登陆界面  -->
+			<result name="login_success" type="redirectAction">fwxx_list</result><!-- 登陆成功去显示页面加分页  -->
+			<result name="tuichu_success" type="redirectAction">user_login</result> <!--退出去登陆页面  -->
+			<result name="reg_success">/pages/login_from.jsp</result> <!--注册成功去登陆页面  -->
+			<result name="input">/pages/reg.jsp</result> <!--注册失败还是在注册  -->
+		</action>
+		
+		<action name="fwxx_*" class="pan.web.action.FwxxAction" method="{1}">
+			<result name="list_success">/pages/login.jsp</result><!-- 分页显示数据 -->
+			<result name="fwxxlist_success" type="redirectAction">fwxx_glList</result><!-- 根据id查到之后显示 -->
+			<result name="glList_success">/pages/my.jsp</result>
+			<result name="del_success" type="chain">fwxx_queryById</result><!-- 删除成功就在根据id查一次并显示 -->
+			<result name="del_error">/pages/error.jsp</result><!-- 删除失败(测试jsp) -->
+			<result name="add_success" type="redirectAction">fwxx_list</result><!-- 新增成功就显示 -->
+			<result name="edit_error">/pages/error.jsp</result><!-- 新增失败(测试jsp) -->
+			<result name="editJump_success">/pages/edit.jsp</result><!--跳到修改页面-->
+			<result name="edit_success" type="redirectAction">fwxx_list</result><!-- 修改成功就去显示页面 -->
+			<result name="edit_error">/pages/edit.jsp</result><!-- 修改不成功还是在修改页面 -->
+			<interceptor-ref name="panStack"></interceptor-ref>	--></action>
+	</package>
+</struts>
