@@ -1,0 +1,27 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="yy" namespace="/" extends="struts-default">
+		<action name="user_*" class="web.action.UserAction" method="{1}">
+			<result name="login_success" type="redirectAction">fw_query</result>
+			<result name="login_error">/page/login_from.jsp</result>
+			<result name="insert_success">/page/ok.jsp</result>
+			<result name="exit_success" type="redirectAction">fw_indexquery</result>
+			<result name="indexlogin_success" type="redirectAction">fw_query</result>
+			<result name="indexlogin_error"  type="redirectAction">fw_indexquery</result>
+		</action>
+		<action name="fw_*" class="web.action.FwxxAction" method="{1}">
+			<result name="query_success">/page/login.jsp</result>
+			<result name="queryUid_success">/page/my.jsp</result>
+			<result name="add_success">/page/post_confirm.jsp</result>
+			<result name="addExe_success">/page/ok.jsp</result>
+			<result name="del_success">/page/ok.jsp</result>
+			<result name="edit_success">/page/post.jsp</result>
+			<result name="update_success">/page/post_confirm.jsp</result>
+			<result name="upExe_success">/page/ok.jsp</result>
+			<result name="queryId_success">/page/detail.jsp</result>
+			<result name="indexquery_success">/page/index.jsp</result>
+		</action>
+	</package>
+</struts>

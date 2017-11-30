@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="BuyHouse"
+  id="myeclipse.1511746066216"
+  context-root="/BuyHouse"
+  j2ee-spec="5.0"
+  archive="BuyHouse.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
