@@ -1,0 +1,49 @@
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<constant name="struts.ui.theme" value="simple"></constant>
+		<package name="housedefault" namespace="/" extends="struts-default">
+		<interceptors>
+    			<interceptor name="UserInterceper" class="test.interceper.UserInterceper"></interceptor>
+    			
+    			<interceptor-stack name="kzStack">
+    				<interceptor-ref name="UserInterceper">
+    					<param name="includeMethods">enterupdate,update,del,add</param>
+    				</interceptor-ref>
+    				<interceptor-ref name="defaultStack"></interceptor-ref>
+    			
+    			</interceptor-stack>
+    		</interceptors>
+		<action name="user_*" class="test.action.UserAaction" method="{1}">
+			<!-- 登录 -->
+			<result name="login_success" type="chain">user_currentPage</result>
+			<result name="login_filed">/page/login_form.jsp</result>
+			<result name="input">/page/login_form.jsp</result>
+			<!-- 注销 -->
+			<result name="login">/page/login_form.jsp</result>
+			<!-- 注册 -->
+			<result name="zhuce_filed">/page/reg.jsp</result>
+			<result name="index">/page/index.jsp</result>
+			<!-- 展示login数据 -->
+			<result name="current_success">/page/login.jsp</result>
+			<!-- 管理页面 -->
+			<result name="guanli_success">/page/my.jsp</result>
+			<!-- 删除操作 -->
+			<result name="del_success" type="chain">user_reguanli</result>
+			<result name="del_filed">/page/my.jsp</result>
+			<!-- 修改 -->
+			<result name="enter_update">/page/update.jsp</result>
+			<result name="update_success" type="chain">user_currentPage</result>
+			<result name="update_filed">/page/update.jsp</result>
+			<!-- 增加 -->
+			<result name="add_success" type="chain">user_currentPage</result>
+			<result name="add_filed">/page/post.jsp</result>
+			<!-- 详细信息 -->
+			<result name="find_success">/page/detail.jsp</result>
+			<!-- 高级查询 -->
+			<result name="gaoji_success">/page/login.jsp</result>
+			<interceptor-ref name="kzStack"></interceptor-ref>
+		</action>
+		</package>
+	</struts>
