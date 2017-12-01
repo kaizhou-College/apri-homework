@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="callback.js"></script>
+	<script type="text/javascript">
+		pxAjax({
+			value1:"阿修,阿香,1阿超,阿钢,阿舒,阿匀,阿东,阿婕",
+			method:"post",
+			url:"../ajax",
+			success:function(data){
+				//alert(data);
+				document.getElementById("id").innerHTML=data;
+			}
+		})
+		
+	</script>
+  </head>
+  <body>
+   		<div id="id">
+   		
+   		</div>
+  </body>
+</html>
