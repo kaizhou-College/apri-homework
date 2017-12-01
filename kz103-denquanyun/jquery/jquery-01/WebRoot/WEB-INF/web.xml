@@ -7,13 +7,13 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>AjaxServlet</servlet-name>
-    <servlet-class>com.kz.servlet.AjaxServlet</servlet-class>
+    <servlet-name>AjaxTest</servlet-name>
+    <servlet-class>service.AjaxTest</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AjaxServlet</servlet-name>
-    <url-pattern>/AjaxServlet</url-pattern>
+    <servlet-name>AjaxTest</servlet-name>
+    <url-pattern>/AjaxTest</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
