@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>对比事件处理.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    <input id="abc" value="abc"/>
+    	<script type="text/javascript">
+  		//1,传统的获取不存在元素
+  		var a  =document.getElementById("abc");
+  		//alert(a);
+  		if(a){// dom元素为null  判断就相当于false 不是null相对于true
+  			//alert("a=true");
+  		}else{
+  			//alert("a=false");
+  		}
+  		//2,在jq中获取不存在的元素
+  		var $b = $("#abc");//id为def的元素
+  		//$b是一个数组
+  		alert($b.get(0));//undefined
+  		if($b.get(0)){//undefined 位false 有值为true
+  			alert("1233");
+  		}else{
+  			alert("456");
+  		}
+  	</script>
+  </body>
+</html>
