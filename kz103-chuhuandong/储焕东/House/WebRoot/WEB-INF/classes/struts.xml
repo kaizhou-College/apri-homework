@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<package name="df" extends="struts-default">
+			<action name="manager_*" class="com.kz.web.action.ManagerAction" method="{1}">
+				<result name="ok" type="redirectAction">view_cx</result>
+				<result name="errormessage">ActionMessage.jsp</result>
+				<result name="request">post_confirm.jsp</result>
+				<result name="add">post.jsp</result>
+			</action>
+			<action name="view_*" class="com.kz.web.action.ViewAction" method="{1}">
+				<result name="show">my.jsp</result>
+				<result name="updateshow">post.jsp</result>
+				<result name="list">login.jsp</result>
+				<result name="shows">login.jsp</result>
+			</action>
+			<action name="check_*" class="com.kz.web.action.Check" method="{1}">
+				<result name="update" type="redirectAction">manager_update</result>
+				<result name="add" type="redirectAction">manager_Add</result>
+			</action>
+		</package>
+	</struts>
