@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+   <struts>
+   	<package name="kzdefault" namespace="/" extends="json-default">
+   	   	<action name="user_*" class="com.kz.action.UserAction" method="{1}">
+   	   		<result type="json" name="login_success">
+   	   			<param name="ignoreHierarchy">true</param>
+   	   		</result>
+   	   	</action>
+   		
+   	</package>
+   
+   
+   </struts>
+    

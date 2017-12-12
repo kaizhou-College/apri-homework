@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+   <struts>
+   	<package name="kzdefault" namespace="/" extends="json-default">
+   	   	<action name="province_*" class="com.kz.action.ProvinceAction" method="{1}">
+   	   		<result type="json" name="pc_success">
+   	   			<param name="ignoreHierarchy">true</param>
+   	   		</result>
+   	   		<result type="json" name="pToc_success">
+   	   			<param name="ignoreHierarchy">true</param>
+   	   		</result>
+   	   	</action>
+   		<action name="city_*" class="com.kz.action.CityAction" method="{1}">
+   			<result type="json" name="cTod_success">
+   				<param name="ignoreHierarchy">true</param>
+   			</result>
+   		
+   		
+   		</action>
+   	</package>
+   
+   
+   </struts>
+    

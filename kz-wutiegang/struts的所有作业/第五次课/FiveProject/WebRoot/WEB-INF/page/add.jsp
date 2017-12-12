@@ -1,0 +1,73 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@include file="comm.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="wrap">
+  <!-- main begin-->
+  <div class="sale">
+    <h1 class="lf">在线拍卖系统</h1>
+    <div class="logout right"><a href="#" title="注销">注销</a></div>
+  </div>
+      <div class="login logns produce">
+        <h1 class="blues">拍卖品信息</h1>
+        <form action="Auction_add" method="post" enctype="multipart/form-data">
+          <dl>
+            <dd >
+              <label>名称：</label>
+              <input type="text" class="inputh lf" value="" name="action.auctionname"/>
+              <div class="xzkbg spbg lf"></div>
+            </dd>
+            <dd>
+              <label>起拍价：</label>
+              <input type="text" class="inputh lf" value=""  name="action.auctionstartprice"/>
+              <div class="lf red laba">必须为数字</div>
+            </dd>
+            <dd>
+              <label>底价：</label>
+              <input type="text" class="inputh lf" value="" name="action.auctionupset"/>
+              <div class="lf red laba">必须为数字</div>
+            </dd>
+            <dd>
+              <label>开始时间：</label>
+              <input type="text" class="inputh lf" value="" name="action.auctionstarttime"/>
+              <div class="lf red laba">格式：2010-05-05 12:30:00</div>
+            </dd>
+            <dd>
+              <label>结束时间：</label>
+              <input type="text" class="inputh lf" value="" name="action.auctionendtime"/>
+              <div class="lf red laba">格式：2010-05-06 16:30:00</div>
+            </dd>
+            <dd class="dds">
+              <label>拍卖品图片：</label>
+               <div class="lf salebd"><a href="#"><img src="images/ad20.jpg" width="100" height="100" /></a></div>
+              <input name="upload" type="file" class="offset10 lf" />
+              
+            </dd>
+             <dd class="dds">
+              <label>描述：</label>
+              <textarea name="action.auctiondesc" cols="" rows="" class="textarea"></textarea>
+            </dd>
+            <dd class="hegas">
+                <input type="submit" value="发布" class="spbg buttombg buttombgs buttomb f14 lf" />
+                 <a href="Auction_find" class="spbg buttombg buttombgs f14 lf buttomb" />取消</a>
+                
+            </dd>
+          </dl>
+          </form>
+    </div>
+
+<s:debug></s:debug>
+</div>
+
+ 
+</div>
+</body>
+</html>

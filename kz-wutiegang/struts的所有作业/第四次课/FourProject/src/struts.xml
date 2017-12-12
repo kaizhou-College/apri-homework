@@ -1,0 +1,44 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	
+		<package name="kzdefault" namespace="/" extends="struts-default" >
+			<action name="LoginAction_*" class="com.wtg.Action.LoginAction" method="{1}">
+				<result type="chain">ManagerAction_manager</result>
+				<result name="loser">jsp/login.jsp</result>
+			</action>
+			<action name="ZhuceAction_*" class="com.wtg.Action.ZhuceAction" method="{1}">
+				<result>jsp/login.jsp</result>
+				<result name="mima">jsp/loser.jsp</result>
+			</action>
+			<action name="AddHomeAction_*" class="com.wtg.Action.AddHomeAction" method="{1}">
+				<result type="chain">ManagerAction_manager</result>
+				<result name="loser">jsp/loser.jsp</result>
+				<result name="mima">jsp/login.jsp</result>
+			</action>	
+			<action name="ManagerAction_*" class="com.wtg.Action.ManagerAction" method="{1}">
+				<result>jsp/Manager.jsp</result>
+				<result name="q_success">jsp/list.jsp</result>
+				<result name="edit_success">jsp/edit.jsp</result>
+				<result name="fabu_success">jsp/FaBu.jsp</result>
+				<result name="update_success" type="chain">ManagerAction_manager</result>
+				<result name="loser">jsp/edit.jsp</result>
+				<result name="gaoji_success">jsp/list.jsp</result>
+			</action>
+			<action name="shanchuAction_*" class="com.wtg.Action.shanchuAction" method="{1}">
+				<result type="chain">ManagerAction_manager</result>
+				<result name="loser">jsp/loser.jsp</result>
+			</action>
+			<action name="outAction_*" class="com.wtg.Action.outAction" method="{1}">
+				<result name="{1}_success">jsp/login.jsp</result>
+				
+			</action>
+			<action name="daAction_*" class="com.wtg.Action.daAction" method="{1}">
+			</action>
+			
+			
+		</package>
+	
+	
+	</struts>

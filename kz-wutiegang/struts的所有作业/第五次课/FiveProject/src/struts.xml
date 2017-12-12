@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    <struts>
+    	<package name="default" namespace="/" extends="struts-default">
+    	<!--token不是18个默认的拦截器，所以要自己在xml文件中引用，并要在action中配置才能使用-->
+   			<interceptors>
+   			<interceptor name="ActionInterceptor" class="com.wtg.interceptor.ActionInterceptor"></interceptor>
+   			
+   			
+   			
+   				<interceptor-stack name="formInterceptor">
+   					<interceptor-ref name="token">
+   						<param name="excludeMethods">Mceshi,check,login,checkCode,ceshi</param>
+   					</interceptor-ref>
+   					<interceptor-ref name="defaultStack"></interceptor-ref>
+   				</interceptor-stack>
+   			<interceptor-stack name="aduInterceptor">
+   					<interceptor-ref name="ActionInterceptor">
+   						<param name="includeMethods">byId,delete,fb,pass</param>
+   					</interceptor-ref>
+   					<interceptor-ref name="defaultStack"></interceptor-ref>
+   				</interceptor-stack>
+   			
+   			
+   			</interceptors>
+    		<action name="AuctionUser_*" class="com.wtg.Action.AuctionUserAction" method="{1}">
+    			<result name="admin_success">/WEB-INF/page/login.jsp</result>
+    			<result name="user_success" type="redirectAction">Auction_query</result>    			
+    			<result name="ceshi_file">/WEB-INF/page/login.jsp</result>
+    			<result name="Madmin_success" type="redirectAction">Auction_find</result>
+    			<result name="Muser_success">/WEB-INF/page/Manager.jsp</result>    			
+    			<result name="Mceshi_file">/WEB-INF/page/Manager.jsp</result>
+    			<result name="Zhuce_success">/WEB-INF/page/Zhuce.jsp</result>
+    			<result name="add_success">/WEB-INF/page/login.jsp</result>
+    			<result name="Adminadd_success">/WEB-INF/page/Manager.jsp</result>
+    			<result name="check_success">/WEB-INF/page/Manager.jsp</result>
+    			<result name="add_file">/WEB-INF/page/Zhuce.jsp</result>
+    			<result name="input">/WEB-INF/page/Manager.jsp</result>
+    			<interceptor-ref name="formInterceptor"></interceptor-ref>
+    			<result name="invalid.token">/WEB-INF/page/Manager.jsp</result>
+    			
+    		</action>
+    		
+			
+    		<action name="Auction_*" class="com.wtg.Action.AuctionAction" method="{1}">
+    			<result name="query_success">/WEB-INF/page/list.jsp</result>
+    			<result name="byId_success">/WEB-INF/page/update.jsp</result>
+    			<result name="find_success">/WEB-INF/page/BuyManager.jsp</result>
+    			<result name="gaoJi_success">/WEB-INF/page/BuyManager.jsp</result>
+    			<result name="delete_success" type="redirectAction">Auction_find</result>
+    			<result name="fb_success">/WEB-INF/page/add.jsp</result>
+    			<result name="pass_success">/WEB-INF/page/Manager.jsp</result>
+    			<result name="update_success" type="redirectAction">Auction_find</result>
+    			<result name="add_success" type="redirectAction">Auction_find</result>
+    			<result name="jinpai_success">/WEB-INF/page/Buy.jsp</result>
+    			<result name="login" >/tiao.jsp</result>
+    			<interceptor-ref name="aduInterceptor"></interceptor-ref>
+    		</action>
+    	
+    	
+    	
+    	
+    	
+    	</package>
+    
+    
+    
+    </struts>
