@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.mozilla.org/rdf/chrome#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="name" type="xs:string"/>
+	<xs:attribute name="extension" type="xs:boolean"/>
+	<xs:attribute name="displayName" type="xs:string"/>
+	<xs:attribute name="author" type="xs:string"/>
+	<xs:attribute name="authorURL" type="xs:anyURI"/>
+	<xs:attribute name="description" type="xs:string"/>
+	<xs:attribute name="settingsURL" type="xs:anyURI"/>
+</xs:schema>

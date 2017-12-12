@@ -1,0 +1,6 @@
+中文参数必须按以下方式处理
+ajax请求中如果包括中文参数后台收到为乱码，
+在发送前用JS中encodeURI方法转码，再发送即可
+
+语法为:
+url:'testAction!test?time='+Math.random()+"&type="+encodeURI("成功");

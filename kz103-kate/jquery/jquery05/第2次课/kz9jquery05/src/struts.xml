@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="kzdefault" namespace="/" extends="struts-default">
+		<action name="users_*" class="com.kz.web.action.UsersAction" method="{1}">
+		</action>
+		
+	</package>
+</struts>
