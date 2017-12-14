@@ -1,0 +1,9 @@
+一 、练习*.hbm.xml中的主键生成策略(手写)
+
+(1)使用sqlserver 建表(test:id) 主键不主动增长
+ hibernate 使用increment,assigned，uuid 测试添加数据
+
+(2)使用oracle 的scott 用户建表并且建立一个序列 
+然后使用序列 做hibernate 主键生产方式 添加数据
+
+(3)使用hibernate 到oracle数据库建表建立序列

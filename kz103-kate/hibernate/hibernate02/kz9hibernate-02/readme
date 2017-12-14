@@ -1,0 +1,13 @@
+一，hibernate:持久层的orm框架
+	o:Object  r:relation  m:mapping :对象关系映射
+二，hiberate的使用步骤
+1，导入jar包
+2，编写hibernate.cfg.xml的核心配置文件
+	（数据库的信息，映射文件的位置）
+3，编写类 ：Users
+4, 创建表 Users
+5， 创建映射文件：类名.hbm.xml
+	类---表
+	属性--字段
+	NOTE:将映射文件配置到hibernate.cfg.xml的核心文件中
+6，测试：CRUD
