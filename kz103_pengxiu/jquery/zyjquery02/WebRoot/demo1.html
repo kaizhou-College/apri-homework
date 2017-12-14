@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="">
+	
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全选、反选</title>
+ <!--   引入jQuery -->
+ <script src="js/jquery-1.4.2.js" type="text/javascript"></script>
+</head>
+<body>
+<form method="post" action="">
+   你爱好的运动是？
+   <br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+	<input type="checkbox" name="items" value="篮球"/>篮球
+	<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+	<input type="checkbox" name="items" value="乒乓球"/>乒乓球
+   <br/>
+    <input type="button" id="CheckedAll" value="全　选"/>
+    <input type="button" id="CheckedNo" value="全不选"/>
+    <input type="button" id="CheckedRev" value="反　选"/> 
+
+	<input type="button" id="send" value="提　交"/> 
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+  	$("#CheckedAll").click(function(){
+		$("input[name='items']").attr("checked","checked");
+  	});
+  	$("#CheckedNo").click(function(){
+  		$("input[name='items']").attr("checked","");
+  	});
+  	$("#CheckedRev").click(function(){
+  		$("input[name='items']").each(function(){
+			//$(this).attr("checked",!$(this).attr("checked"));
+			this.checked=!this.checked;
+  		});
+  	});
+  	$("#send").click(function(){
+  		
+  		$("input[name='items']").each(function(){
+  			
+  			if($(this).attr("checked")){
+  				alert($(this).val());
+  			}
+  		});
+  		
+  	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

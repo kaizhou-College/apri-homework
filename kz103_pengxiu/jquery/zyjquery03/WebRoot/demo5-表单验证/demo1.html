@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--   引入jQuery -->
+<script src="../js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	
+</script>
+</head>
+<body>
+
+<form method="post" action="">
+	<div class="int" id="int">
+		<label for="username">用户名:</label>
+		<input type="text" id="username"  class="required" />
+	</div>
+	<div class="int">
+		<label for="email">邮箱:</label>
+		<input type="text" id="email" class="required" />
+	</div>
+	<div class="int">
+		<label for="personinfo">个人资料:</label>
+		<input type="text" id="personinfo" />
+	</div>
+	<div class="sub">
+		<input type="submit" value="提交" id="send"/><input type="reset" id="res"/>
+	</div>
+</form>
+<script>
+var $id="#username,#email,#personinfo";
+//设置红色小星星
+(function(){
+	$(".int").each(function(){
+		$(this).append("<span style='color: red;'>*</span>");
+	});
+})()
+//设置文本背景颜色
+$($id).mousedown(function(){
+	$(this).css("background","red");	
+});
+$($id).blur(function(){
+	$(this).css("background","000");	
+});
+//非空
+$(".int").each(function(){
+	$(this).keyup(function(){
+		if($("#username").val().trim().length<4){
+			$("#error").remove();
+			$(this).append("<span id='error' >嘿傻逼,用户名怎么长度小于3&nbsp;&nbsp;现在长度:"+$("#username").val().trim().length+"</span>");
+			$("#error").addClass("onError");
+		}else{
+			$(this).append("<span id='error' >"+$("#username").val().trim().length+"</span>");
+			$("#error").remove();
+		}
+	});
+});
+//$("#send").trigger("MyFunction");
+$("form").submit(function(){
+	if($("#username").val().trim().length<3){
+			$("#error").remove();
+			$("#int").append("<span id='error' >嘿傻逼,用户名怎么长度小于3&nbsp;&nbsp;现在长度:"+$("#username").val().trim().length+"</span>");
+			$("#error").addClass("onError");
+			return false;
+		}else{
+			$("#error").remove();
+		}
+});
+
+/*.keydown(function(){
+	alert($(this));
+	if($(this).attr("id")=="username"&&$(this).val().trim().length<2){
+		alert(1);
+		
+		
+		$(this).append("<span style='color: red;'>嘿傻逼,用户名怎么长度小于2</span>");
+	}
+	
+	else if($(this).attr("id")=="email"&&$(this).val().trim().length>2){  
+		$(this).append("<span style='background:color; color:000;'>嘿傻逼,邮箱怎么长度小于2</span>");
+	}else if($(this).attr("id")=="personinfo"&&$(this).val().trim().length>2){
+		$(this).append("<span style='background:color; color:000;'>嘿傻逼,个人资料怎么长度小于2</span>");
+	}
+	
+	
+	
+});*/
+
+
+
+</script>
+</body>
+</html>

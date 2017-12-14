@@ -1,0 +1,12 @@
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="kz-default" extends="json-default" namespace="">
+		<action name="actionajax_*" class="com.kzxy.wed.action.actionAjax" method="{1}">
+			<result name="sfList" type="json">
+				<param name="ignoreHierarchy">true</param>
+			</result>
+		</action>
+	</package>
+</struts>
