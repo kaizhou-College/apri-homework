@@ -1,0 +1,9 @@
+在数库中新建表product表，有如下列
+pid  number(11) 主键
+pname varchar(20)
+price number(11,2)
+pinfo varchar(200)
+
+用hibernate+jsp+struts实现product的增、删、改、查操作
+
+

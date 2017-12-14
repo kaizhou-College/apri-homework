@@ -1,0 +1,90 @@
+一、Hibernate的介绍
+java语言在编写项目时总会有数据库进行交互，众所周知，
+java是面向对象的语言，操作的都是对象模型。对象模型包括封装、继承、多态等。
+数据库则为关系模型，反映的是表与表之间的关系。关系模型包括表、主键、外键等
+我们在编写程序的时候需要将对象模型和关系模型进行转换，通常有两种方式进行转换。
+
+1.手动编写JDBC代码进行增、删、改、查(CRUD)的操作。
+  这种方式代码繁琐、重复、耗时耗力
+2.使用ORM(Object Relation Mapping)框架来解决，如Hibernate
+  这种方式既方便又快捷
+
+Hibernate优点:
+1.Hibernate是一个基于JDBC的主流的持久化框架、很式程度上简化了DAO层的
+  的编码工作，对JDBC访问数据库做了封装、简化了很多的重复的代码。
+  配置灵活、将数据库的连接信息都放在配置文件中，支持各种数据库的操作，
+  可以方便的处理一对一、一对多、多对多等各种复杂的关系。
+
+2.Hibernate使用是反射机制，增强程序的透明性。
+
+持久化
+将程序中数据在瞬时状态和持久状态间转换的机制
+JDBC 就是一种持久化机制
+将程序数据直接保存成文本文件也是持久化机制的一种实现
+
+持久化层
+在分层结构中，DAO 层（数据访问层）也被称为持久化层
+持久化完成的操作
+将对象保存到关系型数据库中
+将关系型数据库中的数据读取出来
+以对象的形式封装
+
+
+二、Hibernate应用
+1.添加hibernate 的jar包(注意做配置)
+  右键--->buildPath -->Config Build Path-->libraries--->add....
+
+2.将hibernate.cfg.xml文件放入到src目录下。
+
+
+		<!-- 定义数据库操作的连接字符 串 -->
+		<!-- 驱动类 -->
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<!-- 连接字符串:url -->
+		<property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=hibernate</property>
+		<!-- 用户名 -->
+		<property name="connection.username">sa</property>
+		<!-- 密码 -->
+		<property name="connection.password">123</property>
+		<!--定义数据库方方-->
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<!-- 在控制台显示SQL语句 -->
+		<property name="show_sql">true</property>
+		<!-- 在控制台格式化显示SQL语句 -->
+		<property name="format_sql">true</property>
+
+
+3.定义实体类和映射文件
+  (1).确保数库中的表是主键、标识列
+  (2).创建实体类、实体类的映射文件
+
+
+4.数据库CRUD
+  操作流程:
+(1).获取配置文件
+(2).创建SessionFactory
+(3).打开Session
+(4).开启事务
+(5).执行CRUD操作
+(6).事务提交或回滚
+(7).关闭Session
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
