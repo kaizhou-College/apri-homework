@@ -1,0 +1,10 @@
+create table t_menu
+(
+  menu_id number primary key ,
+  menu_name varchar2(50) not null,
+  position number,
+  menu_state number not null check(menu_state in (0,1)),
+  url varchar2(1024),
+  super_menu_id number references t_menu(menu_id)
+)
+super_munu_id是外键 关联menuid

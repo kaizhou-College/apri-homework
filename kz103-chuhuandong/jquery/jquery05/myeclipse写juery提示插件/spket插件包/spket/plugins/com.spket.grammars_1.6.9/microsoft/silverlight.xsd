@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.microsoft.com/client/2007"
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="Canvas" type="xs:string"/>
+</xs:schema>

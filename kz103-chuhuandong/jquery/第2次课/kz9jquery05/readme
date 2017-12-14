@@ -1,0 +1,46 @@
+一，百度地图  微信  腾讯   新浪    支付宝  js pai的开放平台
+
+二，easyUI框架
+	jQuery EasyUI是一组基于jQuery的UI插件集合体，
+	而jQuery EasyUI的目标就是帮助web开发者更轻松的打造出功能丰富并且美观的UI界面。开发者不需要编写复杂的javascript，也不需要对css样式有深入的了解，
+	开发者需要了解的只有一些简单的html标签。
+三，怎么样用？
+	1， 参看文档
+	2，
+	
+[{    
+    "id":1,    
+    "text":"文件夹1",    
+    "iconCls":"icon-save",    
+    "children":[{    
+       "text":"File1", 
+       //state:closed是目录
+        "state":"closed",
+        "checked":true    
+    },{    
+        "text":"Books",    
+        "state":"open",    
+        "attributes":{    
+            "url":"/demo/book/abc",    
+            "price":100    
+        },  
+        //带有children属性表示是目录
+        "children":[{    
+            "text":"PhotoShop",    
+            "checked":true   
+        },{    
+            "id": 8,    
+            "text":"Sub Bookds",    
+            "state":"closed" 
+        }]    
+    }]    
+},{    
+    "text":"Languages",    
+    "state":"closed",    
+    "children":[{  
+        "text":"Java", 
+         "state":"closed" 
+    },{    
+        "text":"C#"   
+    }]    
+}]

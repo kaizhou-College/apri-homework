@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT about-box (about-image*, about-version, about-text*)>
+<!ENTITY % aboutAttrs
+"
+	color CDATA #IMPLIED
+	colour CDATA #IMPLIED
+	data CDATA #IMPLIED
+	hOffset CDATA #IMPLIED
+	vOffset CDATA #IMPLIED
+	font CDATA #IMPLIED
+	size CDATA #IMPLIED
+	style CDATA #IMPLIED
+	url CDATA #IMPLIED
+"
+>
+<!ENTITY % commEvent
+"
+	onContextMenu CDATA #IMPLIED
+	onDragDrop CDATA #IMPLIED
+	onDragEnter CDATA #IMPLIED
+	onDragExit CDATA #IMPLIED
+	onMouseDown CDATA #IMPLIED
+	onMouseEnter CDATA #IMPLIED
+	onMouseExit CDATA #IMPLIED
+	onMouseMove CDATA #IMPLIED
+	onMouseUp CDATA #IMPLIED
+	onMultiClick CDATA #IMPLIED
+"
+>
+<!ENTITY % keyEvent
+"
+	onKeyUp CDATA #IMPLIED
+	onKeyDown CDATA #IMPLIED
+"
+>
+<!ENTITY % viewAttrs
+"
+	name CDATA #IMPLIED
+	hAlign (left|right|center) 'left'
+	height CDATA #IMPLIED
+	hOffset CDATA #IMPLIED
+	opacity CDATA #IMPLIED
+	visible (true|false) 'true'
+	vAlign (top|bottom|center) 'top'
+	vOffset CDATA #IMPLIED
+	width CDATA #IMPLIED
+	window CDATA #IMPLIED
+	zOrder CDATA #IMPLIED
+">
+<!ELEMENT about-text (shadow?)>
+<!ATTLIST about-text
+	%aboutAttrs;
+>
+<!ELEMENT about-version (shadow?)>
+<!ATTLIST about-version
+	%aboutAttrs;
+>
+<!ELEMENT about-image (#PCDATA)>
+<!ELEMENT shadow EMPTY>
+<!ATTLIST shadow
+	color CDATA #IMPLIED
+	colour CDATA #IMPLIED
+	hOffset CDATA #IMPLIED
+	opacity CDATA #IMPLIED
+	vOffset CDATA #IMPLIED
+>
+<!ELEMENT action (#PCDATA)>
+<!ATTLIST action
+	file CDATA #IMPLIED
+	interval CDATA #IMPLIED
+	trigger (onGainFocus|onIdle|onKeyDown|onKeyUp|onKonsposeActivated|onKonsposeDeactivated|onLoad|onLoseFocus|onMouseDown|onMouseEnter|onMouseExit|onMouseUp|onPreferencesChanged|onRunCommandInBgComplete|onScreenChanged|onTellWidget|onTimer|onUnload|onWakeFromSleep|onWillChangePreferences|onYahooLoginChanged) #IMPLIED
+>
+<!ELEMENT frame (contextMenuItems?, scrollbar?, (frame|image|text|textarea)*)>
+<!ATTLIST frame
+	%viewAttrs;
+	%commEvent;
+	onMouseWheel CDATA #IMPLIED
+	hLineSize CDATA #IMPLIED
+	hScrollBar CDATA #IMPLIED
+	scrollX CDATA #IMPLIED
+	scrollY CDATA #IMPLIED
+	vLineSize CDATA #IMPLIED
+	vScrollBar CDATA #IMPLIED
+>
+<!ELEMENT contextMenuItems (menuItem+)>
+<!ELEMENT menuItem EMPTY>
+<!ATTLIST menuItem
+	name CDATA #IMPLIED
+	title CDATA #IMPLIED
+	checked (true|false) 'false'
+	enabled (true|false) 'true'
+	onSelect CDATA #IMPLIED
+>
+<!ELEMENT hotkey EMPTY>
+<!ATTLIST hotkey
+	name CDATA #IMPLIED
+	key (Backspace|Clear|Delete|DownArrow|End|Enter|Escape|F1|F2|F3|F4|F5|F6|F7|F8|F9|F10|F11|F12|F13|F14|F15|F16|ForwardDelete|Help|Home|Insert|LeftArrow|PageDown|PageUp|Pause|PrintScreen|Return|RightArrow|ScrollLock|Space|Tab|UpArrow) #IMPLIED
+	modifier (alt|command|control|option|shift) #IMPLIED
+	%keyEvent;
+>
+<!ELEMENT image (contextMenuItems?)>
+<!ATTLIST image
+	alignment (left|right|center) 'left'
+	%viewAttrs;
+	%commEvent;
+	clipRect CDATA #IMPLIED
+	colorize CDATA #IMPLIED
+	fillMode (tile|stretch) "stretch"
+	hRegistrationPoint CDATA #IMPLIED
+	hslAdjustment CDATA #IMPLIED
+	hslTinting CDATA #IMPLIED
+	loadingSrc CDATA #IMPLIED
+	missingSrc CDATA #IMPLIED
+	onImageLoaded CDATA #IMPLIED
+	remoteAsync (true|false) 'false'
+	rotation CDATA #IMPLIED
+	src CDATA #IMPLIED
+	srcHeight CDATA #IMPLIED
+	srcWidth CDATA #IMPLIED
+	tileOrigin (topLeft|topRight|bottomLeft|bottomRight) 'topLeft'
+	tooltip CDATA #IMPLIED
+	tracking (opacity|rectangle) #IMPLIED
+	useFileIcon (true|false) 'false'
+	vRegistrationPoint CDATA #IMPLIED
+>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT option (#PCDATA)>
+<!ELEMENT optionValue (#PCDATA)>
+<!ELEMENT preference (extension*, option*, optionValue*)>
+<!ATTLIST preference
+	name CDATA #IMPLIED
+	defaultValue CDATA #IMPLIED
+	description CDATA #IMPLIED
+	directory CDATA #IMPLIED
+	group CDATA #IMPLIED
+	hidden (true|false) 'false'
+	kind (files|folders|both) #IMPLIED
+	maxLength CDATA #IMPLIED
+	minLength CDATA #IMPLIED
+	notSaved (true|false) #IMPLIED
+	secure (true|false) 'false'
+	style CDATA #IMPLIED
+	ticks CDATA #IMPLIED
+	tickLabel CDATA #IMPLIED
+	title CDATA #IMPLIED
+	type (checkbox|color|font|hotkey|popup|selector|slider|text) #IMPLIED
+	value CDATA #IMPLIED
+>
+<!ELEMENT preferenceGroup EMPTY>
+<!ATTLIST preferenceGroup
+	name CDATA #IMPLIED
+	icon CDATA #IMPLIED
+	order CDATA #IMPLIED
+	title CDATA #IMPLIED
+>
+<!ELEMENT scrollbar EMPTY>
+<!ATTLIST scrollbar
+	%viewAttrs;
+	autoHide (true|false) 'false'
+	max CDATA #IMPLIED
+	min CDATA #IMPLIED
+	onValueChanged CDATA #IMPLIED
+	orientation (vertical|horizontal) 'vertical'
+	pageSize CDATA #IMPLIED
+	thumbColor CDATA #IMPLIED
+	value CDATA #IMPLIED
+>
+<!ELEMENT security (api)+>
+<!ELEMENT api (#PCDATA)>
+<!ATTLIST api
+	name CDATA #IMPLIED
+>
+<!ENTITY % textAttrs
+"
+	alignment (left|right|center) 'left'
+	bgColor CDATA #IMPLIED
+	bgOpacity CDATA #IMPLIED
+	color CDATA #IMPLIED
+	data CDATA #IMPLIED
+	font CDATA #IMPLIED
+	size CDATA #IMPLIED
+	style CDATA #IMPLIED
+	tooltip CDATA #IMPLIED
+"
+>
+<!ELEMENT text (contextMenuItems?, shadow?)>
+<!ATTLIST text
+	%viewAttrs;
+	%commEvent;
+	%keyEvent;
+	%textAttrs;
+	truncation (none|center|end) 'none'
+>
+<!ELEMENT textarea (contextMenuItems?)>
+<!ATTLIST textarea
+	%viewAttrs;
+	%commEvent;
+	%keyEvent;
+	%textAttrs;
+	columns CDATA #IMPLIED
+	editable (true|false) 'true'
+	lines CDATA #IMPLIED
+	onGainFocus CDATA #IMPLIED
+	onKeyPress CDATA #IMPLIED
+	onLoseFocus CDATA #IMPLIED
+	secure (true|false) 'false'
+	scrollbar (true|false) 'true'
+	spellcheck (true|false) 'true'
+	thumbColor CDATA #IMPLIED
+>
+<!ELEMENT timer EMPTY>
+<!ATTLIST timer
+	name CDATA #IMPLIED
+	interval CDATA #IMPLIED
+	ticking (true|false) 'false'
+	onTimerFired CDATA #IMPLIED
+>
+<!ELEMENT widget (about-box, security?, (action|timer|hotkey|window|frame|image|preference|preferenceGroup)*)>
+<!ATTLIST widget
+	name CDATA #IMPLIED
+	author CDATA #IMPLIED
+	company CDATA #IMPLIED
+	copyright CDATA #IMPLIED
+	debug (errors|on|off|verbose) 'errors'
+	defaultTracking (opacity|rectangle) 'opacity'
+	image CDATA #IMPLIED
+	minimumVersion CDATA #IMPLIED
+	option (allowCustomObjectAttributes|dontRememberWindowPosition|allowArbitraryXML) #IMPLIED
+	requiredPlatform (macintosh|windows) #IMPLIED
+	version CDATA #IMPLIED
+>
+<!ELEMENT window (contextMenuItems?, scrollbar?, (image|text|textarea|frame)*)>
+<!ATTLIST window
+	alignment (left|right|center) 'left'
+	name CDATA #IMPLIED
+	height CDATA #IMPLIED
+	hOffset CDATA #IMPLIED
+	level (konspose|desktop|below|normal|topmost|floating) 'normal'
+	onFirstDisplay CDATA #IMPLIED
+	onGainFocus CDATA #IMPLIED
+	onLoseFocus CDATA #IMPLIED
+	onMultiClick CDATA #IMPLIED
+	opacity CDATA #IMPLIED
+	shadow (true|false) 'false'
+	title CDATA #IMPLIED
+	visible (true|false) 'true'
+	vOffset CDATA #IMPLIED
+	width CDATA #IMPLIED
+>

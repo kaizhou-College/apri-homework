@@ -1,0 +1,13 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="kzdefault" namespace="/" extends="json-default">
+		<action name="user_*" class="com.kz.action.UserAction" method="{1}">
+			<result type="json" name="login_success">
+				<!-- 不会把继承的父类的属性也转为json -->
+				<param name="ignoreHierarchy">true</param>
+			</result>
+		</action>
+	</package>
+</struts>

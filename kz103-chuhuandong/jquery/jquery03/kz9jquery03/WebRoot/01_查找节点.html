@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>01_查找节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+	</head>
+	<body>
+		 <ul>
+		 	 <li id="bj"></li>
+			 <li id="tj" name="tianjin">天津</li>
+			
+		 </ul>
+	</body>
+    <script type="text/javascript">
+		/*
+			text();				----得到值
+			text(参数1)			----设置值
+			html()				----得到值
+			html(参数1)			----设置值
+			css(参数)			----得到值
+			css(参数1,参数2)	----设置值
+			attr(参数)			----得到值
+			attr(参数1,参数2);	----设置值
+		
+		*/
+	
+//			/元素节点的查找
+			//$("#tj").attr("name","二狗子");
+			var value = $("#tj").attr("name");
+			
+			alert(value);
+			//怎么查找元素节点的属性节点
+//			/文本节点查找  text();
+			$("#tj").text("天津2222");
+			alert($("#tj").text());
+			//删除属性节点
+			$("#tj").removeAttr("name");
+			alert($("#tj").attr("name"));
+			//设置属性节点
+			$("#tj").attr("name","二狗子");
+			
+			
+			
+	
+		
+    </script>
+   
+</html>
+
+
+

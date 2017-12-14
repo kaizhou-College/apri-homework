@@ -1,0 +1,78 @@
+一，javaScript的简单复习（jquery框架）
+【1，javaScript创建对象的几种方式】
+	1)new
+	2)function 既是一个函数 也是一个对象 同时还是构造函数
+	3)json：
+		json(JavaScript Object Notation, JS 对象标记)
+		是一种轻量级的数据交换格式
+		var a = {"name":"二狗子","age":12};  json对象
+		var arrObj = [{"name":"二狗子","age":12},{"sex":"男"}]
+【2，prototype:原型链】
+1）私有属性方法------定义在function中的
+	function Student(){
+		var name;//私有变量
+		var getName = function(){//私有方法
+			alert(this.name);
+		}
+	}
+	
+2）静态的属性和方法--动态添加的属性和方法
+	function Student(){}
+	//静态属性
+	Student.name = " 三狗子";
+	Student.getName = function(){
+		alert(this.name);
+	}
+	alert(Student.name);//三狗子
+	var s = new Student();
+	alert(s.name);//undefined
+3)实例属性和方法------通过this定义在function的属性和方法
+	function Student(){
+		this.name = "四狗子";
+		this.getName= function(){
+			alert(this.name);
+		}
+	}	
+	alert(Student.name);//undefined
+	
+	var s = new Student();
+	alert(s.name);//四狗子
+	s.getName();//四狗子
+
+4)原型链方法-----定义在prototype原型上的方法
+	function Student(){
+		this.name = "五狗子";//实例属性
+	}
+	//原型链方法----被所有对象共享
+	Student.prototype.getName= function(){
+		alert(this.name);
+	}
+	
+	var s = new Student();
+	s.getName();//原型链方法
+	
+总结：所有实例都有的属性和方法定义原型方法
+如果要求每一个实例属性和方法不同就定义实例方法。
+	
+	var s1 = new Student();
+	s1.getName();//原型链方法
+
+=========================================
+【3）this,callback】
+
+
+【4)闭包：函数外部需要访问函数内部的变量和函数！】
+	1）匿名函数自调用
+	2）实现js继承
+
+【作业：ajax的优化：】
+1，必须要既能post请求也能处理get请求，而且必须带参数！！
+2, 写两个版本：一种是传多个参数，一种是传json的
+3，把上课的案例自己敲一遍！
+
+
+
+
+
+	
+	
