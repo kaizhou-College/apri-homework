@@ -1,0 +1,12 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="yy" namespace="/" extends="json-default">
+		<action name="Province_*" class="yy.web.action.ProvinceAction"  method="{1}" >
+			<result name="query_success">/index.jsp</result>
+			<result type="json" name="byid_success"></result>
+			<result type="json" name="bycid_success"></result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>03_内部插入节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+	</head>
+	 
+	<body>
+		 <ul id="city">
+		 	 <li id="bj" name="beijing">北京</li>
+			 
+			 <li id="tj" name="tianjin">天津</li>
+			 <li id="cq" name="chongqing">重庆</li>
+			 
+		 </ul>
+		 
+		 
+		  <ul id="love">
+		 	 <li id="fk" name="fankong">反恐</li>
+			 <li id="xj" name="xingji">星际</li>
+		 </ul>
+		
+		<div id="foo1">Hello1</div> 
+       
+	</body>
+<script type="text/javascript">	
+//			向每个匹配的元素的内部的结尾处追加内容
+			//$("#bj").append($("#fk"));
+//:将每个匹配的元素追加到指定的元素中的内部结尾处
+//			prepend(content):向每个匹配的元素的内部的开始处插入内容
+			//$("#fk").appendTo($("#bj"));
+	//prependTo(content) //:将每个匹配的元素插入到指定的元素内部的开始处
+	//$("#bj").prepend($("#fk"));
+	$("#fk").prependTo($("#bj"));
+	
+</script>
+   
+</html>
+
+
+

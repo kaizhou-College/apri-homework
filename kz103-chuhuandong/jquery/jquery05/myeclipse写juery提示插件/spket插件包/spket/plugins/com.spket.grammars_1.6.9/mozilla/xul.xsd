@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	targetNamespace="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+	<xs:element name="dialog" type="xs:string"></xs:element>
+	<xs:element name="overlay" type="xs:string"></xs:element>
+	<xs:element name="window" type="xs:string"></xs:element>
+</xs:schema>

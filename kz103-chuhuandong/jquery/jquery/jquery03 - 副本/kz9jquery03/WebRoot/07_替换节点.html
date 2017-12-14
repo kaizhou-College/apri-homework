@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>07_替换节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+	</head>
+	<body>
+	    <p>段落</p>
+		<p>段落</p>
+		<p>段落</p>
+		<button>保存</button>
+	</body>
+<script type="text/javascript">
+		// 将所有匹配的元素都替换为指定的 HTML 或 DOM 元素
+		//$("p").replaceWith("<span>你被我替换了</span>");
+//
+		$("<span>你被我替换了</span>").replaceAll($("button"));
+		//$("<span>你被我替换了</span>").replaceAll($("p"));
+
+</script>
+</html>
+
+
+

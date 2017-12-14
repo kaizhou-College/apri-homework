@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+		<title>关于元素隐藏和显示</title>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#userMenu").click(function(){
+					$("tr[id^='userMenu']").toggle();
+				});
+				$("#categoryMenu").click(function(){
+					$("tr[id^='categoryMenu']").toggle();
+				});
+				$("#newsMenu").click(function(){
+					$("tr[id^='newsMenu']").toggle();
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+			<table width="100%" border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td valign="top">
+					<table width="139" border="0" align="center" cellpadding="0"
+						cellspacing="0">
+						<tr>
+							<td class="lefttitle" colspan="2">
+								<a id="userMenu" href="#" class="leftlink3">用户管理</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr id="userMenuItem1">
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" id="one">
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a href="user/addUser.jsp" class="leftlink" target="content">用户新增</a>
+										</td>
+									</tr>
+									<tr>
+										<td height="1" colspan="2" bgcolor="acc1de"></td>
+									</tr>
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a
+												href="../doFindAllUser.do?pageRecord=10&opt=doFindAllUser&forward=list"
+												class="leftlink" target="content">用户查询</a>
+										</td>
+									</tr>
+									<tr>
+										<td height="1" colspan="2" bgcolor="acc1de"></td>
+									</tr>
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a
+												href="user/updateUserPwd.jsp?user.userName=${sessionScope['com.yxsoft.company.user.entity.User']}"
+												class="leftlink" target="content">密码修改</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr id="userMenuItem2">
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr>
+							<td class="lefttitle" colspan="2">
+								<a id="categoryMenu" href="#" class="leftlink3">栏目管理</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr id="categoryMenuItem1">
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a href="category/addCategory.jsp" class="leftlink"
+												target="content">栏目新增</a>
+										</td>
+									</tr>
+									<tr>
+										<td height="1" colspan="2" bgcolor="acc1de"></td>
+									</tr>
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a
+												href="../doFindAllCategory.do?pageRecord=10&opt=doFindAllCategory&forward=list"
+												class="leftlink" target="content">栏目查询</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr id="categoryMenuItem2">
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr>
+							<td class="lefttitle" colspan="2">
+								<a id="newsMenu" href="#" class="leftlink3">新闻管理</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr id="newsMenuItem1">
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a href="../doPreparedInsertUser.do?opt=doPreparedInsertUser"
+												class="leftlink" target="content">新闻新增</a>
+										</td>
+									</tr>
+									<tr>
+										<td height="1" colspan="2" bgcolor="acc1de"></td>
+									</tr>
+									<tr>
+										<td width="10">
+											<img src="images/arrow_blue.gif">
+										</td>
+										<td>
+											<a
+												href="../doFindAllCategory.do?pageRecord=10&opt=doFindAllCategory&forward=list"
+												class="leftlink" target="content">栏目查询</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr id="newsMenuItem2">
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+
+
+						<tr>
+							<td class="lefttitle" colspan="2">
+								系统日志
+							</td>
+						</tr>
+						<tr>
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr>
+							<td class="lefttitle" colspan="2">
+								<a href="service_pos.htm" class="leftlink3">安全退出</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="1" colspan="2" bgcolor="acc1de"></td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td class="lefttitle">
+								&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

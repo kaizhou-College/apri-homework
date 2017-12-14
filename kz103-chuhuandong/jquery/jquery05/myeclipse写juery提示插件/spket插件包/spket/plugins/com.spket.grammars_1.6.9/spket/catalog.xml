@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+	"http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+	<uri name="http://www.mozilla.org/xbl" uri="xbl.dtd" />
+	<uri name="http://www.spket.com/kon" uri="kon.dtd" />
+	<uri name="http://www.w3.org/1999/02/22-rdf-syntax-ns#" uri="rdf.dtd" />
+	<uri name="http://www.mozilla.org/rdf/chrome#" uri="chrome.xsd" />
+	<uri name="http://www.mozilla.org/2004/em-rdf#" uri="install.dtd" />
+	
+	<uri name="http://schemas.microsoft.com/winfx/2006/xaml" uri="xaml.xsd" />
+</catalog>

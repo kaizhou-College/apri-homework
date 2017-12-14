@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.spket.ui" image="spket.png" label="%feature.name" provider-name="%provider.name" version="1.6.23">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://www.agpad.com/update"/>
+   </url>
+
+   <requires>
+      <import match="greaterOrEqual" plugin="org.apache.xerces" version="2.8.0"/>
+   </requires>
+
+	<includes id="com.spket.sted" version="1.6.23"/>
+    
+  <plugin download-size="0" id="com.spket.as.core" install-size="0" unpack="false" version="1.6.17"/>
+
+   <plugin download-size="0" fragment="true" id="com.spket.awt" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.dtd" install-size="0" unpack="false" version="1.6.19"/>
+
+   <plugin download-size="0" id="com.spket.extjs" install-size="0" unpack="false" version="1.6.17"/>
+
+   <plugin download-size="0" id="com.spket.grammars" install-size="0" version="1.6.9"/>
+
+   <plugin download-size="0" id="com.spket.js" install-size="0" unpack="false" version="1.6.23"/>
+
+   <plugin arch="x86" download-size="0" id="com.spket.js.debug" install-size="0" os="win32" unpack="false" version="1.6.16" ws="win32"/>
+
+   <plugin download-size="0" id="com.spket.js.xpc" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.laszlo" install-size="0" unpack="false" version="1.6.19"/>
+
+   <plugin download-size="0" id="com.spket.mime" install-size="0" unpack="false" version="1.6.19"/>
+
+   <plugin download-size="0" id="com.spket.mxml" install-size="0" unpack="false" version="1.6.15"/>
+
+   <plugin download-size="0" id="com.spket.svg" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.wpfe" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.xml" install-size="0" unpack="false" version="1.6.19"/>
+
+   <plugin download-size="0" id="com.spket.xul" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.ywt" install-size="0" unpack="false" version="1.6.6"/>
+
+   <plugin download-size="0" id="com.spket.yuic" install-size="0" unpack="false" version="1.6.18"/>
+
+</feature>

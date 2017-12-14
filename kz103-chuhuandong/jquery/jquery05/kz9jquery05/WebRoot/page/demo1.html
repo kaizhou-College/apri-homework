@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Panel</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css"
+			href="../easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css"
+			href="../easyui/themes/icon.css">
+		<!--引入Jquery主文件-->
+		<script type="text/javascript" src="../easyui/jquery.min.js">
+</script>
+		<!--引入JqueryEasyUI主文件-->
+		<script type="text/javascript" src="../easyui/jquery.easyui.min.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		$("#dd").draggable({
+			proxy: function(source){
+				var p = $('<div style="border:1px solid red;width:200px"></div>');
+				p.html($(source).html()).appendTo('body');
+				return p;
+			}
+			
+			
+		});
+	})
+	
+</script>
+	</head>
+
+	<body>
+		<div id="dd" class="easyui-draggable" data-options="handle:'#title',revert:false,cursor:'help',deltaX:100,deltaY:100,disabled:true"
+			style="width: 300px; height: 300px; background:green">
+			<div id="title" style="background: #ccc;">
+				title
+			</div>
+		</div>
+
+	</body>
+</html>

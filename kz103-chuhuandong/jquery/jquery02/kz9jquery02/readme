@@ -1,0 +1,18 @@
+
+根据js的一些语法特征，对一些功能进行封装，实现面向对象
+js不是一门面向对象的语言。
+1，jQuery框架
+	jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。
+
+2，如何使用jQuery
+1)  导入jquery包
+	(function( window, undefined ) {
+		var jQuery = function( selector, context ) {
+		
+		}
+		window.jQuery = window.$ = jQuery;
+	})(window);
+	主体：函数子调用
+2）jquery对象认识
+
+	
