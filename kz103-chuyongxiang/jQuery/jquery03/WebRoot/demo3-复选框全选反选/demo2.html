@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+ <!--   引入jQuery -->
+<script src="../js/jquery-1.4.2.min.js" type="text/javascript"></script>
+ <script>
+ $(document).ready(function(){
+	 //取消一个复选框则取消全选
+	  $("input:[name=items]").click(function(){
+		var num1=$("input:[name=items]").length;
+		var num2=$("input:[name=items]:checked").length;
+		if(num1!=num2){
+			 $("#CheckedAll").removeAttr("checked");
+		}else{
+			 $("#CheckedAll").attr("checked",true)
+		}
+	 });
+	  
+ 
+	 //全选、全不选
+	  $("#CheckedAll").click(function(){
+		//  alert($("#CheckedAll").attr("checked"))
+		  if($("#CheckedAll").attr("checked")==true){
+		//	  alert("有东西");
+			   $("input:[name=items]").attr("checked","true"); 
+		  }else{
+		//	  alert("没东西");
+			   $("input:[name=items]").removeAttr("checked");
+		  }
+		});
+	 
+	 $("#send").click(function(){
+ 		var text="";
+		$("input:[name=items]").each(function(){
+			 if($(this).attr("checked")==true){
+				 text+=$(this).val();
+			}
+		});
+       alert(text);
+ 	});
+	
+	});
+</script>
+</head>
+<body>
+
+<form>
+   你爱好的运动是？<input type="checkbox" id="CheckedAll" />全选/全不选<br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+	<input type="checkbox" name="items" value="篮球"/>篮球
+	<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+	<input type="checkbox" name="items" value="乒乓球"/>乒乓球<br/>
+	<input type="button" id="send" value="提　交"/> 
+</form>
+
+</body>
+</html>
+ 

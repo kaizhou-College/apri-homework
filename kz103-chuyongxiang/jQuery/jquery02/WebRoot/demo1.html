@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全选、反选</title>
+ <!--   引入jQuery -->
+ <script src="js/jquery-1.4.2.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ 
+ 
+ $(document).ready(function(){
+	 
+	 //全选
+	 $("#CheckedAll").click(function(){
+		 $("input:checkbox").attr("checked","true"); 
+		 });
+	 
+	  //全不选
+	 $("#CheckedNo").click(function(){
+		 $("input:checkbox").removeAttr("checked");
+		 });
+	  
+	  //反选
+	  $("#CheckedRev").click(function(){
+	  	$("input:checkbox").each(function () {  
+             $(this).attr("checked", !$(this).attr("checked"));  
+             });
+                });  
+	 
+	  
+	 //拿到值提交
+	$("#send").click(function(){
+		
+	//第一种方法
+ 	//	text = $("input:checkbox:checked").map(function(index,z) {
+    //        return $(z).val();
+    //   }).get().join(',');
+ 	
+ 		
+ 	//第二种方法
+ 	var text="";
+		$("input:checkbox").each(function(){
+			 if($(this).attr("checked")==true){
+				 text+=$(this).val();
+			}
+		});
+       alert(text);
+ 	});
+	
+	
+	
+ });
+</script>
+  
+  
+</head>
+<body>
+<form method="post" action="">
+   你爱好的运动是？
+   <br/>
+    <input type="checkbox" name="items"  value="足球"/>足球
+	<input type="checkbox" name="items"  value="篮球"/>篮球
+	<input type="checkbox" name="items"  value="羽毛球"/>羽毛球
+	<input type="checkbox" name="items"  value="乒乓球"/>乒乓球
+   <br/>
+    <input type="button" id="CheckedAll" value="全　选"/>
+    <input type="button" id="CheckedNo" value="全不选"/>
+    <input type="button" id="CheckedRev" value="反　选"/> 
+
+	<input type="button" id="send" value="提　交"/> 
+</form>
+</body>
+</html>
