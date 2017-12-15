@@ -1,0 +1,17 @@
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 使struts2表单的时候，采用主题：simple -->
+	
+	<package name="kzdefault" namespace="/" extends="json-default">
+	
+		<action name="ajax_*" class="web.AjaxAction" method="{1}">
+			<result name="ok" type="json">
+				<param name="ignoreHierarchy">true</param>
+			</result>
+			
+		</action>	
+		
+	</package>
+</struts>

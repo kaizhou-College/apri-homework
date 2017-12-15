@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!-- 数据库驱动 -->
+	<property name="connection.driver_class">
+		oracle.jdbc.driver.OracleDriver
+	</property>
+	<!-- 数据库协议 -->
+	<property name="connection.url">
+		jdbc:oracle:thin://127.0.0.1:1521:orcl
+	</property>
+	<!-- 数据库的用户名 -->
+	<property name="connection.username">scott</property>
+	<!-- 数据库的密码 -->
+	<property name="connection.password">orcl</property>
+	
+	<!-- 方言 -->
+	<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+
+	
+	<property name=""></property>
+	<!-- 加载映射文件 -->
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<mapping resource="entity/Product.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

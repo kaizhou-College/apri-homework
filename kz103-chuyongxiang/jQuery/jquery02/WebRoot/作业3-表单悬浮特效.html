@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		 <link href="css/main.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("table.dataGrid tr:gt(0)").hover(function(){
+					$(this).addClass("moveover");
+					//$(this).removeClass("moveout");
+					//$(this).attr("class","moveover")
+				},function(){
+					//$(this).addClass("moveout");
+					$(this).removeClass("moveover");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<table class="dataGrid">
+			<tr class="dataGridHead">
+				<td>
+					书号
+				</td>
+				<td>
+					书名
+				</td>
+				<td>
+					价格
+				</td>
+				<td>
+					出版社
+				</td>
+				<td>
+					简介
+				</td>
+			</tr>
+			<tr class="moveout">
+				<td>
+					1
+				</td>
+				<td>
+					精通struts
+				</td>
+				<td>
+					50
+				</td>
+				<td>
+					电子工业出版社
+				</td>
+				<td>
+					学习struts必备
+				</td>
+			</tr>
+			<tr class="moveout">
+				<td>
+					2
+				</td>
+				<td>
+					精通hibernate
+				</td>
+				<td>
+					50
+				</td>
+				<td>
+					电子工业出版社
+				</td>
+				<td>
+					好书
+				</td>
+			</tr>
+			<tr class="moveout">
+				<td>
+					3
+				</td>
+				<td>
+					spring宝典
+				</td>
+				<td>
+					50
+				</td>
+				<td>
+					电子工业出版社
+				</td>
+				<td>
+					一般般
+				</td>
+			</tr>
+			<tr class="moveout">
+				<td>
+					4
+				</td>
+				<td>
+					精通tomcat
+				</td>
+				<td>
+					50
+				</td>
+				<td>
+					电子工业出版社
+				</td>
+				<td>
+					好书
+				</td>
+			</tr>
+			<tr class="moveout">
+				<td>
+					5
+				</td>
+				<td>
+					精通struts2
+				</td>
+				<td>
+					50
+				</td>
+				<td>
+					电子工业出版社
+				</td>
+				<td>
+					一般般
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
