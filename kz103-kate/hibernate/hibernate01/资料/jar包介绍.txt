@@ -1,0 +1,86 @@
+Hibernate3.jar            这个是hibernate最主要的jar包
+
+ 
+
+ant-1.63.jar      Ant 的核心包,在构建Hibernate 时会用到 
+
+
+antlr-2.7.5H3.jar       语言转换工,Hibernate利用它实现 HQL 到 SQL的转换 
+
+
+asm.jar/asm-attrs.jar         ASM 字节转换库 
+
+
+c3p0-0.8.5.2.jar             C3PO JDBC 连接池工具 
+
+
+cglib-2.1.jar             高效的代码生成工具, Hibernate用它在运行时扩展 Java类和实现 Java 接口 
+
+
+commons-collections-2.1.1.jar        Apache 的工具集,用来增强Java对集合的处理能力 
+
+commons-logging-1.0.4.jar            Apache 软件基我组所提供的日志工具 
+
+concurrent-1.3.2.jar         线程同步工具,在使用JBoss 的树状缓存时需要用到 
+
+
+connector.jar             用连接多个应用服务器的标准连接器 
+
+
+dom4j-1.6.jar                dom4j XML 解析器 
+
+
+ehcache-1.1.jar                  缓存工具.在没有提供其他缓存工具时,这个缓存工具是必不可少的 
+
+
+jaas.jar        标准的 Java 权限和认证服务包 
+
+
+jaxen-1.1-beta-4.jar              通用的 XPath 处理引擎 
+
+
+jboss-cache.jar         JBoss 的一种树状缓存实现工具 
+
+
+jboss-common.jar             Jboss 的基础包,在使用 JBoss 的树状缓存时必须有此包 
+
+
+jboss-jmx.jar              JBoss 的 JMX 实现包 
+
+
+jboss-system.jar             JBoss 的核心,包括服务器和部署引擎 
+
+
+jdbc2_0-stdext.jar               标准的 JDBC 2.0 扩展API 
+
+
+jgroups2.2.7.jar           网络通信工具包 
+
+
+jta.jar                   标准的 JAVA 事务处理接口 
+
+
+junit-3.8.1.jar                 JUnit 测试框架 
+
+
+log4.j-1.2.9.jar               log4j 库,Apache 的日志工具 
+
+
+oscache-2.1.jar                 Java 对象的缓存工具 
+
+
+proxool-0.8.3.jar                Proxool JDBC 连接池 工具 
+
+
+swarmcache-1.0rc2.jar            Hibernate 可以使用的一种缓存工具 
+
+
+versioncheck.jar               版本检查工具包,用于在构建 Hibernate 的时候检查辅助 jar 包文件的版本 
+
+
+xerces-2.6.2.jar                 SAX XML 解析器 
+
+
+xml-apis.jar                      Java语言中标准的XML 解析器 
+
+

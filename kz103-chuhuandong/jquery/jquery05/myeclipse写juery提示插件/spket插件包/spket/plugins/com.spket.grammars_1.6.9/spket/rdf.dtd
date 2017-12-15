@@ -1,0 +1,20 @@
+<!ELEMENT RDF ANY>
+<!ELEMENT Description ANY>
+<!ATTLIST Description
+	ID ID #IMPLIED
+	about CDATA #IMPLIED
+	type CDATA #IMPLIED
+	bagID CDATA #IMPLIED>
+<!ELEMENT li ANY>
+<!ATTLIST li
+	resource CDATA #IMPLIED
+	parseType (Resource|Literal) #IMPLIED>
+<!ELEMENT Seq (li*)>
+<!ATTLIST Seq
+	about CDATA #IMPLIED>
+<!ELEMENT Bag (li*)>
+<!ATTLIST Bag
+	about CDATA #IMPLIED>
+<!ELEMENT Alt (li*)>
+<!ATTLIST Alt
+	about CDATA #IMPLIED>

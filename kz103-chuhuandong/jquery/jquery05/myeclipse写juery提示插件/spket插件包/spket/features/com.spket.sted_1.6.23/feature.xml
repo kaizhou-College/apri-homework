@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.spket.sted" image="spket.png" label="%feature.name" provider-name="%provider.name" version="1.6.23">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://www.agpad.com/update"/>
+   </url>
+
+   <plugin download-size="0" id="com.spket.core" install-size="0" unpack="false" version="1.6.18"/>
+
+   <plugin download-size="0" id="com.spket.ui" install-size="0" unpack="false" version="1.6.23"/>
+
+   <plugin arch="x86" download-size="0" fragment="true" id="com.spket.scintilla.win32" install-size="0" os="win32" unpack="false" version="1.6.18" ws="win32"/>
+
+   <plugin download-size="0" id="com.spket.sted" install-size="0" unpack="false" version="1.6.18"/>
+
+   <plugin arch="x86" download-size="0" fragment="true" id="com.spket.sted.win32" install-size="0" os="win32" unpack="false" version="1.6.18" ws="win32"/>
+
+   <plugin download-size="0" fragment="true" id="com.spket.swt" install-size="0" unpack="false" version="1.6.18"/>
+
+   <plugin download-size="0" id="com.spket.theme" install-size="0" unpack="false" version="1.6.18"/>
+
+   <plugin download-size="0" id="com.spket.widget" install-size="0" unpack="false" version="1.6.18"/>
+
+   <plugin arch="x86" download-size="0" fragment="true" id="com.spket.widget.win32" install-size="0" os="win32" unpack="false" version="1.6.18" ws="win32"/>
+
+</feature>

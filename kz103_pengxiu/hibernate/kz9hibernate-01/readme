@@ -1,0 +1,53 @@
+javaEE平台开发web项目工程结构：经典的三层结构
+dao------持久层
+	-----jdbc技术进行开发(执行效率很高，开发维护效率很低【有大量的sql语句存在】)
+	-----hibernate(jdbc+反射)框架【不也不懂sql语句】
+biz------业务层
+web------web层
+	-----servlet+jsp
+	-----struts2(servlet+反射)框架
+一，什么是hibernate
+	hibernate就是一个使用jdbc+反射技术封装而成的持久层orm框架。
+二，什么是orm
+	数据库的一张表--------java中一个类
+	数据库表中的字段------java中一个类的属性
+	数据库中一行数据------java中一个类的对象
+	
+	我们往数据库中中插入一条数据，是不是就是将一个对象保存到数据库中。
+	jdbc:insert into 。。。。sql语句
+	hibernate: 保存一个对象
+	操作数据库使用面向对象的思想来进行。
+	o:Object	对象
+	r:relation	关系
+	m:mapping	映射
+	
+	orm是指对象关系映射
+	还有哪些orm框架？ myBatis ibatis
+
+	企业开发过程中比较流行的两套框架：
+		ssh--struts2+hiberate+spring		传统项目
+		ssm--spring+springMvc+myBatis		互联网项目
+			阿里，百度，搜狐.......
+			
+		1）软件公司
+			-------为客户开发软件产品
+			
+		2）互联网公司-------开发软件通过互联网进行盈利
+				阿里
+				百度
+三，怎么样使用hibernate进行开发
+	1，下载hibernate的jar包  3.2
+	2，创建java工程
+	3，导入jar包  11个(根据hibernate的文档)
+	4，orm有什么？没有什么？
+		O:Object		对象-------创建实体类
+		R:Relation		关系-------表
+		M:mapping		映射(对应关系)----配置文件
+			重要的映射：
+						1）哪个数据库  hibernate.cfg.xml
+						2）哪个表          在实体类包中定义一个：类名.hbm.xml文件
+			吴铁刚---->王鸭蛋
+			彭修------>王凤姐
+			
+	
+	

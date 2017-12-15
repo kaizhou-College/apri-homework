@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+	"http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+	<uri name="http://www.w3.org/XML/1998/namespace" uri="xml.xsd" />
+	<uri name="http://www.w3.org/1999/XSL/Transform" uri="xsl.xsd" />
+	<uri name="http://www.w3.org/2001/XInclude" uri="xinclude.xsd"/>
+	
+	<uri name="http://www.w3.org/2000/svg" uri="svg11-flat.dtd" />
+	<uri name="http://www.w3.org/1999/xhtml" uri="xhtml11-flat.dtd" />
+	
+	<group>
+		<public publicId="-//W3C//DTD XMLSCHEMA 200102//EN" uri="XMLSchema.dtd"/>
+		<uri name="http://www.w3.org/2001/XMLSchema" uri="XMLSchema.xsd"/>
+	</group>
+
+</catalog>

@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!-- 数据库驱动 -->
+	<property name="connection.driver_class">
+		oracle.jdbc.driver.OracleDriver
+	</property>
+	<!-- 数据库协议 -->
+	<property name="connection.url">
+		jdbc:oracle:thin://127.0.0.1:1521:orcl
+	</property>
+	<!-- 数据库的用户名 -->
+	<property name="connection.username">kz9</property>
+	<!-- 数据库的密码 -->
+	<property name="connection.password">kz9</property>
+	<!-- 输出hibernate发送的sql语句 -->
+	<property name="show_sql">true</property>
+	<!-- 格式化sql语句 -->
+	<property name="format_sql">true</property>
+	<!-- 加载映射文件 -->
+	<mapping resource="com/kz/entity/Users.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<!-- -->
+	<extension
+			point="org.eclipse.core.runtime.contentTypes">
+		<file-association
+			content-type="org.eclipse.core.runtime.xml"
+			file-extensions="rdf, xhtml, xsl, xsd"/>
+	</extension>
+	<extension point="org.eclipse.team.core.fileTypes">
+		<fileTypes extension="lzs" type="text"/>
+		<fileTypes extension="lzx" type="text"/>
+		<fileTypes extension="rdf" type="text"/>
+		<fileTypes extension="svg" type="text"/>
+		<fileTypes extension="xbl" type="text"/>
+		<fileTypes extension="xhtml" type="text"/>
+		<fileTypes extension="xsd" type="text"/>
+		<fileTypes extension="xsl" type="text"/>
+		<fileTypes extension="xul" type="text"/>
+		<fileTypes extension="xaml" type="text"/>
+		<fileTypes extension="mxml" type="text"/>
+	</extension>
+	<!-- -->
+	<extension point="com.spket.xml.catalog">
+		<catalog file="catalog.xml" />
+		
+		<mapper extensions="xbl" uri="http://www.mozilla.org/xbl" />
+		<mapper extensions="xul" uri="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" />
+		<mapper extensions="kon" uri="http://www.spket.com/kon" />
+		<mapper extensions="svg" uri="http://www.w3.org/2000/svg" />
+		<mapper extensions="xhtml, html" uri="http://www.w3.org/1999/xhtml" />
+		<mapper extensions="xsl" uri="http://www.w3.org/1999/XSL/Transform" />
+		<mapper extensions="xsd" uri="http://www.w3.org/2001/XMLSchema" />
+		<mapper extensions="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+		<mapper extensions="lzx" uri="http://www.laszlosystems.com/2003/05/lzx" />
+		<mapper extensions="xaml" uri="http://schemas.microsoft.com/client/2007" />
+		<mapper extensions="mxml" uri="http://www.adobe.com/2006/mxml" />
+		
+		<namespace prefix="mx" uri="http://www.adobe.com/2006/mxml" />
+		<namespace prefix="xs" uri="http://www.w3.org/2000/xmlns/" />
+		<namespace prefix="xml" uri="http://www.w3.org/XML/1998/namespace" />
+		<namespace prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
+		<namespace prefix="xlink" uri="http://www.w3.org/1999/xlink" />
+	</extension>
+</plugin>

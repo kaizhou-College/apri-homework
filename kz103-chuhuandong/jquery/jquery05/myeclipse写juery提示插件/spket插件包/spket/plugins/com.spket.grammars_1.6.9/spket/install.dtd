@@ -1,0 +1,24 @@
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT targetApplication (id, minVersion, maxVersion)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT creator (#PCDATA)>
+<!ELEMENT developer (#PCDATA)>
+<!ELEMENT translator (#PCDATA)>
+<!ELEMENT contributor (#PCDATA)>
+<!ELEMENT homepageURL (#PCDATA)>
+<!ELEMENT updateURL (#PCDATA)>
+<!ELEMENT optionsURL (#PCDATA)>
+<!ELEMENT aboutURL (#PCDATA)>
+<!ELEMENT iconURL (#PCDATA)>
+<!ELEMENT hidden (#PCDATA)>
+<!ELEMENT targetPlatform (#PCDATA)>
+<!ELEMENT minVersion (#PCDATA)>
+<!ELEMENT maxVersion (#PCDATA)>
+<!-- deprecated -->
+<!ELEMENT file (package, locale, skin)>
+<!ELEMENT package (#PCDATA)>
+<!ELEMENT locale (#PCDATA)>
+<!ELEMENT skin (#PCDATA)>
