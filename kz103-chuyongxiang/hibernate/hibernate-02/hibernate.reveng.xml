@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table name="SYSUSER" schema="SCOTT">
+		<primary-key>
+			<key-column name="ID" type="java.lang.integer" />
+		</primary-key>
+	</table>
+	<table name="ECRPARTS" schema="SCOTT">
+		<primary-key>
+
+			<key-column name="ID" type="java.lang.Long" />
+		</primary-key>
+		<column name="FRUID" type="java.lang.Long"></column>
+	</table>
+<table name="WIFE" schema="SCOTT">
+	<primary-key>
+		<key-column name="ID" type="java.lang.Long"/>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- name:表所所对应的实体类的全限定名 
+		 table:表名
+		 1，表与类的关系
+	-->
+	<class name="entity.SysUser" table="SysUser">
+		<!-- 2，字段与属性的关系 -->
+		<!-- 2.1，id:必须配置 主键对应的属性 
+			name:属性
+			column:主键名
+			generator:增长策略
+			-->
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">PK_SYSUSER</param>
+				
+			</generator>
+		</id>
+		<!-- 2.2普通属性和字段的对应关系 :如果属性名和字段名一样 可以省略字段名 -->
+		<property name="username" ></property>
+		<property name="password" ></property>
+	</class>
+</hibernate-mapping>
